@@ -1,11 +1,14 @@
 /**
- * Transforms a tworldstore.cl image URL to go through the local Vite proxy.
- * - Avoids hotlink/CORS blocks in development by routing through /tworld-img
- * - Keeps original URL structure (don't modify large_default/home_default)
+ * In development: routes through the Vite /tworld-img proxy to avoid CORS.
+ * In production: returns the original tworldstore.cl URL directly.
+ * <img> tags don't require CORS headers, so direct URLs work fine in prod.
  */
 export function twImg(url) {
   if (!url || typeof url !== 'string') return url
-  return url.replace('https://tworldstore.cl', '/tworld-img')
+  if (import.meta.env.DEV) {
+    return url.replace('https://tworldstore.cl', '/tworld-img')
+  }
+  return url
 }
 
 /**
