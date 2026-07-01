@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css?family=Roboto|Roboto:500|Rubik|GothamNarrow-Bold|Vollkorn:regular&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: #333333;
+  background-color: #ffffff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Gotham Narrow Bold', 'Inter', sans-serif;
+  font-weight: 700;
+  color: #000000;
+}
+
+.btn-primary {
+  @apply px-4 py-2 bg-primary text-white font-bold hover:bg-primary-light transition-colors uppercase text-sm tracking-wider;
+}
+
+.btn-accent {
+  @apply px-4 py-2 bg-accent text-white font-bold hover:bg-accent-hover transition-colors uppercase text-sm tracking-wider;
+}
+
+.card {
+  @apply bg-white border border-border p-4 transition-all hover:shadow-[0_0_15px_rgba(0,0,0,0.1)];
+}
+
+.badge {
+  @apply inline-block px-3 py-1 text-xs font-bold rounded-full uppercase;
+}
+
+/* Scroll horizontal for mobile */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
