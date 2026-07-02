@@ -25,7 +25,7 @@ const CATEGORY_META = {
   '12-calzado': {
     label: 'Calzado de Seguridad',
     banner: 'https://tworldstore.cl/img/cms/fotos-home/Calzado.jpg',
-    fallbackBanner: 'https://tworldstore.cl/239-home_default/botin-de-seguridad-edimburgo.jpg',
+    fallbackBanner: 'https://tworldstore.cl/6541-large_default/botin-skechers-seguridad-ledom-hombre.jpg',
   },
   '9-lineas': {
     label: 'Líneas',

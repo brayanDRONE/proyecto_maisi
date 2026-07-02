@@ -2,7 +2,7 @@ export const banners = [
   { id: 1, img: 'https://tworldstore.cl/5066-large_default/polera-ml-hombre-100-alg-170g.jpg', url: '/10-hombre' },
   { id: 2, img: 'https://tworldstore.cl/4338-large_default/polera-hibrida-dual-hi-vis-hombre-mlarga.jpg', url: '/10-hombre' },
   { id: 3, img: 'https://tworldstore.cl/2618-home_default/parka-termica-light-ml-hombre.jpg', url: '/productos' },
-  { id: 4, img: 'https://tworldstore.cl/239-home_default/botin-de-seguridad-edimburgo.jpg', url: '/12-calzado' },
+  { id: 4, img: 'https://tworldstore.cl/6541-large_default/botin-skechers-seguridad-ledom-hombre.jpg', url: '/12-calzado' },
   { id: 5, img: 'https://tworldstore.cl/2600-home_default/parka-softshell-mujer.jpg', url: '/11-mujer' },
 ]
 
@@ -12,7 +12,7 @@ export const categories = [
   { id: 3, title: 'CAMISAS Y BLUSAS', img: 'https://tworldstore.cl/stupload/stswiper/calugas-264x190-03.png', slug: 'camisas' },
   { id: 4, title: 'PARKAS Y CHAQUETAS', img: 'https://tworldstore.cl/stupload/stswiper/calugas-264x190-05.png', slug: 'parkas' },
   { id: 5, title: 'POLERAS Y POLERONES', img: 'https://tworldstore.cl/stupload/stswiper/calugas-264x190-01.png', slug: 'poleras' },
-  { id: 6, title: 'CALZADO DE SEGURIDAD', img: 'https://tworldstore.cl/239-home_default/botin-de-seguridad-edimburgo.jpg', slug: '12-calzado' },
+  { id: 6, title: 'CALZADO DE SEGURIDAD', img: 'https://tworldstore.cl/6541-large_default/botin-skechers-seguridad-ledom-hombre.jpg', slug: '12-calzado' },
 ]
 
 // Datos Base

@@ -1,11 +1,38 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import ProductCard from '../components/catalog/ProductCard'
-import { banners } from '../utils/mockData'
 import { products } from '../utils/productsData'
 import { twImg } from '../utils/imgUrl'
 
 const FALLBACK = '/icons/logo_maisi.jpeg'
+const HERO_BANNERS = [
+  {
+    id: 'maisi-bordado',
+    img: '/icons/foto3.png',
+    url: '/cotizacion',
+    alt: 'Bordados corporativos premium Maisi',
+    badge: 'Bordados premium',
+    title: 'Uniformes y accesorios que elevan tu marca',
+    text: 'Cotiza bordados corporativos con presencia visual, terminación prolija y prendas listas para destacar en terreno.',
+    cta: 'Cotizar proyecto',
+    imageClass: 'object-[62%_center] sm:object-center',
+    overlayClass: 'bg-gradient-to-r from-black/72 via-black/46 to-black/18',
+    panelClass: 'max-w-xl'
+  },
+  {
+    id: 'maisi-catalogo',
+    img: '/icons/foto1.png',
+    url: '/productos',
+    alt: 'Catálogo de prendas bordadas Maisi',
+    badge: 'Catálogo corporativo',
+    title: 'Vestuario corporativo con identidad consistente',
+    text: 'Integramos prendas, bordado y presentación comercial para que tu equipo proyecte orden, confianza y diferenciación.',
+    cta: 'Ver soluciones',
+    imageClass: 'object-center',
+    overlayClass: 'bg-gradient-to-r from-slate-950/78 via-slate-900/48 to-black/16',
+    panelClass: 'max-w-lg'
+  },
+]
 
 // Líneas Tworld con sus colores e imágenes
 const LINEAS = [
@@ -22,8 +49,26 @@ const CATEGORY_CARDS = [
   { title: 'HOMBRE', img: 'https://tworldstore.cl/stupload/stswiper/calugas-264x190-01.png', slug: '10-hombre' },
   { title: 'MUJER', img: 'https://tworldstore.cl/stupload/stswiper/calugas-264x190-03.png', slug: '11-mujer' },
   { title: 'EPP', img: 'https://tworldstore.cl/stupload/stswiper/calugas-264x190.png', slug: 'epp' },
-  { title: 'CALZADO DE SEGURIDAD', img: 'https://tworldstore.cl/239-home_default/botin-de-seguridad-edimburgo.jpg', slug: '12-calzado' },
+  { title: 'CALZADO DE SEGURIDAD', img: 'https://tworldstore.cl/6541-large_default/botin-skechers-seguridad-ledom-hombre.jpg', slug: '12-calzado' },
   { title: 'VESTUARIO / LÍNEAS', img: 'https://tworldstore.cl/stupload/stswiper/calugas-264x190-04.png', slug: '9-lineas' },
+]
+
+const VALUE_PROPS = [
+  {
+    title: 'Vestuario Premium',
+    text: 'Prendas y terminaciones pensadas para soportar uso intensivo sin perder presencia.',
+    metric: 'Acabado prolijo'
+  },
+  {
+    title: 'Bordado Profesional',
+    text: 'Aplicamos identidad de marca con definición, contraste y lectura clara en cada prenda.',
+    metric: 'Imagen consistente'
+  },
+  {
+    title: 'Entrega Confiable',
+    text: 'Coordinamos producción y despacho para responder con tiempos claros y seguimiento.',
+    metric: 'Cobertura nacional'
+  }
 ]
 
 export default function Home() {
@@ -36,7 +81,7 @@ export default function Home() {
   // Hero auto-play
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentSlide(prev => (prev + 1) % banners.length)
+      setCurrentSlide(prev => (prev + 1) % HERO_BANNERS.length)
     }, 5000)
     return () => clearInterval(timer)
   }, [])
@@ -47,21 +92,43 @@ export default function Home() {
     <div className="w-full">
 
       {/* ── Hero Banner Slider ── */}
-      <section className="relative w-full overflow-hidden bg-gray-900" style={{ height: 600 }}>
+      <section className="relative w-full overflow-hidden bg-slate-950" style={{ minHeight: 460 }}>
         <div
           className="flex h-full transition-transform duration-500 ease-in-out"
           style={{ transform: `translateX(-${currentSlide * 100}%)` }}
         >
-          {banners.map((banner) => (
-            <div key={banner.id} className="w-full h-full flex-shrink-0">
+          {HERO_BANNERS.map((banner) => (
+            <div key={banner.id} className="relative w-full min-h-[460px] sm:min-h-[540px] lg:min-h-[620px] flex-shrink-0">
               <Link to={banner.url}>
                 <img
-                  src={twImg(banner.img)}
-                  alt="Banner"
+                  src={banner.img.startsWith('/icons/') ? banner.img : twImg(banner.img)}
+                  alt={banner.alt}
                   loading="eager"
-                  className="w-full h-full object-cover"
+                  className={`absolute inset-0 w-full h-full object-cover ${banner.imageClass}`}
                   onError={(e) => { e.currentTarget.src = FALLBACK }}
                 />
+                <div className={`absolute inset-0 ${banner.overlayClass}`} />
+                <div className="absolute inset-x-0 bottom-0 h-32 sm:h-40 bg-gradient-to-t from-black/70 to-transparent" />
+                <div className="relative z-10 flex min-h-[460px] items-end px-4 py-6 sm:min-h-[540px] sm:px-8 sm:py-8 lg:min-h-[620px] lg:px-16 lg:py-12">
+                  <div className={`${banner.panelClass} rounded-[1.75rem] border border-white/12 bg-black/42 p-5 shadow-2xl backdrop-blur-md sm:p-7 lg:p-8`}>
+                    <span className="inline-flex rounded-full border border-[#ff7a00]/40 bg-[#ff7a00]/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.24em] text-[#ffd2a6] sm:text-xs">
+                      {banner.badge}
+                    </span>
+                    <h1 className="mt-4 text-[1.85rem] font-black uppercase leading-[0.95] text-white sm:text-4xl lg:text-[3.35rem]">
+                      {banner.title}
+                    </h1>
+                    <p className="mt-3 max-w-lg text-sm leading-6 text-white/82 sm:mt-4 sm:text-base">
+                      {banner.text}
+                    </p>
+                    <span className="mt-5 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.22em] text-white sm:mt-6 sm:text-sm">
+                      {banner.cta}
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <path d="M5 12h14"/>
+                        <path d="m13 5 7 7-7 7"/>
+                      </svg>
+                    </span>
+                  </div>
+                </div>
               </Link>
             </div>
           ))}
@@ -69,21 +136,21 @@ export default function Home() {
 
         {/* Arrows */}
         <button
-          className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/50 text-white w-10 h-10 flex items-center justify-center rounded-full transition z-10"
-          onClick={() => setCurrentSlide(currentSlide === 0 ? banners.length - 1 : currentSlide - 1)}
+          className="absolute left-3 top-1/2 -translate-y-1/2 bg-white/18 hover:bg-white/45 text-white w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center rounded-full transition z-10"
+          onClick={() => setCurrentSlide(currentSlide === 0 ? HERO_BANNERS.length - 1 : currentSlide - 1)}
         >
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="m15 18-6-6 6-6"/></svg>
         </button>
         <button
-          className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/50 text-white w-10 h-10 flex items-center justify-center rounded-full transition z-10"
-          onClick={() => setCurrentSlide((currentSlide + 1) % banners.length)}
+          className="absolute right-3 top-1/2 -translate-y-1/2 bg-white/18 hover:bg-white/45 text-white w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center rounded-full transition z-10"
+          onClick={() => setCurrentSlide((currentSlide + 1) % HERO_BANNERS.length)}
         >
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="m9 18 6-6-6-6"/></svg>
         </button>
 
         {/* Dots */}
-        <div className="absolute bottom-5 left-1/2 -translate-x-1/2 flex gap-2 z-10">
-          {banners.map((_, i) => (
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10 sm:bottom-5">
+          {HERO_BANNERS.map((_, i) => (
             <button
               key={i}
               onClick={() => setCurrentSlide(i)}
@@ -250,37 +317,76 @@ export default function Home() {
       </section>
 
       {/* ── Valor Diferencial ── */}
-      <section className="bg-primary text-white py-14">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-display text-3xl font-bold mb-12 uppercase">Por qué elegir a Maisi</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>,
-                title: 'Vestuario Premium',
-                text: 'Productos de excelente calidad para el trabajo del día a día, durables y cómodos.'
-              },
-              {
-                icon: <><path d="m18 14 4-4"/><path d="m14 18-4 4"/><path d="m2 22 2-2"/><path d="M22 2 12 12"/><path d="M11 22 2 13"/><path d="M2 2l20 20"/></>,
-                title: 'Servicio de Bordado',
-                text: 'Personaliza tus prendas corporativas con nuestro servicio de bordado de alta fidelidad.'
-              },
-              {
-                icon: <><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></>,
-                title: 'Despacho Rápido',
-                text: 'Enviamos tus pedidos a todo Chile de forma rápida y segura.'
-              }
-            ].map((item, i) => (
-              <div key={i} className="flex flex-col items-center text-center">
-                <div className="w-20 h-20 bg-white/10 rounded-full flex items-center justify-center mb-6">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    {item.icon}
-                  </svg>
+      <section className="bg-slate-950 py-12 sm:py-14">
+        <div className="w-full px-4 sm:px-6 lg:px-8">
+          <div className="relative overflow-hidden rounded-[2rem] border border-slate-800 shadow-[0_30px_80px_rgba(15,23,42,0.28)]">
+            <img
+              src="/icons/foto2.png"
+              alt="Proceso y resultado de bordado Maisi"
+              className="absolute inset-0 h-full w-full object-cover object-center"
+              onError={(e) => { e.currentTarget.src = FALLBACK }}
+            />
+            <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(8,15,35,0.92)_0%,rgba(8,15,35,0.82)_38%,rgba(8,15,35,0.52)_62%,rgba(8,15,35,0.68)_100%)]" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(249,115,22,0.16),_transparent_26%),radial-gradient(circle_at_bottom_right,_rgba(59,130,246,0.12),_transparent_28%)]" />
+
+            <div className="relative z-10 flex min-h-[360px] items-end lg:min-h-[420px]">
+              <div className="grid w-full gap-6 p-6 sm:p-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(280px,0.72fr)] lg:items-end lg:p-10">
+                <div className="max-w-3xl">
+                  <span className="inline-flex rounded-full border border-orange-400/30 bg-orange-400/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.28em] text-orange-200">
+                    Bordado corporativo
+                  </span>
+                  <h2 className="mt-4 max-w-2xl text-3xl font-black uppercase leading-tight text-white sm:text-4xl lg:text-[2.9rem]">
+                    Por qué elegir a Maisi
+                  </h2>
+                  <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-200 sm:text-base">
+                    Diseñamos soluciones de vestuario corporativo para empresas que necesitan presencia de marca, durabilidad operativa y una entrega confiable de principio a fin.
+                  </p>
+
+                  <div className="mt-6 grid gap-3 sm:grid-cols-3">
+                    {VALUE_PROPS.map((item) => (
+                      <div key={item.title} className="rounded-2xl border border-white/10 bg-slate-900/58 p-4 backdrop-blur-md">
+                        <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-orange-200">
+                          {item.metric}
+                        </p>
+                        <h3 className="mt-2 text-xl font-bold text-white">
+                          {item.title}
+                        </h3>
+                        <p className="mt-2 text-sm leading-6 text-slate-200">
+                          {item.text}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="mt-5 flex flex-wrap items-center gap-3 text-sm text-slate-200">
+                    <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-slate-900/55 px-4 py-2 backdrop-blur-sm">
+                      <span className="h-2 w-2 rounded-full bg-orange-400" />
+                      Personalización textil
+                    </span>
+                    <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-slate-900/55 px-4 py-2 backdrop-blur-sm">
+                      <span className="h-2 w-2 rounded-full bg-sky-400" />
+                      Producción con foco B2B
+                    </span>
+                    <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-slate-900/55 px-4 py-2 backdrop-blur-sm">
+                      <span className="h-2 w-2 rounded-full bg-white" />
+                      Despacho a todo Chile
+                    </span>
+                  </div>
                 </div>
-                <h3 className="font-bold text-xl mb-3">{item.title}</h3>
-                <p className="text-white/80 text-sm">{item.text}</p>
+
+                <div className="rounded-[1.75rem] border border-white/10 bg-black/45 p-5 backdrop-blur-md lg:justify-self-end">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-orange-200">
+                    Imagen que vende
+                  </p>
+                  <p className="mt-3 text-2xl font-black uppercase leading-tight text-white lg:text-[2rem]">
+                    Bordado que se nota, refuerza marca y transmite confianza.
+                  </p>
+                  <p className="mt-3 text-sm leading-6 text-slate-100">
+                    Aplicamos tu identidad en gorras, polos y chaquetas técnicas con una estética cuidada para ventas, atención en terreno y uso diario.
+                  </p>
+                </div>
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </section>
