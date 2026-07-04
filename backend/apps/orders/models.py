@@ -2,6 +2,20 @@ from django.db import models
 from django.conf import settings
 
 
+class OrderLog(models.Model):
+    """Registro mínimo de órdenes para numeración secuencial"""
+    customer_name = models.CharField(max_length=200)
+    customer_email = models.EmailField()
+    total = models.DecimalField(max_digits=12, decimal_places=0)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['-created_at']
+
+    def __str__(self):
+        return f'#{self.pk:06d} – {self.customer_name}'
+
+
 class Order(models.Model):
     """Órdenes de compra"""
     STATUS_CHOICES = [

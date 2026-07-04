@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useCart } from '../hooks/useCart'
+import { submitOrder } from '../services/orders'
 
 const WHATSAPP_NUMBER = '56957025456'
 
@@ -38,6 +39,16 @@ const INITIAL = {
   notas: '',
 }
 
+const Field = ({ id, label, required, error, children }) => (
+  <div id={`field-${id}`}>
+    <label className="block text-sm font-semibold mb-1.5">
+      {label} {required && <span className="text-accent">*</span>}
+    </label>
+    {children}
+    {error && <p className="text-xs text-accent mt-1">{error}</p>}
+  </div>
+)
+
 export default function Checkout() {
   const navigate = useNavigate()
   const { items, total, clearCart } = useCart()
@@ -72,7 +83,7 @@ export default function Checkout() {
     return e
   }
 
-  const buildWhatsAppMessage = () => {
+  const buildWhatsAppMessage = (orderNumber) => {
     const lines = items.map(item => {
       const variant = item.variant
       const size = variant?.size ? ` - Talla ${variant.size}` : ''
@@ -82,6 +93,7 @@ export default function Checkout() {
 
     const msg = [
       '🛒 *NUEVA ORDEN DE COMPRA - MAISI*',
+      '📋 *N° de Orden:* ' + orderNumber,
       '',
       '👤 *Cliente:* ' + form.nombre,
       '🆔 *RUT:* ' + form.rut,
@@ -102,7 +114,9 @@ export default function Checkout() {
       '  ' + form.ciudad + ', ' + form.region,
       '',
       '💳 *Método de pago:* Transferencia Bancaria',
-      form.notas ? ('\u2702️ *Notas de bordado:*\n  ' + form.notas) : null,
+      form.notas ? ('✂️ *Notas de bordado:*\n  ' + form.notas) : null,
+      '',
+      '📧 *PDF del pedido enviado al correo del cliente.*',
       '',
       '_Responde este mensaje para confirmar la orden, coordinar el diseño de bordado y recibir los datos de transferencia._',
     ].filter(l => l !== null).join('\n')
@@ -110,7 +124,7 @@ export default function Checkout() {
     return msg
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     const errs = validate()
     if (Object.keys(errs).length > 0) {
@@ -121,33 +135,46 @@ export default function Checkout() {
     }
 
     setSubmitting(true)
-    const msg = buildWhatsAppMessage()
-    const encoded = encodeURIComponent(msg)
-    const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encoded}`
 
-    // Guardar resumen para la pantalla de confirmación
-    sessionStorage.setItem('maisi_order', JSON.stringify({
-      nombre: form.nombre,
-      total,
-      items: items.length,
-    }))
+    try {
+      const { order_number, pdf_base64 } = await submitOrder({ form, items, total })
 
-    clearCart()
-    window.open(waUrl, '_blank', 'noopener,noreferrer')
-    navigate('/pedido-confirmado')
+      // Auto-download PDF
+      const pdfBytes = Uint8Array.from(atob(pdf_base64), (c) => c.charCodeAt(0))
+      const blob = new Blob([pdfBytes], { type: 'application/pdf' })
+      const blobUrl = URL.createObjectURL(blob)
+      const anchor = document.createElement('a')
+      anchor.href = blobUrl
+      anchor.download = `pedido_${order_number}.pdf`
+      document.body.appendChild(anchor)
+      anchor.click()
+      setTimeout(() => {
+        document.body.removeChild(anchor)
+        URL.revokeObjectURL(blobUrl)
+      }, 200)
+
+      // Open WhatsApp
+      const msg = buildWhatsAppMessage(order_number)
+      const encoded = encodeURIComponent(msg)
+      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encoded}`, '_blank', 'noopener,noreferrer')
+
+      sessionStorage.setItem('maisi_order', JSON.stringify({
+        nombre: form.nombre,
+        total,
+        items: items.length,
+        order_number,
+      }))
+
+      clearCart()
+      navigate('/pedido-confirmado')
+    } catch (err) {
+      console.error('Error al enviar pedido:', err)
+      setSubmitting(false)
+      alert('Hubo un error al procesar tu pedido. Por favor intenta nuevamente.')
+    }
   }
 
   const totalItems = items.reduce((acc, i) => acc + i.quantity, 0)
-
-  const Field = ({ id, label, required, error, children }) => (
-    <div id={`field-${id}`}>
-      <label className="block text-sm font-semibold mb-1.5">
-        {label} {required && <span className="text-accent">*</span>}
-      </label>
-      {children}
-      {error && <p className="text-xs text-accent mt-1">{error}</p>}
-    </div>
-  )
 
   const inputClass = (name) =>
     `w-full border rounded-sm px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors ${
@@ -351,13 +378,25 @@ export default function Checkout() {
                 disabled={submitting}
                 className="w-full flex items-center justify-center gap-2.5 bg-[#25D366] hover:bg-[#1ebe5d] disabled:opacity-60 text-white font-bold uppercase text-sm tracking-wider py-4 rounded-sm transition-colors shadow-sm"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
-                </svg>
-                Enviar orden por WhatsApp
+                {submitting ? (
+                  <>
+                    <svg className="animate-spin" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"/>
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"/>
+                    </svg>
+                    Generando PDF y enviando…
+                  </>
+                ) : (
+                  <>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
+                    </svg>
+                    Enviar orden por WhatsApp
+                  </>
+                )}
               </button>
               <p className="text-center text-xs text-text-light">
-                Al confirmar se abrirá WhatsApp con tu orden. El equipo Maisi te responderá para coordinar diseño y pago.
+                Al confirmar se generará tu PDF, llegará un correo de respaldo y se abrirá WhatsApp con tu orden.
               </p>
             </div>
 

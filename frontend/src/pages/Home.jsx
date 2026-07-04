@@ -8,14 +8,14 @@ const FALLBACK = '/icons/logo_maisi.jpeg'
 const HERO_BANNERS = [
   {
     id: 'maisi-bordado',
-    img: '/icons/foto3.png',
+    img: '/icons/foto2.png',
     url: '/cotizacion',
     alt: 'Bordados corporativos premium Maisi',
     badge: 'Bordados premium',
     title: 'Uniformes y accesorios que elevan tu marca',
     text: 'Cotiza bordados corporativos con presencia visual, terminación prolija y prendas listas para destacar en terreno.',
     cta: 'Cotizar proyecto',
-    imageClass: 'object-[62%_center] sm:object-center',
+    imageClass: 'object-center',
     overlayClass: 'bg-gradient-to-r from-black/72 via-black/46 to-black/18',
     panelClass: 'max-w-xl'
   },
@@ -25,11 +25,11 @@ const HERO_BANNERS = [
     url: '/productos',
     alt: 'Catálogo de prendas bordadas Maisi',
     badge: 'Catálogo corporativo',
-    title: 'Vestuario corporativo con identidad consistente',
-    text: 'Integramos prendas, bordado y presentación comercial para que tu equipo proyecte orden, confianza y diferenciación.',
-    cta: 'Ver soluciones',
-    imageClass: 'object-center',
-    overlayClass: 'bg-gradient-to-r from-slate-950/78 via-slate-900/48 to-black/16',
+    title: 'Bordamos tu identidad',
+    text: 'Tu marca, tu logo, tu presencia — cosidos con precisión en cada prenda para que tu equipo hable por sí solo.',
+    cta: 'Ver catálogo',
+    imageClass: 'object-contain',
+    overlayClass: 'bg-gradient-to-r from-slate-950/80 via-slate-900/40 to-black/10',
     panelClass: 'max-w-lg'
   },
 ]

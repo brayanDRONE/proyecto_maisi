@@ -4,6 +4,10 @@ import api from './api'
  * Servicios relacionados con órdenes
  */
 
+/** Envía la orden al backend: genera PDF y envía email al cliente */
+export const submitOrder = ({ form, items, total }) =>
+  api.post('/orders/submit/', { form, items, total }).then((r) => r.data)
+
 export const createOrder = (orderData) => {
   return api.post('/orders/', orderData)
 }
