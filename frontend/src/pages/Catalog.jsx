@@ -1,5 +1,5 @@
-import React, { useMemo, useState } from 'react'
-import { useParams, Link } from 'react-router-dom'
+import React, { useMemo, useState, useEffect } from 'react'
+import { useParams, Link, useSearchParams } from 'react-router-dom'
 import { products, catalogCategories } from '../utils/productsData'
 import ProductCard from '../components/catalog/ProductCard'
 import { twImg } from '../utils/imgUrl'
@@ -17,20 +17,10 @@ const CATEGORY_META = {
     banner: 'https://tworldstore.cl/img/cms/fotos-home/Mujer.jpg',
     fallbackBanner: 'https://tworldstore.cl/stupload/stswiper/calugas-264x190-03.png',
   },
-  'epp': {
-    label: 'EPP',
-    banner: 'https://tworldstore.cl/img/cms/fotos-home/EPP.jpg',
-    fallbackBanner: 'https://tworldstore.cl/stupload/stswiper/calugas-264x190.png',
-  },
   '12-calzado': {
     label: 'Calzado de Seguridad',
     banner: 'https://tworldstore.cl/img/cms/fotos-home/Calzado.jpg',
     fallbackBanner: 'https://tworldstore.cl/6541-large_default/botin-skechers-seguridad-ledom-hombre.jpg',
-  },
-  '9-lineas': {
-    label: 'Líneas',
-    banner: 'https://tworldstore.cl/img/cms/fotos-home/Lineas.jpg',
-    fallbackBanner: 'https://tworldstore.cl/stupload/stswiper/calugas-264x190-04.png',
   },
 }
 
@@ -43,26 +33,71 @@ const SORT_OPTIONS = [
 
 const PAGE_SIZE = 12
 
+// Subcategorías por categoría (deben coincidir con Navbar)
+const SUBCATS = {
+  '10-hombre': [
+    { label: 'Poleras',               tipo: 'polera' },
+    { label: 'Camisas',               tipo: 'camisa' },
+    { label: 'Chaquetas / Casacas',   tipo: 'chaqueta,casaca' },
+    { label: 'Parkas / Cortavientos', tipo: 'parka,cortaviento' },
+    { label: 'Pantalones',            tipo: 'pantalon,pantalón' },
+    { label: 'Chalecos',              tipo: 'chaleco' },
+    { label: 'Polares',               tipo: 'micropolar,primera' },
+    { label: 'Overoles / Jardineras', tipo: 'overol,jardinera' },
+    { label: 'Jeans',                 tipo: 'jeans' },
+  ],
+  '11-mujer': [
+    { label: 'Poleras',               tipo: 'polera' },
+    { label: 'Blusas',                tipo: 'blusa' },
+    { label: 'Chaquetas',             tipo: 'chaqueta' },
+    { label: 'Parkas / Cortavientos', tipo: 'parka,cortaviento' },
+    { label: 'Pantalones',            tipo: 'pantalon,pantalón' },
+    { label: 'Chalecos',              tipo: 'chaleco' },
+    { label: 'Polares',               tipo: 'micropolar,primera' },
+    { label: 'Jeans',                 tipo: 'jeans' },
+  ],
+  '12-calzado': [
+    { label: 'Botines',    tipo: 'botin' },
+    { label: 'Zapatillas', tipo: 'zapatilla' },
+  ],
+}
+
 export default function Catalog() {
   const { categoryId } = useParams()
+  const [searchParams] = useSearchParams()
+  const tipoParam = searchParams.get('tipo') || ''
+  const tipos = tipoParam ? tipoParam.split(',') : []
+
   const [sort, setSort] = useState('relevance')
   const [page, setPage] = useState(1)
   const [viewMode, setViewMode] = useState('grid') // 'grid' | 'list'
   const [bannerError, setBannerError] = useState(false)
 
   const meta = categoryId ? CATEGORY_META[categoryId] : null
+  const subcats = categoryId ? (SUBCATS[categoryId] || []) : []
 
   const filtered = useMemo(() => {
     let list = categoryId
       ? products.filter(p => p.category === categoryId)
       : products
 
+    if (tipos.length > 0) {
+      list = list.filter(p =>
+        tipos.some(t => p.name.toLowerCase().startsWith(t.toLowerCase()))
+      )
+    }
+
     if (sort === 'price-asc') list = [...list].sort((a, b) => a.price - b.price)
     else if (sort === 'price-desc') list = [...list].sort((a, b) => b.price - a.price)
     else if (sort === 'name-asc') list = [...list].sort((a, b) => a.name.localeCompare(b.name))
 
     return list
-  }, [categoryId, sort])
+  }, [categoryId, tipoParam, sort])
+
+  // Resetear página al cambiar de categoría, tipo o sort
+  useEffect(() => {
+    setPage(1)
+  }, [categoryId, tipoParam, sort])
 
   const totalPages = Math.ceil(filtered.length / PAGE_SIZE)
   const paginated = filtered.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE)
@@ -106,11 +141,50 @@ export default function Catalog() {
           {categoryId && (
             <>
               <span>›</span>
-              <span className="text-text font-medium">{meta?.label || categoryId}</span>
+              <Link to={`/${categoryId}`} className="hover:text-primary">{meta?.label || categoryId}</Link>
+            </>
+          )}
+          {tipoParam && subcats.length > 0 && (
+            <>
+              <span>›</span>
+              <span className="text-text font-medium">
+                {subcats.find(s => s.tipo === tipoParam)?.label || tipoParam}
+              </span>
             </>
           )}
         </div>
       </div>
+
+      {/* Barra de subcategorías */}
+      {subcats.length > 0 && (
+        <div className="border-b border-border bg-white">
+          <div className="max-w-7xl mx-auto px-4 flex items-center gap-1 overflow-x-auto py-2 scrollbar-hide">
+            <Link
+              to={`/${categoryId}`}
+              className={`flex-shrink-0 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider transition-colors ${
+                !tipoParam
+                  ? 'bg-primary text-white'
+                  : 'bg-gray-100 text-text hover:bg-gray-200'
+              }`}
+            >
+              Todos
+            </Link>
+            {subcats.map(sub => (
+              <Link
+                key={sub.tipo}
+                to={`/${categoryId}?tipo=${encodeURIComponent(sub.tipo)}`}
+                className={`flex-shrink-0 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider transition-colors ${
+                  tipoParam === sub.tipo
+                    ? 'bg-primary text-white'
+                    : 'bg-gray-100 text-text hover:bg-gray-200'
+                }`}
+              >
+                {sub.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
 
       <div className="max-w-7xl mx-auto px-4 py-6">
         {/* Toolbar */}

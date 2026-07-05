@@ -15,7 +15,7 @@ const HERO_BANNERS = [
     title: 'Uniformes y accesorios que elevan tu marca',
     text: 'Cotiza bordados corporativos con presencia visual, terminación prolija y prendas listas para destacar en terreno.',
     cta: 'Cotizar proyecto',
-    imageClass: 'object-center',
+    imageClass: 'object-cover object-center',
     overlayClass: 'bg-gradient-to-r from-black/72 via-black/46 to-black/18',
     panelClass: 'max-w-xl'
   },
@@ -28,29 +28,17 @@ const HERO_BANNERS = [
     title: 'Bordamos tu identidad',
     text: 'Tu marca, tu logo, tu presencia — cosidos con precisión en cada prenda para que tu equipo hable por sí solo.',
     cta: 'Ver catálogo',
-    imageClass: 'object-contain',
+    imageClass: 'object-cover object-center',
     overlayClass: 'bg-gradient-to-r from-slate-950/80 via-slate-900/40 to-black/10',
     panelClass: 'max-w-lg'
   },
 ]
 
-// Líneas Tworld con sus colores e imágenes
-const LINEAS = [
-  { name: 'FREE ACTION LINE', color: '#888888', textColor: '#fff' },
-  { name: 'HI-VIS LINE',      color: '#c9920a', textColor: '#fff' },
-  { name: 'IRON LINE',        color: '#0a1040', textColor: '#fff' },
-  { name: 'OUTWORK LINE',     color: '#9e8c6d', textColor: '#fff' },
-  { name: 'PRACTICAL LINE',   color: '#dc2b2e', textColor: '#fff' },
-  { name: 'TECHNIC LINE',     color: '#1a1a1a', textColor: '#fff' },
-  { name: 'ADVANCE LINE',     color: '#555555', textColor: '#fff' },
-]
 
 const CATEGORY_CARDS = [
   { title: 'HOMBRE', img: 'https://tworldstore.cl/stupload/stswiper/calugas-264x190-01.png', slug: '10-hombre' },
   { title: 'MUJER', img: 'https://tworldstore.cl/stupload/stswiper/calugas-264x190-03.png', slug: '11-mujer' },
-  { title: 'EPP', img: 'https://tworldstore.cl/stupload/stswiper/calugas-264x190.png', slug: 'epp' },
   { title: 'CALZADO DE SEGURIDAD', img: 'https://tworldstore.cl/6541-large_default/botin-skechers-seguridad-ledom-hombre.jpg', slug: '12-calzado' },
-  { title: 'VESTUARIO / LÍNEAS', img: 'https://tworldstore.cl/stupload/stswiper/calugas-264x190-04.png', slug: '9-lineas' },
 ]
 
 const VALUE_PROPS = [
@@ -104,7 +92,7 @@ export default function Home() {
                   src={banner.img.startsWith('/icons/') ? banner.img : twImg(banner.img)}
                   alt={banner.alt}
                   loading="eager"
-                  className={`absolute inset-0 w-full h-full object-cover ${banner.imageClass}`}
+                  className={`absolute inset-0 w-full h-full ${banner.imageClass}`}
                   onError={(e) => { e.currentTarget.src = FALLBACK }}
                 />
                 <div className={`absolute inset-0 ${banner.overlayClass}`} />
@@ -164,7 +152,7 @@ export default function Home() {
 
       {/* ── Categorías ── */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
           {CATEGORY_CARDS.map((cat) => (
             <Link
               key={cat.slug}
@@ -234,84 +222,6 @@ export default function Home() {
             >
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="m9 18 6-6-6-6"/></svg>
             </button>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Sección Líneas (grid visual) ── */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-        <div
-          className="grid gap-3"
-          style={{ gridTemplateColumns: '1fr 1fr', gridTemplateRows: '300px 300px',
-            gridTemplateAreas: '"outwork hivis" "outwork technic"' }}
-        >
-          {/* OUTWORK */}
-          <Link
-            to="/9-lineas"
-            className="relative overflow-hidden group rounded shadow-sm"
-            style={{ gridArea: 'outwork' }}
-          >
-            <img src={twImg('https://tworldstore.cl/stupload/stbanner/lineas-inferiores-01.png')} alt="Outwork Line"
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-              onError={(e) => { e.currentTarget.src = FALLBACK }}
-            />
-            <div className="absolute inset-0 bg-black/35"/>
-            <div className="absolute bottom-6 left-6">
-              <p className="text-white font-bold text-2xl leading-tight"><span className="font-black">OUTWORK</span> <span className="font-light">LINE</span></p>
-            </div>
-          </Link>
-
-          {/* HI-VIS */}
-          <Link
-            to="/9-lineas"
-            className="relative overflow-hidden group rounded shadow-sm"
-            style={{ gridArea: 'hivis' }}
-          >
-            <img src={twImg('https://tworldstore.cl/stupload/stbanner/lineas-inferiores-02.png')} alt="Hi-Vis Line"
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-              onError={(e) => { e.currentTarget.src = FALLBACK }}
-            />
-            <div className="absolute inset-0 bg-[#c9920a]/40"/>
-            <div className="absolute bottom-6 left-6">
-              <p className="text-white font-bold text-2xl leading-tight"><span className="font-black">HI-VIS</span> <span className="font-light">LINE</span></p>
-            </div>
-          </Link>
-
-          {/* TECHNIC */}
-          <Link
-            to="/9-lineas"
-            className="relative overflow-hidden group rounded shadow-sm"
-            style={{ gridArea: 'technic' }}
-          >
-            <img src={twImg('https://tworldstore.cl/stupload/stbanner/lineas-inferiores-03.png')} alt="Technic Line"
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-              onError={(e) => { e.currentTarget.src = FALLBACK }}
-            />
-            <div className="absolute inset-0 bg-black/45"/>
-            <div className="absolute bottom-6 left-6">
-              <p className="text-white font-bold text-2xl leading-tight"><span className="font-black">TECHNIC</span> <span className="font-light">LINE</span></p>
-            </div>
-          </Link>
-        </div>
-      </section>
-
-      {/* ── Nuestras Líneas (badges) ── */}
-      <section className="py-10 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-center font-display text-[28px] font-bold text-primary uppercase mb-8 tracking-wide">
-            NUESTRAS LÍNEAS
-          </h2>
-          <div className="flex flex-wrap justify-center gap-2">
-            {LINEAS.map((l) => (
-              <Link
-                key={l.name}
-                to={`/productos?linea=${l.name.toLowerCase().replace(' line', '').replace(' ', '-')}`}
-                className="px-5 py-3 font-bold text-sm uppercase tracking-widest transition-opacity hover:opacity-80 rounded"
-                style={{ backgroundColor: l.color, color: l.textColor }}
-              >
-                {l.name}
-              </Link>
-            ))}
           </div>
         </div>
       </section>

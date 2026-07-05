@@ -1,44 +1,15 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const LINEAS = [
-  { name: 'FREE ACTION LINE', color: '#888888' },
-  { name: 'HI-VIS LINE',      color: '#c9920a' },
-  { name: 'IRON LINE',        color: '#0a1040' },
-  { name: 'OUTWORK LINE',     color: '#9e8c6d' },
-  { name: 'PRACTICAL LINE',   color: '#dc2b2e' },
-  { name: 'TECHNIC LINE',     color: '#1a1a1a' },
-  { name: 'ADVANCE LINE',     color: '#555555' },
-]
-
 export default function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
     <footer className="bg-white border-t border-border font-sans">
 
-      {/* ── Nuestras Líneas + Mapa ── */}
+      {/* ── Mapa ── */}
       <section className="bg-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-center font-display text-[26px] font-bold text-primary uppercase mb-8 tracking-wide">
-            NUESTRAS LÍNEAS
-          </h2>
-
-          {/* Badges de líneas */}
-          <div className="flex flex-wrap justify-center gap-2 mb-10">
-            {LINEAS.map((l) => (
-              <Link
-                key={l.name}
-                to={`/productos?linea=${l.name.toLowerCase().replace(' line', '').replace(/ /g, '-')}`}
-                className="px-5 py-3 text-white font-bold text-[11px] uppercase tracking-widest hover:opacity-80 transition-opacity"
-                style={{ backgroundColor: l.color }}
-              >
-                {l.name}
-              </Link>
-            ))}
-          </div>
-
-          {/* Dirección */}
           <p className="text-center font-bold text-primary text-sm uppercase tracking-wider mb-6">
             VISÍTANOS EN SOR TERESA DE LOS ANDES 519, GRANEROS, CHILE.
           </p>
@@ -96,9 +67,7 @@ export default function Footer() {
               <ul className="space-y-2 text-sm text-text-light">
                 <li><Link to="/10-hombre"  className="hover:text-primary transition-colors">Hombre</Link></li>
                 <li><Link to="/11-mujer" className="hover:text-primary transition-colors">Mujer</Link></li>
-                <li><Link to="/9-lineas" className="hover:text-primary transition-colors">Vestuario / Líneas</Link></li>
                 <li><Link to="/12-calzado" className="hover:text-primary transition-colors">Calzado</Link></li>
-                <li><Link to="/epp"   className="hover:text-primary transition-colors">EPP</Link></li>
               </ul>
             </div>
 

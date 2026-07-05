@@ -1,5 +1,5 @@
 // AUTO-GENERATED from tworld_productos.xlsx — DO NOT EDIT MANUALLY
-export const products = [
+const _products = [
   {
     "id": "930",
     "sku": "930",
@@ -22817,18 +22817,13 @@ export const catalogCategories = [
     "slug": "11-mujer"
   },
   {
-    "id": "epp",
-    "label": "EPP",
-    "slug": "epp"
-  },
-  {
     "id": "12-calzado",
     "label": "Calzado de Seguridad",
     "slug": "12-calzado"
-  },
-  {
-    "id": "9-lineas",
-    "label": "Líneas",
-    "slug": "9-lineas"
   }
 ];
+
+// EPP y Líneas removidos por solicitud del cliente
+export const products = _products.filter(
+  p => p.category !== 'epp' && p.category !== '9-lineas'
+);

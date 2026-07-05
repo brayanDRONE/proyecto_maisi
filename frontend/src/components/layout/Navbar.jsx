@@ -3,9 +3,49 @@ import { Link } from 'react-router-dom'
 import { useCart } from '../../hooks/useCart'
 import { useAuth } from '../../hooks/useAuth'
 
+const NAV_ITEMS = [
+  {
+    label: 'HOMBRE',
+    to: '/10-hombre',
+    subcats: [
+      { label: 'Poleras',              tipo: 'polera' },
+      { label: 'Camisas',              tipo: 'camisa' },
+      { label: 'Chaquetas / Casacas',  tipo: 'chaqueta,casaca' },
+      { label: 'Parkas / Cortavientos',tipo: 'parka,cortaviento' },
+      { label: 'Pantalones',           tipo: 'pantalon,pantalón' },
+      { label: 'Chalecos',             tipo: 'chaleco' },
+      { label: 'Polares',              tipo: 'micropolar,primera' },
+      { label: 'Overoles / Jardineras',tipo: 'overol,jardinera' },
+      { label: 'Jeans',                tipo: 'jeans' },
+    ],
+  },
+  {
+    label: 'MUJER',
+    to: '/11-mujer',
+    subcats: [
+      { label: 'Poleras',              tipo: 'polera' },
+      { label: 'Blusas',               tipo: 'blusa' },
+      { label: 'Chaquetas',            tipo: 'chaqueta' },
+      { label: 'Parkas / Cortavientos',tipo: 'parka,cortaviento' },
+      { label: 'Pantalones',           tipo: 'pantalon,pantalón' },
+      { label: 'Chalecos',             tipo: 'chaleco' },
+      { label: 'Polares',              tipo: 'micropolar,primera' },
+      { label: 'Jeans',                tipo: 'jeans' },
+    ],
+  },
+  {
+    label: 'CALZADO',
+    to: '/12-calzado',
+    subcats: [
+      { label: 'Botines',    tipo: 'botin' },
+      { label: 'Zapatillas', tipo: 'zapatilla' },
+    ],
+  },
+]
+
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [searchQuery, setSearchQuery] = useState('')
+  const [openMobile, setOpenMobile] = useState(null)
   const { itemCount } = useCart()
   const { isAuthenticated, user } = useAuth()
 
@@ -16,7 +56,7 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-9">
             <div className="flex items-center text-white font-medium tracking-wide">
-              Maisi - Líderes en vestuario corporativo, seguridad y EPP
+              Maisi - Líderes en vestuario corporativo y bordado corporativo
             </div>
             <div className="flex items-center gap-5 text-white font-bold uppercase tracking-wide">
               <Link to="/nosotros" className="hover:text-gray-300 transition">NOSOTROS</Link>
@@ -33,9 +73,9 @@ export default function Navbar() {
           <div className="flex justify-between items-center h-20">
             {/* Logo */}
             <Link to="/" className="flex items-center flex-shrink-0">
-              <img 
-                src="/icons/logo_maisi.jpeg" 
-                alt="Maisi Logo" 
+              <img
+                src="/icons/logo_maisi.jpeg"
+                alt="Maisi Logo"
                 className="h-16 object-contain rounded"
               />
             </Link>
@@ -45,11 +85,39 @@ export default function Navbar() {
               <Link to="/" className="hover:text-accent transition">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
               </Link>
-              <Link to="/10-hombre" className="hover:text-accent transition">HOMBRE</Link>
-              <Link to="/11-mujer" className="hover:text-accent transition">MUJER</Link>
-              <Link to="/9-lineas" className="hover:text-accent transition">VESTUARIO / LÍNEAS</Link>
-              <Link to="/12-calzado" className="hover:text-accent transition">CALZADO</Link>
-              <Link to="/epp" className="hover:text-accent transition">EPP</Link>
+
+              {NAV_ITEMS.map(item => (
+                <div key={item.to} className="relative group">
+                  <Link
+                    to={item.to}
+                    className="hover:text-accent transition flex items-center gap-1 py-7"
+                  >
+                    {item.label}
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="m6 9 6 6 6-6"/></svg>
+                  </Link>
+
+                  {/* Dropdown */}
+                  <div className="absolute top-full left-0 hidden group-hover:block z-50 pt-0">
+                    <div className="bg-white shadow-xl border border-gray-100 rounded-b-lg py-1 min-w-[200px]">
+                      <Link
+                        to={item.to}
+                        className="flex items-center gap-2 px-4 py-2.5 text-[11px] font-bold uppercase tracking-widest text-primary hover:bg-gray-50 border-b border-gray-100"
+                      >
+                        Ver todo
+                      </Link>
+                      {item.subcats.map(sub => (
+                        <Link
+                          key={sub.tipo}
+                          to={`${item.to}?tipo=${encodeURIComponent(sub.tipo)}`}
+                          className="block px-4 py-2 text-[13px] font-semibold normal-case tracking-normal text-text hover:bg-gray-50 hover:text-accent transition-colors"
+                        >
+                          {sub.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ))}
             </nav>
 
             {/* Right side actions */}
@@ -71,13 +139,47 @@ export default function Navbar() {
           </div>
         </div>
 
+        {/* Mobile menu */}
         {isMenuOpen && (
-          <div className="lg:hidden border-t border-border px-4 py-2 font-bold uppercase text-sm">
-            <Link to="/10-hombre" onClick={() => setIsMenuOpen(false)} className="block py-3 border-b border-border hover:text-accent">Hombre</Link>
-            <Link to="/11-mujer" onClick={() => setIsMenuOpen(false)} className="block py-3 border-b border-border hover:text-accent">Mujer</Link>
-            <Link to="/9-lineas" onClick={() => setIsMenuOpen(false)} className="block py-3 border-b border-border hover:text-accent">Vestuario / Líneas</Link>
-            <Link to="/12-calzado" onClick={() => setIsMenuOpen(false)} className="block py-3 border-b border-border hover:text-accent">Calzado</Link>
-            <Link to="/epp" onClick={() => setIsMenuOpen(false)} className="block py-3 hover:text-accent">EPP</Link>
+          <div className="lg:hidden border-t border-border font-bold uppercase text-sm">
+            {NAV_ITEMS.map(item => (
+              <div key={item.to} className="border-b border-border">
+                <div className="flex items-center justify-between px-4">
+                  <Link
+                    to={item.to}
+                    onClick={() => setIsMenuOpen(false)}
+                    className="block py-3 hover:text-accent flex-1"
+                  >
+                    {item.label}
+                  </Link>
+                  <button
+                    onClick={() => setOpenMobile(openMobile === item.to ? null : item.to)}
+                    className="p-2 hover:text-accent"
+                  >
+                    <svg
+                      width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"
+                      className={`transition-transform ${openMobile === item.to ? 'rotate-180' : ''}`}
+                    >
+                      <path d="m6 9 6 6 6-6"/>
+                    </svg>
+                  </button>
+                </div>
+                {openMobile === item.to && (
+                  <div className="bg-gray-50 px-4 pb-2">
+                    {item.subcats.map(sub => (
+                      <Link
+                        key={sub.tipo}
+                        to={`${item.to}?tipo=${encodeURIComponent(sub.tipo)}`}
+                        onClick={() => { setIsMenuOpen(false); setOpenMobile(null) }}
+                        className="block py-2 pl-3 text-xs font-semibold normal-case tracking-normal text-text-light border-l-2 border-gray-200 hover:border-accent hover:text-accent transition-colors"
+                      >
+                        {sub.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
         )}
       </div>

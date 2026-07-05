@@ -88,37 +88,39 @@ export default function Checkout() {
       const variant = item.variant
       const size = variant?.size ? ` - Talla ${variant.size}` : ''
       const color = variant?.color ? ` - ${variant.color}` : ''
-      return `  • ${item.quantity}x ${item.product.name}${size}${color} → ${formatCLP(item.product.price * item.quantity)}`
+      return `  > ${item.quantity}x ${item.product.name}${size}${color}\n     ${formatCLP(item.product.price * item.quantity)}`
     })
 
     const msg = [
-      '🛒 *NUEVA ORDEN DE COMPRA - MAISI*',
-      '📋 *N° de Orden:* ' + orderNumber,
+      '*[ NUEVA ORDEN - MAISI ]*',
+      '─────────────────────',
+      '*N° Orden:* #' + orderNumber,
+      '*Fecha:* ' + new Date().toLocaleDateString('es-CL'),
       '',
-      '👤 *Cliente:* ' + form.nombre,
-      '🆔 *RUT:* ' + form.rut,
-      '📱 *Teléfono:* ' + form.telefono,
-      '📧 *Email:* ' + form.email,
-      form.empresa ? '🏢 *Empresa:* ' + form.empresa : null,
+      '*DATOS DEL CLIENTE*',
+      '*Nombre:* ' + form.nombre,
+      '*RUT:* ' + form.rut,
+      '*Teléfono:* ' + form.telefono,
+      '*Email:* ' + form.email,
+      form.empresa ? '*Empresa:* ' + form.empresa : null,
       '',
-      '📦 *PRODUCTOS SOLICITADOS:*',
+      '─────────────────────',
+      '*PRODUCTOS SOLICITADOS*',
       ...lines,
+      '─────────────────────',
+      '*Subtotal:* ' + formatCLP(total),
+      '*Envío:* A coordinar',
+      '*TOTAL: ' + formatCLP(total) + '*',
       '',
-      `💰 *Subtotal:* ${formatCLP(total)}`,
-      '🚚 *Envío:* A coordinar',
-      '━━━━━━━━━━━━━━━',
-      `💳 *TOTAL:* ${formatCLP(total)}`,
+      '*DIRECCIÓN DE DESPACHO*',
+      form.direccion,
+      form.ciudad + ', ' + form.region,
       '',
-      '🚚 *DIRECCIÓN DE DESPACHO:*',
-      '  ' + form.direccion,
-      '  ' + form.ciudad + ', ' + form.region,
-      '',
-      '💳 *Método de pago:* Transferencia Bancaria',
-      form.notas ? ('✂️ *Notas de bordado:*\n  ' + form.notas) : null,
-      '',
-      '📧 *PDF del pedido enviado al correo del cliente.*',
-      '',
-      '_Responde este mensaje para confirmar la orden, coordinar el diseño de bordado y recibir los datos de transferencia._',
+      '*Método de pago:* Transferencia Bancaria',
+      form.notas ? ('*Notas de bordado:*\n' + form.notas) : null,
+      '─────────────────────',
+      '_PDF del pedido enviado al correo del cliente._',
+      '_Responde para confirmar la orden, coordinar el diseño de bordado y recibir los datos de transferencia._',
     ].filter(l => l !== null).join('\n')
 
     return msg
