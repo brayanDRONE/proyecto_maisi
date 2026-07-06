@@ -2,13 +2,20 @@ import axios from 'axios'
 import { useAuthStore } from '../store/authStore'
 
 // URL base de la API
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000'
+const envApiBaseUrl = (import.meta.env.VITE_API_URL || '').trim().replace(/\/$/, '')
+const API_BASE_URL = envApiBaseUrl || (import.meta.env.DEV ? 'http://localhost:8000' : '')
+
+if (!API_BASE_URL && !import.meta.env.DEV) {
+  console.warn('VITE_API_URL no esta configurada en produccion. Usando /api como fallback.')
+}
+
+const API_PREFIX = API_BASE_URL ? `${API_BASE_URL}/api` : '/api'
 
 /**
  * Instancia de Axios con interceptores
  */
 const api = axios.create({
-  baseURL: `${API_BASE_URL}/api`,
+  baseURL: API_PREFIX,
   headers: {
     'Content-Type': 'application/json',
   },
