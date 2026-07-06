@@ -3,13 +3,14 @@ import { useAuthStore } from '../store/authStore'
 
 // URL base de la API
 const envApiBaseUrl = (import.meta.env.VITE_API_URL || '').trim().replace(/\/$/, '')
-const API_BASE_URL = envApiBaseUrl || (import.meta.env.DEV ? 'http://localhost:8000' : '')
+const DEFAULT_PROD_API_URL = 'https://tworld-backend.onrender.com'
+const API_BASE_URL = envApiBaseUrl || (import.meta.env.DEV ? 'http://localhost:8000' : DEFAULT_PROD_API_URL)
 
-if (!API_BASE_URL && !import.meta.env.DEV) {
-  console.warn('VITE_API_URL no esta configurada en produccion. Usando /api como fallback.')
+if (!envApiBaseUrl && !import.meta.env.DEV) {
+  console.warn(`VITE_API_URL no esta configurada en produccion. Usando fallback ${DEFAULT_PROD_API_URL}.`)
 }
 
-const API_PREFIX = API_BASE_URL ? `${API_BASE_URL}/api` : '/api'
+const API_PREFIX = `${API_BASE_URL}/api`
 
 /**
  * Instancia de Axios con interceptores
