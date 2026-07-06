@@ -1,5 +1,27 @@
 from .base import *
 import dj_database_url
+from urllib.parse import urlparse
+
+
+def _normalize_origin(value):
+    raw = (value or '').strip().rstrip('/')
+    if not raw:
+        return ''
+
+    parsed = urlparse(raw)
+    if not parsed.scheme or not parsed.netloc:
+        return ''
+
+    return f'{parsed.scheme}://{parsed.netloc}'
+
+
+def _normalize_origin_list(values):
+    normalized = []
+    for item in values:
+        origin = _normalize_origin(item)
+        if origin and origin not in normalized:
+            normalized.append(origin)
+    return normalized
 
 # Producción
 DEBUG = False
@@ -16,8 +38,12 @@ if DATABASE_URL:
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 # CORS restrictivo en producción
-CORS_ALLOWED_ORIGINS = config('CORS_ALLOWED_ORIGINS', default='', cast=Csv())
-CSRF_TRUSTED_ORIGINS = config('CSRF_TRUSTED_ORIGINS', default='', cast=Csv())
+CORS_ALLOWED_ORIGINS = _normalize_origin_list(
+    config('CORS_ALLOWED_ORIGINS', default='', cast=Csv())
+)
+CSRF_TRUSTED_ORIGINS = _normalize_origin_list(
+    config('CSRF_TRUSTED_ORIGINS', default='', cast=Csv())
+)
 
 # Seguridad
 SECURE_SSL_REDIRECT = config('SECURE_SSL_REDIRECT', default=True, cast=bool)
