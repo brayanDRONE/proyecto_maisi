@@ -1,5 +1,6 @@
 import io
 import base64
+import logging
 from datetime import datetime
 
 from django.core.mail import EmailMessage
@@ -17,6 +18,9 @@ from reportlab.lib.enums import TA_CENTER
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle
 
 from .models import OrderLog
+
+
+logger = logging.getLogger(__name__)
 
 
 def _next_order_number(customer_name, customer_email, total):
@@ -245,9 +249,9 @@ def submit_order(request):
         return Response({'error': f'Error al generar el PDF: {exc}'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
     # Send confirmation email to client
-    try:
-        notification_email = getattr(settings, 'ORDER_NOTIFICATION_EMAIL', 'contacto@maisibordados.com').strip()
+    notification_email = getattr(settings, 'ORDER_NOTIFICATION_EMAIL', 'contacto@maisibordados.com').strip()
 
+    try:
         msg = EmailMessage(
             subject=f'Confirmación de pedido Maisi – {order_number}',
             body=(
@@ -267,10 +271,14 @@ def submit_order(request):
             to=[form['email']],
         )
         msg.attach(f'pedido_{order_number}.pdf', pdf_bytes, 'application/pdf')
-        msg.send(fail_silently=True)
+        sent_count = msg.send(fail_silently=False)
+        logger.info('Client order email sent. order=%s recipient=%s sent=%s', order_number, form.get('email', ''), sent_count)
+    except Exception:
+        logger.exception('Failed to send client order email. order=%s recipient=%s', order_number, form.get('email', ''))
 
-        # Send internal notification email with order details
-        if notification_email:
+    # Send internal notification email with order details
+    if notification_email:
+        try:
             admin_msg = EmailMessage(
                 subject=f'Nuevo pedido web {order_number}',
                 body=(
@@ -287,9 +295,10 @@ def submit_order(request):
                 reply_to=[form.get('email', '')] if form.get('email') else None,
             )
             admin_msg.attach(f'pedido_{order_number}.pdf', pdf_bytes, 'application/pdf')
-            admin_msg.send(fail_silently=True)
-    except Exception:
-        pass  # Email failure should not block the response
+            sent_count = admin_msg.send(fail_silently=False)
+            logger.info('Internal order email sent. order=%s recipient=%s sent=%s', order_number, notification_email, sent_count)
+        except Exception:
+            logger.exception('Failed to send internal order email. order=%s recipient=%s', order_number, notification_email)
 
     return Response({
         'success': True,
