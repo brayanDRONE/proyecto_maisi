@@ -296,23 +296,23 @@ export default function Checkout() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
                   <div className="flex flex-col gap-0.5">
                     <span className="text-xs font-semibold uppercase text-text-light tracking-wide">Banco</span>
-                    <span className="font-semibold">Banco de Chile</span>
+                    <span className="font-semibold">Banco Estado</span>
                   </div>
                   <div className="flex flex-col gap-0.5">
                     <span className="text-xs font-semibold uppercase text-text-light tracking-wide">Tipo de cuenta</span>
-                    <span className="font-semibold">Cuenta Corriente</span>
+                    <span className="font-semibold">Chequera Electrónica</span>
                   </div>
                   <div className="flex flex-col gap-0.5">
                     <span className="text-xs font-semibold uppercase text-text-light tracking-wide">Número de cuenta</span>
-                    <span className="font-semibold">Se entrega al confirmar el pedido</span>
+                    <span className="font-semibold">90277683830</span>
                   </div>
                   <div className="flex flex-col gap-0.5">
                     <span className="text-xs font-semibold uppercase text-text-light tracking-wide">RUT titular</span>
-                    <span className="font-semibold">Se entrega al confirmar el pedido</span>
+                    <span className="font-semibold">78.092.582-5</span>
                   </div>
                   <div className="flex flex-col gap-0.5 sm:col-span-2">
                     <span className="text-xs font-semibold uppercase text-text-light tracking-wide">Nombre titular</span>
-                    <span className="font-semibold">Maisi SpA</span>
+                    <span className="font-semibold">MAISI BORDADOS PERSONALIZADOS SPA</span>
                   </div>
                   <div className="flex flex-col gap-0.5 sm:col-span-2">
                     <span className="text-xs font-semibold uppercase text-text-light tracking-wide">Email para comprobante</span>
@@ -320,7 +320,7 @@ export default function Checkout() {
                   </div>
                 </div>
                 <p className="mt-4 text-xs text-primary/80 leading-relaxed">
-                  💡 Los datos bancarios exactos serán confirmados por el equipo Maisi a través de WhatsApp una vez recibida tu solicitud.
+                  💡 Envía tu comprobante a contacto@maisibordados.com indicando tu número de pedido para acelerar la validación.
                 </p>
               </section>
 

@@ -151,7 +151,7 @@ export default function Home() {
 
       {/* ── Categorías ── */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-3 sm:grid-cols-2">
           {CATEGORY_CARDS.map((cat) => (
             <Link
               key={cat.slug}
