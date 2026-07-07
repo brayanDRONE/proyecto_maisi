@@ -51,7 +51,7 @@ export default function About() {
             </div>
           </aside>
         </div>
-      </div>
+      </section>
     </div>
   )
 }
