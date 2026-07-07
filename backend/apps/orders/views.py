@@ -246,6 +246,8 @@ def submit_order(request):
 
     # Send confirmation email to client
     try:
+        notification_email = getattr(settings, 'ORDER_NOTIFICATION_EMAIL', 'contacto@maisibordados.com').strip()
+
         msg = EmailMessage(
             subject=f'Confirmación de pedido Maisi – {order_number}',
             body=(
@@ -266,6 +268,26 @@ def submit_order(request):
         )
         msg.attach(f'pedido_{order_number}.pdf', pdf_bytes, 'application/pdf')
         msg.send(fail_silently=True)
+
+        # Send internal notification email with order details
+        if notification_email:
+            admin_msg = EmailMessage(
+                subject=f'Nuevo pedido web {order_number}',
+                body=(
+                    f"Se recibió un nuevo pedido en la web.\n\n"
+                    f"N° de Orden: {order_number}\n"
+                    f"Cliente: {form.get('nombre', '')}\n"
+                    f"Email: {form.get('email', '')}\n"
+                    f"Teléfono: {form.get('telefono', '')}\n"
+                    f"RUT: {form.get('rut', '')}\n"
+                    f"Total: {_format_clp(total)}\n"
+                ),
+                from_email=settings.DEFAULT_FROM_EMAIL,
+                to=[notification_email],
+                reply_to=[form.get('email', '')] if form.get('email') else None,
+            )
+            admin_msg.attach(f'pedido_{order_number}.pdf', pdf_bytes, 'application/pdf')
+            admin_msg.send(fail_silently=True)
     except Exception:
         pass  # Email failure should not block the response
 

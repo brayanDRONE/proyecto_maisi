@@ -154,6 +154,7 @@ EMAIL_HOST_USER = config('EMAIL_HOST_USER', default='')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD', default='')
 EMAIL_USE_TLS = config('EMAIL_USE_TLS', default=True, cast=bool)
 DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL', default='no-reply@tworlddistribuidor.cl')
+ORDER_NOTIFICATION_EMAIL = config('ORDER_NOTIFICATION_EMAIL', default='contacto@maisibordados.com')
 
 # Flow.cl Integration
 FLOW_API_KEY = config('FLOW_API_KEY', default='')
