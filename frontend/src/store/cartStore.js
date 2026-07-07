@@ -6,6 +6,8 @@ import { create } from 'zustand'
  */
 export const useCartStore = create((set, get) => ({
   items: [],
+  cartNotice: '',
+  cartNoticeTs: 0,
   
   // Agregar item al carrito
   addItem: (product, variant, quantity, embroidery = false, embroideryText = '') => {
@@ -24,13 +26,19 @@ export const useCartStore = create((set, get) => ({
             ? { ...item, quantity: item.quantity + quantity }
             : item
         ),
+        cartNotice: 'Producto agregado con éxito',
+        cartNoticeTs: Date.now(),
       })
     } else {
       set({
         items: [...items, { product, variant, quantity, embroidery, embroideryText }],
+        cartNotice: 'Producto agregado con éxito',
+        cartNoticeTs: Date.now(),
       })
     }
   },
+
+  clearCartNotice: () => set({ cartNotice: '' }),
 
   // Remover item del carrito
   removeItem: (productId, variantId, embroideryText) => {

@@ -7,7 +7,6 @@ const CATEGORY_LABELS = {
   '10-hombre': 'Hombre',
   '11-mujer': 'Mujer',
   'epp': 'EPP',
-  '12-calzado': 'Calzado de Seguridad',
   '9-lineas': 'Líneas',
 }
 

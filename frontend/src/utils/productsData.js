@@ -22815,15 +22815,10 @@ export const catalogCategories = [
     "id": "11-mujer",
     "label": "Mujer",
     "slug": "11-mujer"
-  },
-  {
-    "id": "12-calzado",
-    "label": "Calzado de Seguridad",
-    "slug": "12-calzado"
   }
 ];
 
 // EPP y Líneas removidos por solicitud del cliente
 export const products = _products.filter(
-  p => p.category !== 'epp' && p.category !== '9-lineas'
+  p => p.category !== 'epp' && p.category !== '9-lineas' && p.category !== '12-calzado'
 );

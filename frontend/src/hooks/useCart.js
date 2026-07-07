@@ -27,6 +27,9 @@ export const useCart = () => {
     removeItem: cartStore.removeItem,
     updateQuantity: cartStore.updateQuantity,
     clearCart: cartStore.clearCart,
+    cartNotice: cartStore.cartNotice,
+    cartNoticeTs: cartStore.cartNoticeTs,
+    clearCartNotice: cartStore.clearCartNotice,
     total: cartStore.getTotal(),
     itemCount: cartStore.items.reduce((acc, item) => acc + item.quantity, 0),
   }

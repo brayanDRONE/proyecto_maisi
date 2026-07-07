@@ -17,11 +17,6 @@ const CATEGORY_META = {
     banner: 'https://tworldstore.cl/img/cms/fotos-home/Mujer.jpg',
     fallbackBanner: 'https://tworldstore.cl/stupload/stswiper/calugas-264x190-03.png',
   },
-  '12-calzado': {
-    label: 'Calzado de Seguridad',
-    banner: 'https://tworldstore.cl/img/cms/fotos-home/Calzado.jpg',
-    fallbackBanner: 'https://tworldstore.cl/6541-large_default/botin-skechers-seguridad-ledom-hombre.jpg',
-  },
 }
 
 const SORT_OPTIONS = [
@@ -55,10 +50,6 @@ const SUBCATS = {
     { label: 'Chalecos',              tipo: 'chaleco' },
     { label: 'Polares',               tipo: 'micropolar,primera' },
     { label: 'Jeans',                 tipo: 'jeans' },
-  ],
-  '12-calzado': [
-    { label: 'Botines',    tipo: 'botin' },
-    { label: 'Zapatillas', tipo: 'zapatilla' },
   ],
 }
 

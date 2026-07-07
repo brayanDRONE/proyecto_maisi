@@ -304,11 +304,11 @@ export default function Checkout() {
                   </div>
                   <div className="flex flex-col gap-0.5">
                     <span className="text-xs font-semibold uppercase text-text-light tracking-wide">Número de cuenta</span>
-                    <span className="font-semibold">XXXXXXXX</span>
+                    <span className="font-semibold">Se entrega al confirmar el pedido</span>
                   </div>
                   <div className="flex flex-col gap-0.5">
                     <span className="text-xs font-semibold uppercase text-text-light tracking-wide">RUT titular</span>
-                    <span className="font-semibold">XX.XXX.XXX-X</span>
+                    <span className="font-semibold">Se entrega al confirmar el pedido</span>
                   </div>
                   <div className="flex flex-col gap-0.5 sm:col-span-2">
                     <span className="text-xs font-semibold uppercase text-text-light tracking-wide">Nombre titular</span>

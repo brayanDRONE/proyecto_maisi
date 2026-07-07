@@ -38,7 +38,6 @@ const HERO_BANNERS = [
 const CATEGORY_CARDS = [
   { title: 'HOMBRE', img: 'https://tworldstore.cl/stupload/stswiper/calugas-264x190-01.png', slug: '10-hombre' },
   { title: 'MUJER', img: 'https://tworldstore.cl/stupload/stswiper/calugas-264x190-03.png', slug: '11-mujer' },
-  { title: 'CALZADO DE SEGURIDAD', img: 'https://tworldstore.cl/6541-large_default/botin-skechers-seguridad-ledom-hombre.jpg', slug: '12-calzado' },
 ]
 
 const VALUE_PROPS = [

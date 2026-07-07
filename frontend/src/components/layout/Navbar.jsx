@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useCart } from '../../hooks/useCart'
 import { useAuth } from '../../hooks/useAuth'
@@ -33,24 +33,33 @@ const NAV_ITEMS = [
       { label: 'Jeans',                tipo: 'jeans' },
     ],
   },
-  {
-    label: 'CALZADO',
-    to: '/12-calzado',
-    subcats: [
-      { label: 'Botines',    tipo: 'botin' },
-      { label: 'Zapatillas', tipo: 'zapatilla' },
-    ],
-  },
 ]
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [openMobile, setOpenMobile] = useState(null)
-  const { itemCount } = useCart()
+  const [showNotice, setShowNotice] = useState(false)
+  const { itemCount, cartNotice, cartNoticeTs, clearCartNotice } = useCart()
   const { isAuthenticated, user } = useAuth()
+
+  useEffect(() => {
+    if (!cartNoticeTs || !cartNotice) return
+    setShowNotice(true)
+    const timer = setTimeout(() => {
+      setShowNotice(false)
+      clearCartNotice()
+    }, 2200)
+    return () => clearTimeout(timer)
+  }, [cartNoticeTs, cartNotice, clearCartNotice])
 
   return (
     <header className="sticky top-0 z-40 bg-white shadow-md w-full">
+      {showNotice && cartNotice && (
+        <div className="fixed top-4 right-4 z-[80] rounded-md border border-green-300 bg-green-50 px-4 py-2 text-sm font-semibold text-green-800 shadow-lg">
+          {cartNotice}
+        </div>
+      )}
+
       {/* TopBar */}
       <div className="bg-[#1a1a1a] text-[12px] hidden md:block">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

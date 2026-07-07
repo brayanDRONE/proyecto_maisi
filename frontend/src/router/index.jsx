@@ -1,5 +1,5 @@
 import React from 'react'
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, Navigate } from 'react-router-dom'
 
 import Home from '../pages/Home'
 import Catalog from '../pages/Catalog'
@@ -31,6 +31,7 @@ export default function AppRouter() {
       <Route path="/contacto"          element={<Contact />} />
 
       {/* Category catalog routes — must be after specific routes */}
+      <Route path="/12-calzado" element={<Navigate to="/productos" replace />} />
       <Route path="/:categoryId" element={<Catalog />} />
 
       {/* 404 */}
