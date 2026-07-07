@@ -316,7 +316,7 @@ export default function Checkout() {
                   </div>
                   <div className="flex flex-col gap-0.5 sm:col-span-2">
                     <span className="text-xs font-semibold uppercase text-text-light tracking-wide">Email para comprobante</span>
-                    <span className="font-semibold">contacto@maisi.cl</span>
+                    <span className="font-semibold">contacto@maisibordados.com</span>
                   </div>
                 </div>
                 <p className="mt-4 text-xs text-primary/80 leading-relaxed">

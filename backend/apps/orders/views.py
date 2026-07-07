@@ -263,7 +263,7 @@ def submit_order(request):
                 f"  • Enviarte los datos de transferencia\n"
                 f"  • Confirmar tu pedido\n\n"
                 f"Encontrarás el detalle completo de tu pedido en el PDF adjunto.\n\n"
-                f"Si tienes dudas escríbenos a contacto@maisi.cl\n\n"
+                f"Si tienes dudas escríbenos a contacto@maisibordados.com\n\n"
                 f"¡Gracias por elegirnos!\n"
                 f"El equipo Maisi"
             ),

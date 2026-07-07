@@ -119,7 +119,7 @@ export default function OrderSuccess() {
           ¿Necesitas ayuda inmediata?
           <a href="tel:+56957025456" className="text-primary font-semibold hover:underline ml-1">+56 9 5702 5456</a>
           {' '}·{' '}
-          <a href="mailto:contacto@maisi.cl" className="text-primary font-semibold hover:underline">contacto@maisi.cl</a>
+          <a href="mailto:contacto@maisibordados.com" className="text-primary font-semibold hover:underline">contacto@maisibordados.com</a>
         </p>
 
       </div>
