@@ -86,8 +86,8 @@ export default function Contact() {
               </span>
               <div>
                 <p className="text-xs font-bold uppercase tracking-widest text-text-light mb-0.5">Email</p>
-                <a href="mailto:info@distribuidora.cl" className="text-sm font-semibold text-text hover:text-primary transition-colors">
-                  info@distribuidora.cl
+                <a href="mailto:contacto@maisibordados.com" className="text-sm font-semibold text-text hover:text-primary transition-colors">
+                  contacto@maisibordados.com
                 </a>
               </div>
             </li>
@@ -97,8 +97,8 @@ export default function Contact() {
               </span>
               <div>
                 <p className="text-xs font-bold uppercase tracking-widest text-text-light mb-0.5">Teléfono</p>
-                <a href="tel:+56912345678" className="text-sm font-semibold text-text hover:text-primary transition-colors">
-                  +56 9 1234 5678
+                <a href="tel:+56957025456" className="text-sm font-semibold text-text hover:text-primary transition-colors">
+                  +56 9 5702 5456
                 </a>
               </div>
             </li>
@@ -108,7 +108,7 @@ export default function Contact() {
               </span>
               <div>
                 <p className="text-xs font-bold uppercase tracking-widest text-text-light mb-0.5">Dirección</p>
-                <p className="text-sm font-semibold text-text">Santiago, Chile</p>
+                <p className="text-sm font-semibold text-text">Sor Teresa de los Andes 519, Graneros, Chile.</p>
               </div>
             </li>
             <li className="flex items-start gap-4">
