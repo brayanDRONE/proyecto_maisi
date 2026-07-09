@@ -103,16 +103,14 @@ export default function ProductCard({ product }) {
           </div>
         )}
 
-        {/* Colores (paleta fija, no individual por producto) */}
+        {/* Colores por producto */}
         <div className="flex gap-1 justify-center mt-1 flex-wrap">
-          {[
-            '#FFFFFF','#36454F','#1a1a1a','#89CFF0','#9E9E9E',
-            '#D32F2F','#1565C0','#003087'
-          ].slice(0, 7).map((hex, i) => (
+          {colors.slice(0, 7).map((color, i) => (
             <span
               key={i}
               className="w-4 h-4 rounded-full border border-gray-300 inline-block shrink-0"
-              style={{ backgroundColor: hex }}
+              title={color.name}
+              style={{ backgroundColor: color.hex || '#cccccc' }}
             />
           ))}
         </div>

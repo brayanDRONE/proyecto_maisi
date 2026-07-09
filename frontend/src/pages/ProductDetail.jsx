@@ -10,19 +10,6 @@ const CATEGORY_LABELS = {
   '9-lineas': 'Líneas',
 }
 
-// Standard colors available for clothing
-const STANDARD_COLORS = [
-  { name: 'BLANCO',   hex: '#FFFFFF' },
-  { name: 'GRIS MARENGO', hex: '#36454F' },
-  { name: 'NEGRO',    hex: '#1a1a1a' },
-  { name: 'CELESTE',  hex: '#89CFF0' },
-  { name: 'GRIS',     hex: '#9E9E9E' },
-  { name: 'VERDE',    hex: '#2E7D32' },
-  { name: 'ROJO',     hex: '#D32F2F' },
-  { name: 'AZUL',     hex: '#1565C0' },
-  { name: 'AZUL MARINO', hex: '#003087' },
-]
-
 // Attributes/icons to show for products
 const ATTRIBUTES = [
   { key: 'antipilling', label: 'ANTIPILLING', icon: '⟨|||⟩' },
@@ -38,7 +25,7 @@ export default function ProductDetail() {
 
   const [product, setProduct] = useState(null)
   const [related, setRelated] = useState([])
-  const [selectedColor, setSelectedColor] = useState(STANDARD_COLORS[7]) // AZUL by default
+  const [selectedColor, setSelectedColor] = useState(null)
   const [quantities, setQuantities] = useState({})
   const [activeImage, setActiveImage] = useState(0)
   const [descOpen, setDescOpen] = useState(true)
@@ -60,6 +47,11 @@ export default function ProductDetail() {
       setRelated(rel)
       setActiveImage(0)
       setQuantities({})
+      if (Array.isArray(found.colors) && found.colors.length > 0) {
+        setSelectedColor(found.colors[0])
+      } else {
+        setSelectedColor({ name: 'N/D', hex: '#cccccc' })
+      }
     }
   }, [slug])
 
@@ -76,6 +68,9 @@ export default function ProductDetail() {
   }
 
   const gallery = product.gallery && product.gallery.length > 0 ? product.gallery : [product.image]
+  const availableColors = Array.isArray(product.colors) && product.colors.length > 0
+    ? product.colors
+    : [{ name: 'N/D', hex: '#cccccc' }]
   const totalQty = Object.values(quantities).reduce((a, b) => a + b, 0)
 
   // Active price tier based on quantity
@@ -252,16 +247,16 @@ export default function ProductDetail() {
             {/* Color selector */}
             <div className="mb-5">
               <p className="text-sm font-bold uppercase mb-2">
-                Seleccione Color: <span className="text-primary">{selectedColor.name}</span>
+                Seleccione Color: <span className="text-primary">{selectedColor?.name || 'N/D'}</span>
               </p>
               <div className="flex flex-wrap gap-2">
-                {STANDARD_COLORS.map(color => (
+                {availableColors.map(color => (
                   <button
                     key={color.name}
                     onClick={() => setSelectedColor(color)}
                     title={color.name}
                     className={`w-9 h-9 rounded-full border-2 transition-all duration-150 shadow-sm ${
-                      selectedColor.name === color.name
+                      selectedColor?.name === color.name
                         ? 'border-primary scale-115 shadow-md ring-2 ring-primary/30'
                         : 'border-gray-300 hover:scale-110'
                     }`}
@@ -296,7 +291,7 @@ export default function ProductDetail() {
                           {product.sku}{String(idx).padStart(2, '0')}
                         </td>
                         <td className="px-4 py-2.5 text-text-light text-xs hidden sm:table-cell uppercase">
-                          {selectedColor.name}
+                          {selectedColor?.name || 'N/D'}
                         </td>
                         <td className="px-4 py-2.5">
                           {v.stock === 0 ? (

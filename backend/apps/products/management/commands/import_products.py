@@ -1,5 +1,6 @@
 import json
 import os
+import re
 from django.core.management.base import BaseCommand
 from django.utils.text import slugify
 from apps.products.models import Category, Product, ProductImage, ProductVariant, Line
@@ -13,6 +14,22 @@ class Command(BaseCommand):
 
     def add_arguments(self, parser):
         parser.add_argument('json_file', type=str, help='Ruta del archivo JSON con productos')
+
+    def _normalize_sku(self, raw_sku, fallback='00000'):
+        digits = re.sub(r'\D', '', str(raw_sku or ''))
+        if len(digits) >= 5:
+            return digits[:5]
+        if digits:
+            return digits
+        return str(fallback)[:5] or '00000'
+
+    def _normalize_category(self, raw_category):
+        value = str(raw_category or '').strip().lower()
+        if 'hombre' in value:
+            return 'Vestuario Hombre'
+        if 'mujer' in value:
+            return 'Vestuario Mujer'
+        return None
 
     def handle(self, *args, **options):
         json_file = options['json_file']
@@ -29,11 +46,19 @@ class Command(BaseCommand):
 
         created_count = 0
         updated_count = 0
+        skipped_count = 0
         error_count = 0
 
         for prod_data in products_data:
             try:
-                category_name = prod_data.get('category', 'General')
+                category_name = self._normalize_category(prod_data.get('category'))
+                if not category_name:
+                    skipped_count += 1
+                    continue
+
+                product_name = prod_data.get('name', 'Producto sin nombre')
+                product_sku = self._normalize_sku(prod_data.get('sku'), prod_data.get('id'))
+                product_slug = f"{slugify(product_name)}-{prod_data.get('id', product_sku)}"
                 
                 # Obtener o crear categoría
                 category, _ = Category.objects.get_or_create(
@@ -46,10 +71,10 @@ class Command(BaseCommand):
 
                 # Obtener o crear producto
                 product, created = Product.objects.get_or_create(
-                    sku=prod_data.get('sku', f"sku-{prod_data.get('id')}"),
+                    sku=product_sku,
                     defaults={
-                        'name': prod_data.get('name', 'Producto sin nombre'),
-                        'slug': slugify(prod_data.get('slug', prod_data.get('name', 'producto'))),
+                        'name': product_name,
+                        'slug': product_slug,
                         'category': category,
                         'description': '',
                         'price': prod_data.get('price', 0),
@@ -66,10 +91,18 @@ class Command(BaseCommand):
                 else:
                     updated_count += 1
                     status = '🔄 ACTUALIZADO'
+                    product.name = product_name
+                    product.slug = product_slug
+                    product.category = category
+                    product.price = prod_data.get('price', product.price)
+                    product.is_featured = prod_data.get('isFeatured', product.is_featured)
+                    product.has_embroidery = prod_data.get('hasEmbroidery', product.has_embroidery)
+                    product.save(update_fields=['name', 'slug', 'category', 'price', 'is_featured', 'has_embroidery'])
 
                 # Limpiar imágenes anteriores si es actualización
                 if not created:
                     product.images.all().delete()
+                    product.variants.all().delete()
 
                 # Descargar e importar imágenes
                 images_list = prod_data.get('images', [])
@@ -125,6 +158,7 @@ class Command(BaseCommand):
         self.stdout.write(self.style.SUCCESS(f'\n✅ Importación completada:'))
         self.stdout.write(f'  ✨ Creados: {created_count}')
         self.stdout.write(f'  🔄 Actualizados: {updated_count}')
+        self.stdout.write(f'  ⏭️ Omitidos (no Hombre/Mujer): {skipped_count}')
         self.stdout.write(f'  ❌ Errores: {error_count}')
 
     def _save_product_image(self, product, img_url, is_primary=False):
