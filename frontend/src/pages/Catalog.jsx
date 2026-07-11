@@ -55,19 +55,31 @@ const SUBCATS = {
 
 export default function Catalog() {
   const { categoryId } = useParams()
-  const [searchParams] = useSearchParams()
+  const [searchParams, setSearchParams] = useSearchParams()
   const tipoParam = searchParams.get('tipo') || ''
+  const queryParam = searchParams.get('q') || ''
   const tipos = tipoParam ? tipoParam.split(',') : []
 
   const [sort, setSort] = useState('relevance')
   const [page, setPage] = useState(1)
   const [viewMode, setViewMode] = useState('grid') // 'grid' | 'list'
   const [bannerError, setBannerError] = useState(false)
+  const [searchInput, setSearchInput] = useState(queryParam)
 
   const meta = categoryId ? CATEGORY_META[categoryId] : null
   const subcats = categoryId ? (SUBCATS[categoryId] || []) : []
 
+  const normalizeText = (value) => {
+    return String(value || '')
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .trim()
+  }
+
   const filtered = useMemo(() => {
+    const normalizedQuery = normalizeText(queryParam)
+
     let list = categoryId
       ? products.filter(p => p.category === categoryId)
       : products
@@ -78,12 +90,24 @@ export default function Catalog() {
       )
     }
 
+    if (normalizedQuery) {
+      list = list.filter((p) => {
+        const name = normalizeText(p.name)
+        const sku = normalizeText(p.sku)
+        return name.includes(normalizedQuery) || sku.includes(normalizedQuery)
+      })
+    }
+
     if (sort === 'price-asc') list = [...list].sort((a, b) => a.price - b.price)
     else if (sort === 'price-desc') list = [...list].sort((a, b) => b.price - a.price)
     else if (sort === 'name-asc') list = [...list].sort((a, b) => a.name.localeCompare(b.name))
 
     return list
-  }, [categoryId, tipoParam, sort])
+  }, [categoryId, tipoParam, sort, queryParam])
+
+  useEffect(() => {
+    setSearchInput(queryParam)
+  }, [queryParam])
 
   // Resetear página al cambiar de categoría, tipo o sort
   useEffect(() => {
@@ -95,6 +119,18 @@ export default function Catalog() {
 
   const handleSortChange = (val) => {
     setSort(val)
+    setPage(1)
+  }
+
+  const handleSearchSubmit = (e) => {
+    e.preventDefault()
+    const next = new URLSearchParams(searchParams)
+    const term = searchInput.trim()
+
+    if (term) next.set('q', term)
+    else next.delete('q')
+
+    setSearchParams(next)
     setPage(1)
   }
 
@@ -181,6 +217,29 @@ export default function Catalog() {
         {/* Toolbar */}
         <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
           <div className="flex items-center gap-3">
+            <form onSubmit={handleSearchSubmit}>
+              <div className="flex rounded border border-border overflow-hidden bg-white">
+                <input
+                  type="search"
+                  value={searchInput}
+                  onChange={(e) => setSearchInput(e.target.value)}
+                  placeholder="Buscar por SKU o nombre"
+                  className="w-56 md:w-72 px-3 py-2 text-sm text-text placeholder:text-text-light focus:outline-none"
+                  aria-label="Buscar productos por nombre o SKU"
+                />
+                <button
+                  type="submit"
+                  className="px-3 bg-primary text-white hover:opacity-90 transition-opacity"
+                  aria-label="Buscar"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="11" cy="11" r="8"/>
+                    <path d="m21 21-4.3-4.3"/>
+                  </svg>
+                </button>
+              </div>
+            </form>
+
             {/* Sort */}
             <select
               value={sort}
@@ -255,7 +314,9 @@ export default function Catalog() {
           )
         ) : (
           <div className="text-center py-20">
-            <h2 className="text-2xl font-bold text-text-light">No hay productos en esta categoría</h2>
+            <h2 className="text-2xl font-bold text-text-light">
+              {queryParam ? 'No encontramos productos para esa búsqueda' : 'No hay productos en esta categoría'}
+            </h2>
             <Link to="/productos" className="mt-4 inline-block text-primary underline">Ver todos los productos</Link>
           </div>
         )}

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { useCart } from '../../hooks/useCart'
 import { useAuth } from '../../hooks/useAuth'
 
@@ -39,8 +39,16 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [openMobile, setOpenMobile] = useState(null)
   const [showNotice, setShowNotice] = useState(false)
+  const [searchTerm, setSearchTerm] = useState('')
   const { itemCount, cartNotice, cartNoticeTs, clearCartNotice } = useCart()
   const { isAuthenticated, user } = useAuth()
+  const navigate = useNavigate()
+  const location = useLocation()
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search)
+    setSearchTerm(params.get('q') || '')
+  }, [location.search])
 
   useEffect(() => {
     if (!cartNoticeTs || !cartNotice) return
@@ -51,6 +59,14 @@ export default function Navbar() {
     }, 2200)
     return () => clearTimeout(timer)
   }, [cartNoticeTs, cartNotice, clearCartNotice])
+
+  const handleSearchSubmit = (e) => {
+    e.preventDefault()
+    const q = searchTerm.trim()
+    navigate(q ? `/productos?q=${encodeURIComponent(q)}` : '/productos')
+    setIsMenuOpen(false)
+    setOpenMobile(null)
+  }
 
   return (
     <header className="sticky top-0 z-40 bg-white shadow-md w-full">
@@ -129,6 +145,30 @@ export default function Navbar() {
               ))}
             </nav>
 
+            {/* Search */}
+            <form onSubmit={handleSearchSubmit} className="hidden md:flex flex-1 max-w-xl mx-5">
+              <div className="w-full flex rounded-full border border-gray-300 overflow-hidden bg-white">
+                <input
+                  type="search"
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  placeholder="¿Qué buscas?"
+                  className="w-full px-4 py-2.5 text-sm text-text placeholder:text-gray-400 focus:outline-none"
+                  aria-label="Buscar productos por nombre o SKU"
+                />
+                <button
+                  type="submit"
+                  className="px-4 bg-[#213C6B] text-white hover:bg-[#1a3058] transition-colors"
+                  aria-label="Buscar"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="11" cy="11" r="8"/>
+                    <path d="m21 21-4.3-4.3"/>
+                  </svg>
+                </button>
+              </div>
+            </form>
+
             {/* Right side actions */}
             <div className="flex items-center gap-5 text-text">
               <Link to="/carrito" className="relative hover:text-primary transition">
@@ -151,6 +191,28 @@ export default function Navbar() {
         {/* Mobile menu */}
         {isMenuOpen && (
           <div className="lg:hidden border-t border-border font-bold uppercase text-sm">
+            <form onSubmit={handleSearchSubmit} className="px-4 py-3 border-b border-border bg-white">
+              <div className="w-full flex rounded-full border border-gray-300 overflow-hidden bg-white">
+                <input
+                  type="search"
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  placeholder="¿Qué buscas?"
+                  className="w-full px-4 py-2 text-sm normal-case tracking-normal text-text placeholder:text-gray-400 focus:outline-none"
+                  aria-label="Buscar productos por nombre o SKU"
+                />
+                <button
+                  type="submit"
+                  className="px-4 bg-[#213C6B] text-white"
+                  aria-label="Buscar"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="11" cy="11" r="8"/>
+                    <path d="m21 21-4.3-4.3"/>
+                  </svg>
+                </button>
+              </div>
+            </form>
             {NAV_ITEMS.map(item => (
               <div key={item.to} className="border-b border-border">
                 <div className="flex items-center justify-between px-4">
