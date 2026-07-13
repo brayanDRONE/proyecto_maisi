@@ -74,19 +74,40 @@ function buildProduct(prod) {
   const id = String(prod.id || prod.psId || sku5);
   const safeName = String(prod.name || 'Producto sin nombre').trim();
 
+  // Usar volumePricing scrapeado si está disponible y tiene los 3 niveles esperados;
+  // si no, construir los 3 niveles con el mismo precio base (fallback)
+  let volumePricing;
+  if (Array.isArray(prod.volumePricing) && prod.volumePricing.length > 0) {
+    // Asegurar que siempre hay exactamente los 3 niveles esperados: 1, 3 y 10
+    const getPrice = (minQty) => {
+      // Buscar el precio del nivel con minQuantity <= minQty (precio aplicable)
+      const applicable = prod.volumePricing
+        .filter(t => t.minQuantity <= minQty)
+        .sort((a, b) => b.minQuantity - a.minQuantity);
+      return applicable.length > 0 ? Number(applicable[0].price) : price;
+    };
+    volumePricing = [
+      { minQuantity: 1,  price: getPrice(1),  label: 'C/U' },
+      { minQuantity: 3,  price: getPrice(3),  label: 'desde 3 articulos' },
+      { minQuantity: 10, price: getPrice(10), label: 'desde 10 articulos' },
+    ];
+  } else {
+    volumePricing = [
+      { minQuantity: 1,  price, label: 'C/U' },
+      { minQuantity: 3,  price, label: 'desde 3 articulos' },
+      { minQuantity: 10, price, label: 'desde 10 articulos' },
+    ];
+  }
+
   return {
     id,
     sku: sku5,
     slug: `${slugify(safeName)}-${id}`,
     name: safeName,
-    price,
+    price: volumePricing[0].price,  // siempre usar precio C/U (primer nivel)
     category: cat.id,
     categoryLabel: cat.label,
-    volumePricing: [
-      { minQuantity: 1, price, label: 'C/U' },
-      { minQuantity: 3, price, label: 'desde 3 articulos' },
-      { minQuantity: 10, price, label: 'desde 10 articulos' },
-    ],
+    volumePricing,
     shortDesc: '',
     fullDesc: '',
     image: primaryImage,

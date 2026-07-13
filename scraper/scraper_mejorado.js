@@ -4,364 +4,444 @@ const fs = require('fs');
 const path = require('path');
 const https = require('https');
 
-// Configurar timeout y user agent
+// ── HTTP client ──────────────────────────────────────────────────────────────
 const axiosInstance = axios.create({
-  timeout: 10000,
+  timeout: 20000,
   headers: {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+    'User-Agent':    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
+    'Accept':        'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
+    'Accept-Language': 'es-ES,es;q=0.9,en;q=0.8',
+    'Cache-Control': 'no-cache',
+    'Pragma':        'no-cache',
   },
-  httpsAgent: new https.Agent({ rejectUnauthorized: false })
+  httpsAgent: new https.Agent({ rejectUnauthorized: false }),
 });
+
+// ── Retry helper ─────────────────────────────────────────────────────────────
+async function fetchWithRetry(url, retries = 3, delayMs = 2000) {
+  for (let attempt = 1; attempt <= retries; attempt++) {
+    try {
+      const res = await axiosInstance.get(url);
+      return res;
+    } catch (err) {
+      if (attempt === retries) throw err;
+      console.log(`    ↩️  Retry ${attempt}/${retries - 1} en ${delayMs / 1000}s...`);
+      await new Promise(r => setTimeout(r, delayMs * attempt));
+    }
+  }
+}
 
 const BASE_URL = 'https://tworldstore.cl';
 
 const categories = [
-  { url: 'https://tworldstore.cl/10-hombre', categoryName: 'Hombre' },
-  { url: 'https://tworldstore.cl/11-mujer', categoryName: 'Mujer' },
-  { url: 'https://tworldstore.cl/23-calzado-de-seguridad', categoryName: 'Calzado' },
-  { url: 'https://tworldstore.cl/9-lineas', categoryName: 'Líneas' },
-  { url: 'https://tworldstore.cl/14-epp', categoryName: 'EPP' },
+  { url: 'https://tworldstore.cl/10-hombre',              categoryName: 'Hombre'   },
+  { url: 'https://tworldstore.cl/11-mujer',               categoryName: 'Mujer'    },
+  { url: 'https://tworldstore.cl/23-calzado-de-seguridad',categoryName: 'Calzado'  },
+  { url: 'https://tworldstore.cl/9-lineas',               categoryName: 'Líneas'   },
+  { url: 'https://tworldstore.cl/14-epp',                 categoryName: 'EPP'      },
 ];
 
-/**
- * Obtener todas las imágenes de un producto desde su página de detalle
- */
-async function getProductImages(productUrl) {
-  try {
-    const { data } = await axiosInstance.get(productUrl);
-    const $ = cheerio.load(data);
-    
-    const images = [];
-    const imageMap = new Set();
-    
-    // Buscar en galerías de imágenes (PrestaShop Panda)
-    // Generalmente están en .product-cover, .images-container, o elementos con data-image-zoom
-    
-    // Método 1: Buscar en el div de galería principal
-    $('.images-container img').each((i, el) => {
-      let imgSrc = $(el).attr('data-image-zoom') || 
-                   $(el).attr('data-large-image') ||
-                   $(el).attr('src');
-      
-      if (imgSrc && !imgSrc.includes('placeholder')) {
-        imgSrc = ensureAbsoluteUrl(imgSrc);
-        if (!imageMap.has(imgSrc)) {
-          images.push(imgSrc);
-          imageMap.add(imgSrc);
-        }
-      }
-    });
-
-    // Método 2: Buscar en thumbnails
-    $('.product-cover .thumb-container img').each((i, el) => {
-      let imgSrc = $(el).attr('data-image-zoom') || 
-                   $(el).attr('src');
-      
-      if (imgSrc && !imgSrc.includes('placeholder')) {
-        imgSrc = ensureAbsoluteUrl(imgSrc);
-        if (!imageMap.has(imgSrc)) {
-          images.push(imgSrc);
-          imageMap.add(imgSrc);
-        }
-      }
-    });
-
-    // Método 3: Script JSON (PrestaShop a veces tiene JSON en el HTML)
-    const scriptMatch = data.match(/var\s+product\s*=\s*({[\s\S]*?});/);
-    if (scriptMatch) {
-      try {
-        const productJson = JSON.parse(scriptMatch[1]);
-        if (productJson.images) {
-          productJson.images.forEach(img => {
-            if (img && img.legend) {
-              let imgUrl = img.id_image ? `${BASE_URL}/img/p/${img.id_image}/` : img.cover;
-              if (imgUrl && !imageMap.has(imgUrl)) {
-                images.push(ensureAbsoluteUrl(imgUrl));
-                imageMap.add(imgUrl);
-              }
-            }
-          });
-        }
-      } catch (e) {
-        // El JSON no es válido, continuar
-      }
-    }
-
-    return images.slice(0, 10); // Máximo 10 imágenes por producto
-  } catch (err) {
-    console.error(`Error obteniendo imágenes de ${productUrl}:`, err.message);
-    return [];
-  }
-}
-
-/**
- * Obtener variantes (colores y tallas) de un producto
- */
-async function getProductVariants(productUrl) {
-  try {
-    const { data } = await axiosInstance.get(productUrl);
-    
-    // Buscar en script JSON de atributos
-    const attrMatch = data.match(/var\s+attributes\s*=\s*({[\s\S]*?});/);
-    if (!attrMatch) {
-      return { colors: [], sizes: [] };
-    }
-
-    try {
-      const attributes = JSON.parse(attrMatch[1]);
-      let colors = [];
-      let sizes = [];
-
-      // Buscar select de colores y tallas en el HTML
-      const $ = cheerio.load(data);
-      
-      // Colores
-      $('select#group_1, select[name*="color"], select[data-attribute*="color"]').each((i, el) => {
-        $(el).find('option').each((j, opt) => {
-          const value = $(opt).val();
-          const text = $(opt).text().trim();
-          if (text && text !== 'Selecciona una opción') {
-            colors.push({ name: text, value });
-          }
-        });
-      });
-
-      // Tallas
-      $('select#group_2, select[name*="size"], select[data-attribute*="size"]').each((i, el) => {
-        $(el).find('option').each((j, opt) => {
-          const value = $(opt).val();
-          const text = $(opt).text().trim();
-          if (text && text !== 'Selecciona una opción') {
-            sizes.push({ name: text, value });
-          }
-        });
-      });
-
-      // Si no encuentra en selects, buscar en la estructura de botones o divs
-      if (colors.length === 0) {
-        $('.product-variants .form-group').each((i, el) => {
-          if ($(el).find('label').text().toLowerCase().includes('color')) {
-            $(el).find('input, button').each((j, variant) => {
-              const text = $(variant).attr('data-title') || $(variant).text().trim();
-              const value = $(variant).val() || $(variant).attr('value') || text;
-              if (text) colors.push({ name: text, value });
-            });
-          }
-        });
-      }
-
-      if (sizes.length === 0) {
-        $('.product-variants .form-group').each((i, el) => {
-          if ($(el).find('label').text().toLowerCase().includes('talla') || 
-              $(el).find('label').text().toLowerCase().includes('size')) {
-            $(el).find('input, button').each((j, variant) => {
-              const text = $(variant).attr('data-title') || $(variant).text().trim();
-              const value = $(variant).val() || $(variant).attr('value') || text;
-              if (text) sizes.push({ name: text, value });
-            });
-          }
-        });
-      }
-
-      // Eliminar duplicados
-      colors = Array.from(new Map(colors.map(c => [c.name, c])).values());
-      sizes = Array.from(new Map(sizes.map(s => [s.name, s])).values());
-
-      return { colors, sizes };
-    } catch (e) {
-      console.error(`Error parseando variantes:`, e.message);
-      return { colors: [], sizes: [] };
-    }
-  } catch (err) {
-    console.error(`Error obteniendo variantes de ${productUrl}:`, err.message);
-    return { colors: [], sizes: [] };
-  }
-}
-
-/**
- * Asegurar que las URLs de imágenes sean absolutas
- */
+// ── helpers ──────────────────────────────────────────────────────────────────
 function ensureAbsoluteUrl(url) {
   if (!url) return '';
+  url = url.trim();
   if (url.startsWith('http')) return url;
-  if (url.startsWith('//')) return 'https:' + url;
-  if (url.startsWith('/')) return BASE_URL + url;
+  if (url.startsWith('//'))   return 'https:' + url;
+  if (url.startsWith('/'))    return BASE_URL + url;
   return BASE_URL + '/' + url;
 }
 
 /**
- * Scraping de categoría con paginación
+ * Extrae el SKU real de la página de detalle del producto.
+ * En Tworld el SKU está en la meta og:description o en un elemento
+ * con clase "product-reference" o similar.
+ * Fallback: parsear desde la URL (el número antes del slug).
  */
-async function scrapeCategory(cat) {
+async function getProductDetail(productUrl) {
   try {
-    console.log(`\n📁 Scrapeando categoría: ${cat.categoryName}`);
-    
-    let allProducts = [];
-    let page = 1;
-    let hasNextPage = true;
+    const { data } = await fetchWithRetry(productUrl);
+    const $ = cheerio.load(data);
 
-    while (hasNextPage) {
-      const pageUrl = cat.url + (page > 1 ? `?page=${page}` : '');
-      console.log(`  📄 Página ${page}: ${pageUrl}`);
+    // ── SKU real ──────────────────────────────────────────────────────────
+    // 1. Buscar referencia en el bloque de detalles del producto
+    let sku = '';
 
-      try {
-        const { data } = await axiosInstance.get(pageUrl);
-        const $ = cheerio.load(data);
+    // Selector más común en PrestaShop Panda: span#product-reference-value o .product-reference
+    const refEl = $('#product-reference-value, .product-reference span, [itemprop="sku"]').first();
+    if (refEl.length) {
+      sku = refEl.text().trim();
+    }
 
-        // Verificar si hay más páginas
-        hasNextPage = $('a.next').length > 0 || 
-                      $('link[rel="next"]').length > 0 ||
-                      data.includes(`page=${page + 1}`);
+    // 2. Buscar dentro de scripts JSON de PrestaShop
+    if (!sku) {
+      const refMatch = data.match(/"reference"\s*:\s*"([^"]+)"/);
+      if (refMatch) sku = refMatch[1];
+    }
 
-        const productElements = $('.product-miniature, .product-item, article.product-item');
-        console.log(`  ✓ Encontrados ${productElements.length} productos en página ${page}`);
+    // 3. Buscar patrón "Referencia:" en texto
+    if (!sku) {
+      $('*').each((_, el) => {
+        const text = $(el).text();
+        const m = text.match(/Referencia[:\s]+([A-Z0-9\-]+)/i);
+        if (m && m[1]) { sku = m[1]; return false; }
+      });
+    }
 
-        if (productElements.length === 0) {
-          hasNextPage = false;
-          break;
+    // ── Colores completos desde página de detalle ─────────────────────────
+    // En la página de detalle los colores aparecen como inputs radio o <li> con data-value
+    const colors = [];
+    const colorSet = new Set();
+
+    // Método A: inputs con data-title (selector de atributos de PrestaShop)
+    $('ul.product-variants-item input[type="radio"], .product-variants-item input').each((_, el) => {
+      const title = $(el).attr('data-title') || $(el).attr('title') || '';
+      const val   = $(el).val() || '';
+      if (title && !colorSet.has(title.toUpperCase())) {
+        colorSet.add(title.toUpperCase());
+        colors.push({ name: title, value: val });
+      }
+    });
+
+    // Método B: <li> en listas de variantes (algunos temas de PS)
+    if (colors.length === 0) {
+      $('ul.product-variants-item li').each((_, el) => {
+        const title = $(el).attr('data-title') || $(el).find('[data-title]').attr('data-title') || '';
+        const val   = $(el).attr('data-value') || '';
+        if (title && !colorSet.has(title.toUpperCase())) {
+          colorSet.add(title.toUpperCase());
+          colors.push({ name: title, value: val });
         }
+      });
+    }
 
-        for (const el of productElements.toArray()) {
-          const $el = $(el);
-          
-          const name = $el.find('.product-title a, .product-name').text().trim();
-          const productLink = $el.find('a.product-link, .product-title a').attr('href');
-          let sku = $el.attr('data-id-product') || $el.attr('data-product-id') || '';
-          
-          // Extraer precio
-          let priceText = $el.find('.price, [data-price]').text().trim();
-          const price = parseInt(priceText.replace(/[^0-9]/g, '')) || 0;
+    // ── Tallas desde página de detalle ────────────────────────────────────
+    const sizes = [];
+    const sizeSet = new Set();
 
-          // Imagen primaria desde el listado
-          let image = $el.find('img.front-image, img.product-thumbnail').attr('data-src') ||
-                      $el.find('img.front-image, img.product-thumbnail').attr('src') || '';
-          image = ensureAbsoluteUrl(image);
+    $('select option, .product-variants-item input[type="radio"]').each((_, el) => {
+      const text = $(el).text().trim() || $(el).attr('data-title') || '';
+      if (
+        text &&
+        text !== 'Selecciona una opción' &&
+        /^(XS|S|M|L|XL|XXL|XXXL|4XL|5XL|[0-9]+)$/i.test(text) &&
+        !sizeSet.has(text.toUpperCase())
+      ) {
+        sizeSet.add(text.toUpperCase());
+        sizes.push({ name: text });
+      }
+    });
 
-          if (!name || !image) {
-            console.log(`  ⚠️ Producto sin nombre o imagen, omitido`);
-            continue;
-          }
+    // ── Imágenes desde página de detalle ─────────────────────────────────
+    const images = [];
+    const imgSet  = new Set();
 
-          // Si tenemos URL del producto, extraer más detalles
-          let images = [image];
-          let variants = { colors: [], sizes: [] };
+    // Todas las miniaturas / slides de la galería de detalle
+    $('img.js-thumb, img[data-image-type], #thumbnails img, .product-images img, .slick-slide img').each((_, el) => {
+      let src =
+        $(el).attr('data-image-zoom') ||
+        $(el).attr('data-large-image') ||
+        $(el).attr('src') || '';
+      // Preferir large_default
+      src = src.replace(/(home_default|small_default|cart_default|medium_default)/, 'large_default');
+      src = ensureAbsoluteUrl(src);
+      if (src && !src.includes('placeholder') && !imgSet.has(src)) {
+        imgSet.add(src);
+        images.push(src);
+      }
+    });
 
-          if (productLink) {
-            try {
-              console.log(`    🔍 Obteniendo detalles de: ${name.substring(0, 40)}...`);
-              
-              // Obtener más imágenes
-              const moreImages = await getProductImages(productLink);
-              if (moreImages.length > 0) {
-                images = moreImages;
+    // ── Precios por volumen desde página de detalle ───────────────────────
+    const volumePricing = [];
+
+    // Método 1: JSON embebido de PrestaShop (prestashop.product o similar)
+    // Buscar quantity_discounts en cualquier bloque <script>
+    const scriptTags = $('script:not([src])').toArray();
+    for (const scriptEl of scriptTags) {
+      const scriptContent = $(scriptEl).html() || '';
+      // Intentar extraer quantity_discounts del JSON de prestashop
+      const qdMatch = scriptContent.match(/"quantity_discounts"\s*:\s*(\[.*?\])/s);
+      if (qdMatch) {
+        try {
+          const discounts = JSON.parse(qdMatch[1]);
+          if (Array.isArray(discounts) && discounts.length > 0) {
+            for (const d of discounts) {
+              const qty   = parseInt(d.quantity || d.from_quantity || d.min_quantity || 0);
+              const raw   = d.price || d.price_to_display || d.value || '';
+              const price = parseInt(String(raw).replace(/[^0-9]/g, '')) || 0;
+              if (qty > 0 && price > 0) {
+                const label = qty === 1 ? 'C/U' : `desde ${qty} articulos`;
+                volumePricing.push({ minQuantity: qty, price, label });
               }
-
-              // Obtener variantes
-              variants = await getProductVariants(productLink);
-
-              await new Promise(resolve => setTimeout(resolve, 500)); // Esperar entre requests
-            } catch (err) {
-              console.log(`    ⚠️ Error obteniendo detalles: ${err.message}`);
             }
           }
-
-          allProducts.push({
-            id: parseInt(sku) || Math.floor(Math.random() * 100000),
-            sku: sku || `SKU-${Math.floor(Math.random() * 10000)}`,
-            name: name,
-            slug: productLink ? productLink.split('/').pop().replace('.html', '') : name.toLowerCase().replace(/ /g, '-'),
-            price: price,
-            category: cat.categoryName,
-            images: images,
-            primaryImage: images[0] || image,
-            secondaryImage: images[1] || images[0] || image,
-            colors: variants.colors,
-            sizes: variants.sizes,
-            isFeatured: false,
-            hasEmbroidery: true,
-            productUrl: productLink || ''
-          });
-
-          console.log(`    ✓ ${name} - ${variants.colors.length} colores, ${variants.sizes.length} tallas`);
-        }
-
-        page++;
-        
-        // Esperar entre páginas
-        await new Promise(resolve => setTimeout(resolve, 1000));
-
-      } catch (err) {
-        console.error(`  ❌ Error scrapeando página ${page}:`, err.message);
-        break;
+        } catch (_) {}
+        if (volumePricing.length > 0) break;
       }
     }
 
-    console.log(`  ✅ Categoría completa: ${allProducts.length} productos`);
-    return allProducts;
+    // Método 2: Tabla de descuentos por cantidad (PrestaShop estándar)
+    if (volumePricing.length === 0) {
+      $('table.table-product-discounts tbody tr, .quantity-discounts tbody tr, .product-discounts table tbody tr').each((_, row) => {
+        const cells    = $(row).find('td');
+        const qtyText  = cells.eq(0).text().trim();
+        const priceText= cells.eq(1).text().trim() || cells.last().text().trim();
+        const qty   = parseInt(qtyText.replace(/[^0-9]/g, ''));
+        const price = parseInt(priceText.replace(/[^0-9]/g, ''));
+        if (qty > 0 && price > 0) {
+          const label = qty === 1 ? 'C/U' : `desde ${qty} articulos`;
+          volumePricing.push({ minQuantity: qty, price, label });
+        }
+      });
+    }
 
+    // Método 3: Filas de precio con etiqueta de texto (diseño Panda/personalizado)
+    // Busca patrones como "$8.090" seguido de "desde 3 articulos"
+    if (volumePricing.length === 0) {
+      // Buscar dentro de .product-prices, .price-container o .pro_kuan_box
+      const priceContainers = $('.product-prices, .pro_second_box, .price-container, [class*="price"]');
+      priceContainers.each((_, container) => {
+        const fullText = $(container).text();
+        // Buscar patrón: precio + etiqueta (ej. "$ 8.090 C/U" o "$ 8.090 desde 3 articulos")
+        const matches = [...fullText.matchAll(/\$?\s*([0-9][0-9.]+)\s*(c\/u|desde\s+([0-9]+)\s*articulos?)/gi)];
+        for (const m of matches) {
+          const price = parseInt(m[1].replace(/\./g, ''));
+          const labelRaw = m[2].trim().toLowerCase();
+          const qty = labelRaw.startsWith('c') ? 1 : parseInt(m[3] || '0');
+          if (price > 0 && qty > 0) {
+            const label = qty === 1 ? 'C/U' : `desde ${qty} articulos`;
+            volumePricing.push({ minQuantity: qty, price, label });
+          }
+        }
+      });
+    }
+
+    // Ordenar por cantidad mínima
+    volumePricing.sort((a, b) => a.minQuantity - b.minQuantity);
+
+    return { sku, colors, sizes, images, volumePricing };
   } catch (err) {
-    console.error(`❌ Error scrapeando categoría ${cat.categoryName}:`, err.message);
-    return [];
+    console.error(`  ⚠️ Error obteniendo detalle de ${productUrl}:`, err.message);
+    return { sku: '', colors: [], sizes: [], images: [] };
   }
 }
 
-/**
- * Función principal
- */
-async function main() {
-  console.log('🚀 Iniciando scraper mejorado para Tworld...\n');
-  
+// ── Scraping de una categoría con paginación ─────────────────────────────────
+async function scrapeCategory(cat) {
+  console.log(`\n📁 Categoría: ${cat.categoryName}`);
+
   let allProducts = [];
-  
+  let page = 1;
+  let hasNextPage = true;
+
+  while (hasNextPage) {
+    const pageUrl = cat.url + (page > 1 ? `?page=${page}` : '');
+    console.log(`  📄 Página ${page}: ${pageUrl}`);
+
+    try {
+      const { data } = await fetchWithRetry(pageUrl);
+      const $ = cheerio.load(data);
+
+      // Verificar si hay página siguiente
+      hasNextPage =
+        $('a.next').length > 0 ||
+        $('link[rel="next"]').length > 0;
+
+      // El selector correcto en Tworld es article.js-product-miniature
+      const productElements = $('article.js-product-miniature, article.ajax_block_product');
+      console.log(`  ✓ ${productElements.length} productos en página ${page}`);
+
+      if (productElements.length === 0) {
+        hasNextPage = false;
+        break;
+      }
+
+      for (const el of productElements.toArray()) {
+        const $el = $(el);
+
+        // ── Nombre ────────────────────────────────────────────────────────
+        const name =
+          $el.find('h3.s_title_block a, h3.product-title a, .product-title a').first().text().trim() ||
+          $el.find('h3 a, h2 a').first().text().trim();
+
+        // ── URL del producto ──────────────────────────────────────────────
+        const productLink =
+          $el.find('h3.s_title_block a, h3.product-title a, .product-title a').first().attr('href') ||
+          $el.find('a.tm_gallery_item_box').first().attr('href') || '';
+
+        // ── ID interno PrestaShop ─────────────────────────────────────────
+        const psId = $el.attr('data-id-product') || '';
+        const psIdAttr = $el.attr('data-id-product-attribute') || '';
+
+        // ── SKU visible en el listado (div pro_kuan_box con texto "SKU") ──
+        let skuFromList = '';
+        $el.find('.pro_kuan_box').each((_, box) => {
+          const txt = $(box).text();
+          const m = txt.match(/SKU\s*([A-Za-z0-9\-]+)/i);
+          if (m) { skuFromList = m[1].trim(); return false; }
+        });
+
+        // ── Precio ────────────────────────────────────────────────────────
+        const priceText = $el.find('.price span.price, span.price').first().text().trim();
+        const price = parseInt(priceText.replace(/[^0-9]/g, '')) || 0;
+
+        // ── Colores desde el listado (.variant-links a.color) ─────────────
+        const colorsFromList = [];
+        $el.find('.variant-links a.color').each((_, a) => {
+          const colorName = $(a).attr('title') || $(a).attr('aria-label') || '';
+          const styleAttr  = $(a).attr('style') || '';
+          const hexMatch   = styleAttr.match(/background-color:\s*(#[0-9A-Fa-f]{3,6}|[a-z]+)/i);
+          const hex        = hexMatch ? hexMatch[1] : '';
+          const colorUrl   = $(a).attr('href') || '';
+          if (colorName) {
+            colorsFromList.push({
+              name: colorName.trim().toUpperCase(),
+              hex:  hex,
+              url:  colorUrl,
+            });
+          }
+        });
+
+        // ── Imágenes desde el listado (swiper slides) ─────────────────────
+        const imagesFromList = [];
+        const imgSetList = new Set();
+        $el.find('.swiper-slide img, img.tm_gallery_item').each((_, img) => {
+          let src = $(img).attr('src') || $(img).attr('data-src') || '';
+          src = ensureAbsoluteUrl(src);
+          if (src && !src.includes('placeholder') && !imgSetList.has(src)) {
+            imgSetList.add(src);
+            imagesFromList.push(src);
+          }
+        });
+
+        if (!name) {
+          console.log(`  ⚠️ Producto sin nombre, omitido`);
+          continue;
+        }
+
+        // ── Detalles desde página de producto ────────────────────────────
+        let sku   = skuFromList;
+        let colors = colorsFromList;
+        let sizes  = [];
+        let images = imagesFromList;
+        let volumePricingFromDetail = [];
+
+        if (productLink) {
+          console.log(`    🔍 ${name.substring(0, 50)}`);
+          const detail = await getProductDetail(productLink);
+
+          // SKU: preferir el de la página de detalle si lo encontramos,
+          // si no, usar el del listado, si no usar psId
+          if (detail.sku) sku = detail.sku;
+          else if (!sku)  sku = psId;
+
+          // Colores: si la página de detalle tiene más, los usamos
+          if (detail.colors.length > colorsFromList.length) colors = detail.colors;
+
+          // Tallas
+          if (detail.sizes.length > 0) sizes = detail.sizes;
+
+          // Imágenes: si la página de detalle tiene más, las usamos
+          if (detail.images.length > imagesFromList.length) images = detail.images;
+
+          // Precios por volumen desde la página de detalle
+          if (detail.volumePricing && detail.volumePricing.length > 0) {
+            volumePricingFromDetail = detail.volumePricing;
+          }
+
+          // Pequeña pausa para no saturar el servidor
+          await new Promise(r => setTimeout(r, 600));
+        }
+
+        const primaryImage   = images[0] || '';
+        const secondaryImage = images[1] || images[0] || '';
+
+        allProducts.push({
+          id:             parseInt(psId) || Math.floor(Math.random() * 100000),
+          psId:           psId,
+          psIdAttribute:  psIdAttr,
+          sku:            sku || `SKU-${psId}`,
+          name,
+          slug:           productLink
+                            ? productLink.split('/').pop().replace(/\.html.*$/, '')
+                            : name.toLowerCase().replace(/\s+/g, '-'),
+          price,
+          volumePricing:  volumePricingFromDetail,
+          category:       cat.categoryName,
+          images,
+          primaryImage,
+          secondaryImage,
+          colors,
+          sizes,
+          isFeatured:     false,
+          hasEmbroidery:  true,
+          productUrl:     productLink,
+        });
+
+        console.log(`    ✓ SKU: ${sku || '(sin SKU)'} | ${colors.length} colores | ${sizes.length} tallas | ${volumePricingFromDetail.length} niveles de precio`);
+      }
+
+      page++;
+      await new Promise(r => setTimeout(r, 1200));
+
+    } catch (err) {
+      console.error(`  ❌ Error en página ${page}:`, err.message);
+      break;
+    }
+  }
+
+  console.log(`  ✅ Total en categoría: ${allProducts.length} productos`);
+  return allProducts;
+}
+
+// ── main ─────────────────────────────────────────────────────────────────────
+async function main() {
+  console.log('🚀 Iniciando scraper Tworld (SKU reales + colores)...\n');
+
+  // Pausa inicial para que el servidor no rechace el primer request
+  await new Promise(r => setTimeout(r, 1500));
+
+  let allProducts = [];
+
   for (const cat of categories) {
     const prods = await scrapeCategory(cat);
     allProducts = [...allProducts, ...prods];
   }
 
-  console.log(`\n✅ Total de productos capturados: ${allProducts.length}\n`);
+  console.log(`\n✅ Total productos capturados: ${allProducts.length}\n`);
 
-  // Generar datos en formato JSON para backend
-  const output = {
-    timestamp: new Date().toISOString(),
-    totalProducts: allProducts.length,
-    products: allProducts
-  };
-
-  // Guardar JSON
+  // ── Guardar JSON raw ────────────────────────────────────────────────────
   const jsonPath = path.join(__dirname, 'productos_scrapedos.json');
-  fs.writeFileSync(jsonPath, JSON.stringify(output, null, 2));
-  console.log(`📁 Guardado en: ${jsonPath}`);
+  fs.writeFileSync(jsonPath, JSON.stringify({ timestamp: new Date().toISOString(), totalProducts: allProducts.length, products: allProducts }, null, 2));
+  console.log(`📁 JSON guardado en: ${jsonPath}`);
 
-  // Generar también mockData.js para frontend
+  // ── Generar mockData.js para el frontend ────────────────────────────────
   const mockDataPath = path.join(__dirname, '../frontend/src/utils/mockData.js');
-  const mockContent = `
-// Auto-generated mock data from Tworldstore.cl scraper
+  const mockContent = `// Auto-generated from Tworldstore.cl scraper
 // Generado: ${new Date().toLocaleString()}
 // Total productos: ${allProducts.length}
 
 export const banners = [
-  { id: 1, img: 'https://tworldstore.cl/stupload/stswiper/lofty2.png', url: '/productos' },
-  { id: 2, img: 'https://tworldstore.cl/stupload/stswiper/jeans-practical.jpg', url: '/productos' },
-  { id: 3, img: 'https://tworldstore.cl/stupload/stswiper/secuoya.jpg', url: '/productos' },
-  { id: 4, img: 'https://tworldstore.cl/stupload/stswiper/mineiria.jpg', url: '/productos' },
-  { id: 5, img: 'https://tworldstore.cl/stupload/stswiper/jardinera.jpg', url: '/productos' },
+  { id: 1, img: 'https://tworldstore.cl/stupload/stswiper/lofty2.png',           url: '/productos' },
+  { id: 2, img: 'https://tworldstore.cl/stupload/stswiper/jeans-practical.jpg',  url: '/productos' },
+  { id: 3, img: 'https://tworldstore.cl/stupload/stswiper/secuoya.jpg',          url: '/productos' },
+  { id: 4, img: 'https://tworldstore.cl/stupload/stswiper/mineiria.jpg',         url: '/productos' },
+  { id: 5, img: 'https://tworldstore.cl/stupload/stswiper/jardinera.jpg',        url: '/productos' },
 ];
 
 export const categories = [
-  { id: 1, title: 'HOMBRE', img: 'https://tworldstore.cl/stupload/stswiper/calugas-264x190.png', slug: 'hombre' },
-  { id: 2, title: 'MUJER', img: 'https://tworldstore.cl/stupload/stswiper/calugas-264x190-04.png', slug: 'mujer' },
-  { id: 3, title: 'CALZADO', img: 'https://tworldstore.cl/stupload/stswiper/calugas-264x190-03.png', slug: 'calzado' },
-  { id: 4, title: 'LÍNEAS', img: 'https://tworldstore.cl/stupload/stswiper/calugas-264x190-05.png', slug: 'lineas' },
-  { id: 5, title: 'EPP', img: 'https://tworldstore.cl/stupload/stswiper/calugas-264x190-01.png', slug: 'epp' },
+  { id: 1, title: 'HOMBRE',  img: 'https://tworldstore.cl/stupload/stswiper/calugas-264x190.png',       slug: 'hombre'  },
+  { id: 2, title: 'MUJER',   img: 'https://tworldstore.cl/stupload/stswiper/calugas-264x190-04.png',    slug: 'mujer'   },
+  { id: 3, title: 'CALZADO', img: 'https://tworldstore.cl/stupload/stswiper/calugas-264x190-03.png',    slug: 'calzado' },
+  { id: 4, title: 'LÍNEAS',  img: 'https://tworldstore.cl/stupload/stswiper/calugas-264x190-05.png',    slug: 'lineas'  },
+  { id: 5, title: 'EPP',     img: 'https://tworldstore.cl/stupload/stswiper/calugas-264x190-01.png',    slug: 'epp'     },
 ];
 
 export const products = ${JSON.stringify(allProducts, null, 2)};
 `;
 
   fs.writeFileSync(mockDataPath, mockContent);
-  console.log(`📁 Guardado mockData en: ${mockDataPath}`);
-
-  console.log('\n✅ Scraper completado correctamente!\n');
+  console.log(`📁 mockData.js guardado en: ${mockDataPath}`);
+  console.log('\n✅ Scraper completado!\n');
 }
 
 main().catch(err => {

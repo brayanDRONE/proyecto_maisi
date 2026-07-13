@@ -5,18 +5,18 @@ const _products = [
     "sku": "01074",
     "slug": "polera-100-algodon-manga-larga-930",
     "name": "Polera 100% Algodón Manga Larga",
-    "price": 5090,
+    "price": 5891,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 5090,
+        "price": 5891,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 5090,
+        "price": 5489,
         "label": "desde 3 articulos"
       },
       {
@@ -118,20 +118,20 @@ const _products = [
   {
     "id": "736",
     "sku": "21073",
-    "slug": "polera-dry-fit-m-l-hombre-736",
-    "name": "POLERA DRY FIT M/L HOMBRE",
-    "price": 6290,
+    "slug": "polera-dryfit-manga-larga-hombre-736",
+    "name": "Polera DryFit Manga Larga Hombre",
+    "price": 7190,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 6290,
+        "price": 7190,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 6290,
+        "price": 6690,
         "label": "desde 3 articulos"
       },
       {
@@ -208,20 +208,20 @@ const _products = [
   {
     "id": "737",
     "sku": "01341",
-    "slug": "polera-hibrida-dual-hi-vis-hombre-m-larga-737",
-    "name": "POLERA HIBRIDA DUAL HI VIS HOMBRE M/LARGA",
-    "price": 9190,
+    "slug": "polera-hibrida-dual-manga-larga-hombre-737",
+    "name": "Polera Hibrida Dual Manga Larga Hombre",
+    "price": 10690,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 9190,
+        "price": 10690,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 9190,
+        "price": 9890,
         "label": "desde 3 articulos"
       },
       {
@@ -305,18 +305,18 @@ const _products = [
     "sku": "01281",
     "slug": "polera-hibrida-con-cinta-reflectiva-manga-larga-hombre-738",
     "name": "Polera Hibrida con Cinta Reflectiva Manga Larga Hombre",
-    "price": 7890,
+    "price": 9190,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 7890,
+        "price": 9190,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 7890,
+        "price": 8489,
         "label": "desde 3 articulos"
       },
       {
@@ -498,25 +498,25 @@ const _products = [
   {
     "id": "740",
     "sku": "01321",
-    "slug": "polera-hibrida-dual-hi-vis-hombre-manga-corta-740",
-    "name": "POLERA HIBRIDA DUAL HI VIS HOMBRE MANGA CORTA",
-    "price": 8090,
+    "slug": "polera-hibrida-dual-hombre-manga-corta-740",
+    "name": "POLERA HIBRIDA DUAL HOMBRE MANGA CORTA",
+    "price": 7990,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 8090,
+        "price": 7990,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 8090,
+        "price": 7990,
         "label": "desde 3 articulos"
       },
       {
         "minQuantity": 10,
-        "price": 8090,
+        "price": 7990,
         "label": "desde 10 articulos"
       }
     ],
@@ -595,18 +595,18 @@ const _products = [
     "sku": "01301",
     "slug": "polera-hibrida-hi-vis-bi-color-manga-larga-hombre-741",
     "name": "Polera Hibrida Hi-Vis Bi Color Manga Larga Hombre",
-    "price": 9090,
+    "price": 10490,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 9090,
+        "price": 10490,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 9090,
+        "price": 9790,
         "label": "desde 3 articulos"
       },
       {
@@ -685,23 +685,23 @@ const _products = [
     "sku": "01221",
     "slug": "polera-work-dry-hombre-m-corta-748",
     "name": "POLERA WORK DRY HOMBRE M/CORTA",
-    "price": 4790,
+    "price": 4690,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 4790,
+        "price": 4690,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 4790,
+        "price": 4690,
         "label": "desde 3 articulos"
       },
       {
         "minQuantity": 10,
-        "price": 4790,
+        "price": 4690,
         "label": "desde 10 articulos"
       }
     ],
@@ -780,18 +780,18 @@ const _products = [
     "sku": "02146",
     "slug": "polera-polo-m-l-hombre-60-alg-40-poly-749",
     "name": "POLERA POLO M/L HOMBRE 60% ALG 40% POLY",
-    "price": 7490,
+    "price": 8691,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 7490,
+        "price": 8691,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 7490,
+        "price": 8090,
         "label": "desde 3 articulos"
       },
       {
@@ -905,18 +905,18 @@ const _products = [
     "sku": "02136",
     "slug": "polera-polo-m-c-hombre-60-alg-40-poly-750",
     "name": "POLERA POLO M/C HOMBRE 60% ALG 40% POLY",
-    "price": 6290,
+    "price": 7290,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 6290,
+        "price": 7290,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 6290,
+        "price": 6690,
         "label": "desde 3 articulos"
       },
       {
@@ -1030,18 +1030,18 @@ const _products = [
     "sku": "02366",
     "slug": "polera-polo-alta-visibilidad-bi-color-m-l-hombre-754",
     "name": "POLERA POLO ALTA VISIBILIDAD BI COLOR M/L HOMBRE",
-    "price": 9990,
+    "price": 11489,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 9990,
+        "price": 11489,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 9990,
+        "price": 10690,
         "label": "desde 3 articulos"
       },
       {
@@ -1120,18 +1120,18 @@ const _products = [
     "sku": "22063",
     "slug": "polera-polo-dry-fit-m-l-hombre-755",
     "name": "POLERA POLO DRY FIT M/L HOMBRE",
-    "price": 7290,
+    "price": 8390,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 7290,
+        "price": 8390,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 7290,
+        "price": 7790,
         "label": "desde 3 articulos"
       },
       {
@@ -1210,18 +1210,18 @@ const _products = [
     "sku": "02026",
     "slug": "polera-polo-m-l-hombre-80-alg-20-poly-756",
     "name": "POLERA POLO M/L HOMBRE 80% ALG 20% POLY",
-    "price": 9390,
+    "price": 10790,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 9390,
+        "price": 10790,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 9390,
+        "price": 10090,
         "label": "desde 3 articulos"
       },
       {
@@ -1325,23 +1325,23 @@ const _products = [
     "sku": "02016",
     "slug": "polera-polo-m-c-hombre-80-alg-20-poly-757",
     "name": "POLERA POLO M/C HOMBRE 80% ALG 20% POLY",
-    "price": 5990,
+    "price": 9090,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 5990,
+        "price": 9090,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 5990,
+        "price": 8489,
         "label": "desde 3 articulos"
       },
       {
         "minQuantity": 10,
-        "price": 5990,
+        "price": 7890,
         "label": "desde 10 articulos"
       }
     ],
@@ -1440,18 +1440,18 @@ const _products = [
     "sku": "02346",
     "slug": "polera-polo-comfort-spandex-m-l-hombre-763",
     "name": "POLERA POLO COMFORT SPANDEX M/L HOMBRE",
-    "price": 8190,
+    "price": 9490,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 8190,
+        "price": 9490,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 8190,
+        "price": 8890,
         "label": "desde 3 articulos"
       },
       {
@@ -1545,18 +1545,18 @@ const _products = [
     "sku": "02326",
     "slug": "polera-polo-comfort-spandex-m-c-hombre-764",
     "name": "POLERA POLO COMFORT SPANDEX M/C HOMBRE",
-    "price": 6890,
+    "price": 7990,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 6890,
+        "price": 7990,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 6890,
+        "price": 7490,
         "label": "desde 3 articulos"
       },
       {
@@ -1650,18 +1650,18 @@ const _products = [
     "sku": "02256",
     "slug": "polera-polo-dryfresh-m-l-hombre-60-alg-40-poly-767",
     "name": "POLERA POLO DRYFRESH M/L HOMBRE 60% ALG 40% POLY",
-    "price": 7990,
+    "price": 9190,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 7990,
+        "price": 9190,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 7990,
+        "price": 8589,
         "label": "desde 3 articulos"
       },
       {
@@ -1765,18 +1765,18 @@ const _products = [
     "sku": "02306",
     "slug": "polera-c-camisero-dryfresh-smooth-hombre-m-l-768",
     "name": "POLERA C. CAMISERO DRYFRESH SMOOTH HOMBRE M/L",
-    "price": 6890,
+    "price": 7890,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 6890,
+        "price": 7890,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 6890,
+        "price": 7390,
         "label": "desde 3 articulos"
       },
       {
@@ -1875,18 +1875,18 @@ const _products = [
     "sku": "02246",
     "slug": "polera-polo-dryfresh-m-c-hombre-60-alg-40-poly-769",
     "name": "POLERA POLO DRYFRESH M/C HOMBRE 60% ALG 40% POLY",
-    "price": 7090,
+    "price": 8190,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 7090,
+        "price": 8190,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 7090,
+        "price": 7590,
         "label": "desde 3 articulos"
       },
       {
@@ -1990,23 +1990,23 @@ const _products = [
     "sku": "02286",
     "slug": "polera-polo-dryfresh-smooth-m-c-hombre-770",
     "name": "POLERA POLO DRYFRESH SMOOTH M/C HOMBRE",
-    "price": 2489,
+    "price": 6790,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 2489,
+        "price": 6790,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 2489,
+        "price": 6290,
         "label": "desde 3 articulos"
       },
       {
         "minQuantity": 10,
-        "price": 2489,
+        "price": 5891,
         "label": "desde 10 articulos"
       }
     ],
@@ -2100,23 +2100,23 @@ const _products = [
     "sku": "02406",
     "slug": "polera-polo-work-dry-hombre-m-larga-775",
     "name": "POLERA POLO WORK DRY HOMBRE M/LARGA",
-    "price": 6790,
+    "price": 2791,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 6790,
+        "price": 2791,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 6790,
+        "price": 2791,
         "label": "desde 3 articulos"
       },
       {
         "minQuantity": 10,
-        "price": 6790,
+        "price": 2791,
         "label": "desde 10 articulos"
       }
     ],
@@ -2190,23 +2190,23 @@ const _products = [
     "sku": "02386",
     "slug": "polera-polo-work-dry-hombre-m-corta-776",
     "name": "POLERA POLO WORK DRY HOMBRE M/CORTA",
-    "price": 6990,
+    "price": 2691,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 6990,
+        "price": 2691,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 6990,
+        "price": 2691,
         "label": "desde 3 articulos"
       },
       {
         "minQuantity": 10,
-        "price": 6990,
+        "price": 2691,
         "label": "desde 10 articulos"
       }
     ],
@@ -2290,23 +2290,23 @@ const _products = [
     "sku": "03179",
     "slug": "micropolar-m-l-hombre-100-poly-777",
     "name": "MICROPOLAR M/L HOMBRE 100% POLY",
-    "price": 6990,
+    "price": 3190,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 6990,
+        "price": 3190,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 6990,
+        "price": 3190,
         "label": "desde 3 articulos"
       },
       {
         "minQuantity": 10,
-        "price": 6990,
+        "price": 3190,
         "label": "desde 10 articulos"
       }
     ],
@@ -2380,18 +2380,18 @@ const _products = [
     "sku": "03219",
     "slug": "micropolar-practical-line-c-reflectiva-hombre-779",
     "name": "MICROPOLAR PRACTICAL LINE C/REFLECTIVA HOMBRE",
-    "price": 11890,
+    "price": 13690,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 11890,
+        "price": 13690,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 11890,
+        "price": 12790,
         "label": "desde 3 articulos"
       },
       {
@@ -2480,18 +2480,18 @@ const _products = [
     "sku": "03119",
     "slug": "micropolar-expedition-m-l-hombre-100-poly-780",
     "name": "MICROPOLAR EXPEDITION M/L HOMBRE 100% POLY",
-    "price": 27490,
+    "price": 31790,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 27490,
+        "price": 31790,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 27490,
+        "price": 29591,
         "label": "desde 3 articulos"
       },
       {
@@ -2660,18 +2660,18 @@ const _products = [
     "sku": "03199",
     "slug": "micropolar-hi-vis-clase-2-bi-color-m-l-hombre-783",
     "name": "MICROPOLAR HI VIS CLASE 2 BI COLOR M/L HOMBRE",
-    "price": 15990,
+    "price": 18490,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 15990,
+        "price": 18490,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 15990,
+        "price": 17190,
         "label": "desde 3 articulos"
       },
       {
@@ -2750,18 +2750,18 @@ const _products = [
     "sku": "03079",
     "slug": "micropolar-tela-plana-hombre-m-l-784",
     "name": "MICROPOLAR TELA PLANA  HOMBRE M/L",
-    "price": 16890,
+    "price": 19490,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 16890,
+        "price": 19490,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 16890,
+        "price": 18190,
         "label": "desde 3 articulos"
       },
       {
@@ -2850,18 +2850,18 @@ const _products = [
     "sku": "03139",
     "slug": "micropolar-navigator-m-l-hombre-100-poly-786",
     "name": "MICROPOLAR NAVIGATOR M/L HOMBRE 100% POLY",
-    "price": 19390,
+    "price": 22490,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 19390,
+        "price": 22490,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 19390,
+        "price": 20890,
         "label": "desde 3 articulos"
       },
       {
@@ -2940,23 +2940,23 @@ const _products = [
     "sku": "03259",
     "slug": "micropolar-outwork-hombre-m-l-788",
     "name": "MICROPOLAR OUTWORK HOMBRE M/L",
-    "price": 33290,
+    "price": 33390,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 33290,
+        "price": 33390,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 33290,
+        "price": 33390,
         "label": "desde 3 articulos"
       },
       {
         "minQuantity": 10,
-        "price": 33290,
+        "price": 33390,
         "label": "desde 10 articulos"
       }
     ],
@@ -3028,8 +3028,8 @@ const _products = [
   {
     "id": "789",
     "sku": "06351",
-    "slug": "camisa-oxford-789",
-    "name": "CAMISA OXFORD",
+    "slug": "camisa-oxford-manga-larga-hombre-789",
+    "name": "Camisa Oxford Manga Larga Hombre",
     "price": 9790,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
@@ -3113,20 +3113,20 @@ const _products = [
   {
     "id": "790",
     "sku": "06012",
-    "slug": "camisa-oxford-classic-790",
-    "name": "CAMISA OXFORD CLASSIC",
-    "price": 9890,
+    "slug": "camisa-oxford-classic-m-l-hombre-55-alg-45-poly-790",
+    "name": "CAMISA OXFORD CLASSIC M/L HOMBRE 55% ALG 45% POLY",
+    "price": 11489,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 9890,
+        "price": 11489,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 9890,
+        "price": 10690,
         "label": "desde 3 articulos"
       },
       {
@@ -3208,20 +3208,20 @@ const _products = [
   {
     "id": "791",
     "sku": "06271",
-    "slug": "camisa-oxford-light-791",
-    "name": "CAMISA OXFORD LIGHT",
-    "price": 10390,
+    "slug": "camisa-oxford-light-m-l-hombre-791",
+    "name": "CAMISA OXFORD LIGHT M/L HOMBRE",
+    "price": 11990,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 10390,
+        "price": 11990,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 10390,
+        "price": 11190,
         "label": "desde 3 articulos"
       },
       {
@@ -3303,20 +3303,20 @@ const _products = [
   {
     "id": "793",
     "sku": "06291",
-    "slug": "camisa-trevira-light-793",
-    "name": "CAMISA TREVIRA LIGHT",
-    "price": 10390,
+    "slug": "camisa-trevira-light-m-l-hombre-793",
+    "name": "CAMISA TREVIRA LIGHT M/L HOMBRE",
+    "price": 11990,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 10390,
+        "price": 11990,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 10390,
+        "price": 11190,
         "label": "desde 3 articulos"
       },
       {
@@ -3398,25 +3398,25 @@ const _products = [
   {
     "id": "794",
     "sku": "06212",
-    "slug": "camisa-oxford-classic-794",
-    "name": "CAMISA OXFORD CLASSIC",
-    "price": 8489,
+    "slug": "camisa-oxford-classic-c-bol-m-l-hombre-794",
+    "name": "CAMISA OXFORD CLASSIC C/BOL. M/L HOMBRE",
+    "price": 11489,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 8489,
+        "price": 11489,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 8489,
+        "price": 10690,
         "label": "desde 3 articulos"
       },
       {
         "minQuantity": 10,
-        "price": 8489,
+        "price": 9890,
         "label": "desde 10 articulos"
       }
     ],
@@ -3495,23 +3495,23 @@ const _products = [
     "sku": "06241",
     "slug": "camisa-oxford-classic-m-c-hombre-797",
     "name": "CAMISA OXFORD CLASSIC M/C HOMBRE",
-    "price": 5090,
+    "price": 6290,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 5090,
+        "price": 6290,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 5090,
+        "price": 6290,
         "label": "desde 3 articulos"
       },
       {
         "minQuantity": 10,
-        "price": 5090,
+        "price": 6290,
         "label": "desde 10 articulos"
       }
     ],
@@ -3583,8 +3583,8 @@ const _products = [
   {
     "id": "798",
     "sku": "06001",
-    "slug": "camisa-trevira-urban-fantasia-798",
-    "name": "Camisa Trevira Urban Fantasia",
+    "slug": "camisa-trevira-urban-fantasia-m-l-hombre-798",
+    "name": "CAMISA TREVIRA URBAN FANTASÍA M/L HOMBRE",
     "price": 3090,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
@@ -3673,25 +3673,25 @@ const _products = [
   {
     "id": "799",
     "sku": "06002",
-    "slug": "camisa-trevira-urban-fantasia-799",
-    "name": "Camisa Trevira Urban Fantasia",
-    "price": 2990,
+    "slug": "camisa-trevira-urban-cuadros-m-l-hombre-799",
+    "name": "CAMISA TREVIRA URBAN CUADROS M/L HOMBRE",
+    "price": 3290,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 2990,
+        "price": 3290,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 2990,
+        "price": 3290,
         "label": "desde 3 articulos"
       },
       {
         "minQuantity": 10,
-        "price": 2990,
+        "price": 3290,
         "label": "desde 10 articulos"
       }
     ],
@@ -3763,25 +3763,25 @@ const _products = [
   {
     "id": "800",
     "sku": "06003",
-    "slug": "camisa-trevira-urban-fantasia-800",
-    "name": "Camisa Trevira Urban Fantasia",
-    "price": 3290,
+    "slug": "camisa-trevira-urban-listado-m-l-hombre-800",
+    "name": "CAMISA TREVIRA URBAN LISTADO M/L HOMBRE",
+    "price": 3190,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 3290,
+        "price": 3190,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 3290,
+        "price": 3190,
         "label": "desde 3 articulos"
       },
       {
         "minQuantity": 10,
-        "price": 3290,
+        "price": 3190,
         "label": "desde 10 articulos"
       }
     ],
@@ -3853,20 +3853,20 @@ const _products = [
   {
     "id": "801",
     "sku": "06004",
-    "slug": "camisa-jubae-801",
-    "name": "CAMISA JUBAE",
-    "price": 17190,
+    "slug": "camisa-outwork-ripstop-jubae-m-l-hombre-801",
+    "name": "CAMISA OUTWORK RIPSTOP JUBAE M/L HOMBRE",
+    "price": 19890,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 17190,
+        "price": 19890,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 17190,
+        "price": 18490,
         "label": "desde 3 articulos"
       },
       {
@@ -3963,25 +3963,25 @@ const _products = [
   {
     "id": "803",
     "sku": "06361",
-    "slug": "camisa-salvia-803",
-    "name": "CAMISA SALVIA",
-    "price": 20190,
+    "slug": "camisa-outwork-salvia-hombre-m-l-803",
+    "name": "CAMISA OUTWORK SALVIA HOMBRE M/L",
+    "price": 19790,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 20190,
+        "price": 19790,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 20190,
+        "price": 19790,
         "label": "desde 3 articulos"
       },
       {
         "minQuantity": 10,
-        "price": 20190,
+        "price": 19790,
         "label": "desde 10 articulos"
       }
     ],
@@ -4053,20 +4053,20 @@ const _products = [
   {
     "id": "804",
     "sku": "06381",
-    "slug": "camisa-outdoor-804",
-    "name": "CAMISA OUTDOOR",
-    "price": 18590,
+    "slug": "camisa-abelia-manga-larga-hombre-804",
+    "name": "Camisa Abelia Manga Larga Hombre",
+    "price": 21490,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 18590,
+        "price": 21490,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 18590,
+        "price": 19990,
         "label": "desde 3 articulos"
       },
       {
@@ -4148,20 +4148,20 @@ const _products = [
   {
     "id": "806",
     "sku": "07014",
-    "slug": "basic-cortaviento-806",
-    "name": "BASIC Cortaviento",
-    "price": 12690,
+    "slug": "cortaviento-basic-m-l-hombre-806",
+    "name": "CORTAVIENTO BASIC M/L HOMBRE",
+    "price": 14691,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 12690,
+        "price": 14691,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 12690,
+        "price": 13690,
         "label": "desde 3 articulos"
       },
       {
@@ -4250,18 +4250,18 @@ const _products = [
     "sku": "27001",
     "slug": "cortaviento-limos-high-tech-m-l-hombre-808",
     "name": "CORTAVIENTO LIMOS HIGH TECH M/L HOMBRE",
-    "price": 15990,
+    "price": 18490,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 15990,
+        "price": 18490,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 15990,
+        "price": 17190,
         "label": "desde 3 articulos"
       },
       {
@@ -4350,23 +4350,23 @@ const _products = [
     "sku": "08096",
     "slug": "parka-basica-3-en-1-809",
     "name": "PARKA BÁSICA 3 EN 1",
-    "price": 34390,
+    "price": 42390,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 34390,
+        "price": 42390,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 34390,
+        "price": 39390,
         "label": "desde 3 articulos"
       },
       {
         "minQuantity": 10,
-        "price": 34390,
+        "price": 36690,
         "label": "desde 10 articulos"
       }
     ],
@@ -4445,18 +4445,18 @@ const _products = [
     "sku": "08324",
     "slug": "chaqueta-termica-premium-810",
     "name": "CHAQUETA TÉRMICA PREMIUM",
-    "price": 23090,
+    "price": 26691,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 23090,
+        "price": 26691,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 23090,
+        "price": 24790,
         "label": "desde 3 articulos"
       },
       {
@@ -4548,20 +4548,20 @@ const _products = [
   {
     "id": "811",
     "sku": "08046",
-    "slug": "casaca-termica-pionner-811",
-    "name": "CASACA TERMICA PIONNER",
-    "price": 25390,
+    "slug": "casaca-termica-pionner-imperm-m-l-hombre-811",
+    "name": "CASACA TERMICA PIONNER IMPERM. M/L HOMBRE",
+    "price": 29389,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 25390,
+        "price": 29389,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 25390,
+        "price": 27390,
         "label": "desde 3 articulos"
       },
       {
@@ -4643,25 +4643,25 @@ const _products = [
   {
     "id": "814",
     "sku": "08279",
-    "slug": "parka-navigator-814",
-    "name": "Parka Navigator",
-    "price": 14791,
+    "slug": "chaqueta-termica-navigator-m-l-hombre-high-tech-814",
+    "name": "CHAQUETA TÉRMICA NAVIGATOR M/L HOMBRE HIGH TECH",
+    "price": 14890,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 14791,
+        "price": 14890,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 14791,
+        "price": 14890,
         "label": "desde 3 articulos"
       },
       {
         "minQuantity": 10,
-        "price": 14791,
+        "price": 14890,
         "label": "desde 10 articulos"
       }
     ],
@@ -4818,25 +4818,25 @@ const _products = [
   {
     "id": "816",
     "sku": "08309",
-    "slug": "parka-premium-816",
-    "name": "PARKA PREMIUM",
-    "price": 21090,
+    "slug": "chaqueta-3-en-1-premium-m-l-hombre-816",
+    "name": "CHAQUETA 3 EN 1 PREMIUM M/L HOMBRE",
+    "price": 20890,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 21090,
+        "price": 20890,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 21090,
+        "price": 20890,
         "label": "desde 3 articulos"
       },
       {
         "minQuantity": 10,
-        "price": 21090,
+        "price": 20890,
         "label": "desde 10 articulos"
       }
     ],
@@ -4915,18 +4915,18 @@ const _products = [
     "sku": "08640",
     "slug": "chaqueta-free-action-line-expert-hombre-m-l-817",
     "name": "CHAQUETA FREE ACTION LINE EXPERT HOMBRE M/L",
-    "price": 41090,
+    "price": 47491,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 41090,
+        "price": 47491,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 41090,
+        "price": 44189,
         "label": "desde 3 articulos"
       },
       {
@@ -5005,18 +5005,18 @@ const _products = [
     "sku": "08600",
     "slug": "chaqueta-iron-line-onix-hombre-m-l-818",
     "name": "CHAQUETA IRON LINE ÓNIX HOMBRE M/L",
-    "price": 34890,
+    "price": 40390,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 34890,
+        "price": 40390,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 34890,
+        "price": 37590,
         "label": "desde 3 articulos"
       },
       {
@@ -5095,18 +5095,18 @@ const _products = [
     "sku": "08650",
     "slug": "chaqueta-advance-line-sirius-hombre-m-l-819",
     "name": "CHAQUETA ADVANCE LINE SIRIUS HOMBRE M/L",
-    "price": 25690,
+    "price": 29790,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 25690,
+        "price": 29790,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 25690,
+        "price": 27690,
         "label": "desde 3 articulos"
       },
       {
@@ -5185,18 +5185,18 @@ const _products = [
     "sku": "08610",
     "slug": "chaqueta-practical-line-resist-hombre-m-l-820",
     "name": "CHAQUETA PRACTICAL LINE RESIST HOMBRE M/L",
-    "price": 25990,
+    "price": 30090,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 25990,
+        "price": 30090,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 25990,
+        "price": 27990,
         "label": "desde 3 articulos"
       },
       {
@@ -5275,18 +5275,18 @@ const _products = [
     "sku": "08520",
     "slug": "chaqueta-softshell-rhelmu-m-l-hombre-100-poly-821",
     "name": "CHAQUETA SOFTSHELL RHELMU M/L HOMBRE 100% POLY",
-    "price": 26090,
+    "price": 30190,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 26090,
+        "price": 30190,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 26090,
+        "price": 28090,
         "label": "desde 3 articulos"
       },
       {
@@ -5373,20 +5373,20 @@ const _products = [
   {
     "id": "823",
     "sku": "08401",
-    "slug": "parka-termica-impermeable-hi-vis-823",
-    "name": "Parka Térmica Impermeable Hi-Vis",
-    "price": 36690,
+    "slug": "parka-termica-alta-visibilidad-m-l-hombre-823",
+    "name": "PARKA TERMICA ALTA VISIBILIDAD M/L HOMBRE",
+    "price": 42390,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 36690,
+        "price": 42390,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 36690,
+        "price": 39390,
         "label": "desde 3 articulos"
       },
       {
@@ -5480,23 +5480,23 @@ const _products = [
     "sku": "08501",
     "slug": "chaqueta-softshell-alta-visibilidad-m-l-hombre-824",
     "name": "CHAQUETA SOFTSHELL ALTA VISIBILIDAD M/L HOMBRE",
-    "price": 29289,
+    "price": 11290,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 29289,
+        "price": 11290,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 29289,
+        "price": 11290,
         "label": "desde 3 articulos"
       },
       {
         "minQuantity": 10,
-        "price": 29289,
+        "price": 11290,
         "label": "desde 10 articulos"
       }
     ],
@@ -5568,20 +5568,20 @@ const _products = [
   {
     "id": "827",
     "sku": "08341",
-    "slug": "parka-light-827",
-    "name": "PARKA LIGHT",
-    "price": 22490,
+    "slug": "parka-termica-light-m-l-hombre-827",
+    "name": "PARKA TÉRMICA LIGHT M/L HOMBRE",
+    "price": 25990,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 22490,
+        "price": 25990,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 22490,
+        "price": 24190,
         "label": "desde 3 articulos"
       },
       {
@@ -5675,18 +5675,18 @@ const _products = [
     "sku": "08480",
     "slug": "parka-pukem-hombre-m-larga-100-poly-829",
     "name": "PARKA PUKEM  HOMBRE M/LARGA 100% POLY",
-    "price": 34290,
+    "price": 39690,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 34290,
+        "price": 39690,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 34290,
+        "price": 36890,
         "label": "desde 3 articulos"
       },
       {
@@ -5860,18 +5860,18 @@ const _products = [
     "sku": "08580",
     "slug": "chaqueta-executive-trade-hombre-m-l-833",
     "name": "CHAQUETA EXECUTIVE TRADE HOMBRE M/L",
-    "price": 30290,
+    "price": 34990,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 30290,
+        "price": 34990,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 30290,
+        "price": 32591,
         "label": "desde 3 articulos"
       },
       {
@@ -5948,20 +5948,20 @@ const _products = [
   {
     "id": "834",
     "sku": "08003",
-    "slug": "fix-oregon-parka-834",
-    "name": "FIX OREGÓN PARKA",
-    "price": 58890,
+    "slug": "parka-fix-oregon-termica-m-l-hombre-834",
+    "name": "PARKA FIX OREGÓN TÉRMICA M/L HOMBRE",
+    "price": 68089,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 58890,
+        "price": 68089,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 58890,
+        "price": 63290,
         "label": "desde 3 articulos"
       },
       {
@@ -6050,18 +6050,18 @@ const _products = [
     "sku": "08560",
     "slug": "chaqueta-executive-venture-hombre-m-l-835",
     "name": "CHAQUETA EXECUTIVE VENTURE HOMBRE M/L",
-    "price": 26090,
+    "price": 30190,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 26090,
+        "price": 30190,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 26090,
+        "price": 28090,
         "label": "desde 3 articulos"
       },
       {
@@ -6138,20 +6138,20 @@ const _products = [
   {
     "id": "836",
     "sku": "08001",
-    "slug": "sequoia-parka-3-en-1-d-836",
-    "name": "SEQUOIA PARKA 3 EN 1 D",
-    "price": 73690,
+    "slug": "parka-3-en-1-desmontable-secuoya-m-l-hombre-836",
+    "name": "PARKA 3 EN 1 DESMONTABLE SECUOYA M/L HOMBRE",
+    "price": 85190,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 73690,
+        "price": 85190,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 73690,
+        "price": 79190,
         "label": "desde 3 articulos"
       },
       {
@@ -6235,23 +6235,23 @@ const _products = [
     "sku": "08009",
     "slug": "parka-rapel-softshell-outwork-s-m-hombre-840",
     "name": "PARKA RAPEL SOFTSHELL OUTWORK S/M HOMBRE",
-    "price": 31090,
+    "price": 24990,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 31090,
+        "price": 24990,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 31090,
+        "price": 24990,
         "label": "desde 3 articulos"
       },
       {
         "minQuantity": 10,
-        "price": 31090,
+        "price": 24990,
         "label": "desde 10 articulos"
       }
     ],
@@ -6323,20 +6323,20 @@ const _products = [
   {
     "id": "841",
     "sku": "08007",
-    "slug": "pangue-softshell-outwork-parka-841",
-    "name": "PANGUE SOFTSHELL OUTWORK PARKA",
-    "price": 29190,
+    "slug": "parka-pangue-softshell-outwork-m-l-hombre-841",
+    "name": "PARKA PANGUE SOFTSHELL OUTWORK M/L HOMBRE",
+    "price": 33790,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 29190,
+        "price": 33790,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 29190,
+        "price": 31390,
         "label": "desde 3 articulos"
       },
       {
@@ -6413,20 +6413,20 @@ const _products = [
   {
     "id": "842",
     "sku": "08005",
-    "slug": "ralco-parka-softshell-842",
-    "name": "RALCO PARKA SOFTSHELL",
-    "price": 50590,
+    "slug": "parka-ralco-softshell-termica-m-l-hombre-842",
+    "name": "PARKA RALCO SOFTSHELL TÉRMICA M/L HOMBRE",
+    "price": 58490,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 50590,
+        "price": 58490,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 50590,
+        "price": 54390,
         "label": "desde 3 articulos"
       },
       {
@@ -6505,18 +6505,18 @@ const _products = [
     "sku": "08630",
     "slug": "chaqueta-executive-lofty-hombre-m-l-844",
     "name": "CHAQUETA EXECUTIVE LOFTY HOMBRE M/L",
-    "price": 55290,
+    "price": 63990,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 55290,
+        "price": 63990,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 55290,
+        "price": 59490,
         "label": "desde 3 articulos"
       },
       {
@@ -6595,18 +6595,18 @@ const _products = [
     "sku": "08620",
     "slug": "chaqueta-outwork-rusco-hombre-m-l-845",
     "name": "CHAQUETA OUTWORK RUSCO HOMBRE M/L",
-    "price": 53291,
+    "price": 61690,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 53291,
+        "price": 61690,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 53291,
+        "price": 57390,
         "label": "desde 3 articulos"
       },
       {
@@ -6685,18 +6685,18 @@ const _products = [
     "sku": "10581",
     "slug": "pantalon-cargo-gabardina-practical-line-hombre-850",
     "name": "PANTALON CARGO GABARDINA PRACTICAL LINE HOMBRE",
-    "price": 6890,
+    "price": 7890,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 6890,
+        "price": 7890,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 6890,
+        "price": 7390,
         "label": "desde 3 articulos"
       },
       {
@@ -6780,23 +6780,23 @@ const _products = [
     "sku": "10601",
     "slug": "pantalon-cargo-gabardina-practical-line-con-cinta-hombre-852",
     "name": "PANTALON CARGO GABARDINA PRACTICAL LINE CON CINTA  HOMBRE",
-    "price": 7390,
+    "price": 8290,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 7390,
+        "price": 8290,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 7390,
+        "price": 7690,
         "label": "desde 3 articulos"
       },
       {
         "minQuantity": 10,
-        "price": 7390,
+        "price": 7190,
         "label": "desde 10 articulos"
       }
     ],
@@ -6880,18 +6880,18 @@ const _products = [
     "sku": "10007",
     "slug": "pantalon-termico-hombre-exterior-854",
     "name": "PANTALON TERMICO HOMBRE EXTERIOR",
-    "price": 24490,
+    "price": 28290,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 24490,
+        "price": 28290,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 24490,
+        "price": 26289,
         "label": "desde 3 articulos"
       },
       {
@@ -6971,112 +6971,22 @@ const _products = [
     "url": "https://tworldstore.cl/pantalones/854-21261-pantalon-termico-hombre-exterior.html#/30-color-gris_oscuro/58-talla-xs"
   },
   {
-    "id": "857",
-    "sku": "10791",
-    "slug": "pantalon-cargo-trabajo-poplin-hombre-857",
-    "name": "PANTALON CARGO TRABAJO POPLIN HOMBRE",
-    "price": 1990,
-    "category": "10-hombre",
-    "categoryLabel": "Hombre",
-    "volumePricing": [
-      {
-        "minQuantity": 1,
-        "price": 1990,
-        "label": "C/U"
-      },
-      {
-        "minQuantity": 3,
-        "price": 1990,
-        "label": "desde 3 articulos"
-      },
-      {
-        "minQuantity": 10,
-        "price": 1990,
-        "label": "desde 10 articulos"
-      }
-    ],
-    "shortDesc": "",
-    "fullDesc": "",
-    "image": "https://tworldstore.cl/5828-home_default/pantalon-cargo-trabajo-poplin-hombre.jpg",
-    "hoverImage": "https://tworldstore.cl/5829-home_default/pantalon-cargo-trabajo-poplin-hombre.jpg",
-    "gallery": [
-      "https://tworldstore.cl/5828-home_default/pantalon-cargo-trabajo-poplin-hombre.jpg",
-      "https://tworldstore.cl/5829-home_default/pantalon-cargo-trabajo-poplin-hombre.jpg",
-      "https://tworldstore.cl/5830-home_default/pantalon-cargo-trabajo-poplin-hombre.jpg",
-      "https://tworldstore.cl/5831-home_default/pantalon-cargo-trabajo-poplin-hombre.jpg",
-      "https://tworldstore.cl/5832-home_default/pantalon-cargo-trabajo-poplin-hombre.jpg",
-      "https://tworldstore.cl/5833-home_default/pantalon-cargo-trabajo-poplin-hombre.jpg"
-    ],
-    "variants": [
-      {
-        "size": "XS",
-        "stock": 10
-      },
-      {
-        "size": "S",
-        "stock": 10
-      },
-      {
-        "size": "M",
-        "stock": 10
-      },
-      {
-        "size": "L",
-        "stock": 10
-      },
-      {
-        "size": "XL",
-        "stock": 10
-      },
-      {
-        "size": "XXL",
-        "stock": 10
-      },
-      {
-        "size": "XXXL",
-        "stock": 10
-      }
-    ],
-    "sizes": [
-      "XS",
-      "S",
-      "M",
-      "L",
-      "XL",
-      "XXL",
-      "XXXL"
-    ],
-    "colors": [
-      {
-        "name": "GRIS",
-        "hex": "#cccccc",
-        "url": ""
-      },
-      {
-        "name": "AZUL",
-        "hex": "#cccccc",
-        "url": ""
-      }
-    ],
-    "url": "https://tworldstore.cl/pantalones/857-21309-pantalon-cargo-trabajo-poplin-hombre.html#/1-talla-s/34-color-gris"
-  },
-  {
     "id": "859",
     "sku": "30088",
     "slug": "pantalon-cargo-alerce-bicolor-rodilla-reforzada-hombre-859",
     "name": "PANTALON CARGO ALERCE BICOLOR RODILLA REFORZADA  HOMBRE",
-    "price": 14691,
+    "price": 16990,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 14691,
+        "price": 16990,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 14691,
+        "price": 15790,
         "label": "desde 3 articulos"
       },
       {
@@ -7175,18 +7085,18 @@ const _products = [
     "sku": "30038",
     "slug": "pantalon-cargo-alerce-hombre-860",
     "name": "PANTALON CARGO ALERCE  HOMBRE",
-    "price": 13090,
+    "price": 15190,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 13090,
+        "price": 15190,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 13090,
+        "price": 14090,
         "label": "desde 3 articulos"
       },
       {
@@ -7280,18 +7190,18 @@ const _products = [
     "sku": "30058",
     "slug": "pantalon-cargo-alerce-rodillas-reforzadas-hombre-861",
     "name": "PANTALON CARGO ALERCE RODILLAS REFORZADAS  HOMBRE",
-    "price": 14691,
+    "price": 16990,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 14691,
+        "price": 16990,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 14691,
+        "price": 15790,
         "label": "desde 3 articulos"
       },
       {
@@ -7385,18 +7295,18 @@ const _products = [
     "sku": "30018",
     "slug": "pantalon-actium-canvas-hombre-862",
     "name": "PANTALON ACTIUM CANVAS HOMBRE",
-    "price": 14489,
+    "price": 16690,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 14489,
+        "price": 16690,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 14489,
+        "price": 15590,
         "label": "desde 3 articulos"
       },
       {
@@ -7475,18 +7385,18 @@ const _products = [
     "sku": "30078",
     "slug": "pantalon-cargo-alerce-c-cinta-reflectiva-hombre-863",
     "name": "PANTALON CARGO ALERCE C/CINTA REFLECTIVA  HOMBRE",
-    "price": 13790,
+    "price": 15990,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 13790,
+        "price": 15990,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 13790,
+        "price": 14890,
         "label": "desde 3 articulos"
       },
       {
@@ -7575,18 +7485,18 @@ const _products = [
     "sku": "10841",
     "slug": "pantalon-free-action-line-expert-hombre-865",
     "name": "PANTALON FREE ACTION LINE EXPERT HOMBRE",
-    "price": 27990,
+    "price": 32389,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 27990,
+        "price": 32389,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 27990,
+        "price": 30090,
         "label": "desde 3 articulos"
       },
       {
@@ -7665,18 +7575,18 @@ const _products = [
     "sku": "10851",
     "slug": "pantalon-advance-line-sirius-hombre-866",
     "name": "PANTALON ADVANCE LINE SIRIUS HOMBRE",
-    "price": 24090,
+    "price": 27890,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 24090,
+        "price": 27890,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 24090,
+        "price": 25890,
         "label": "desde 3 articulos"
       },
       {
@@ -7755,18 +7665,18 @@ const _products = [
     "sku": "10881",
     "slug": "pantalon-iron-line-astano-hombre-867",
     "name": "PANTALON IRON LINE ASTANO HOMBRE",
-    "price": 27590,
+    "price": 31890,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 27590,
+        "price": 31890,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 27590,
+        "price": 29691,
         "label": "desde 3 articulos"
       },
       {
@@ -7838,18 +7748,18 @@ const _products = [
     "sku": "10861",
     "slug": "pantalon-iron-line-onix-hombre-868",
     "name": "PANTALON IRON LINE ÓNIX HOMBRE",
-    "price": 32790,
+    "price": 37990,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 32790,
+        "price": 37990,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 32790,
+        "price": 35289,
         "label": "desde 3 articulos"
       },
       {
@@ -7928,18 +7838,18 @@ const _products = [
     "sku": "10019",
     "slug": "pantalon-manio-advance-line-hombre-869",
     "name": "PANTALON MAÑIO ADVANCE LINE HOMBRE",
-    "price": 28090,
+    "price": 32491,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 28090,
+        "price": 32491,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 28090,
+        "price": 30190,
         "label": "desde 3 articulos"
       },
       {
@@ -8023,18 +7933,18 @@ const _products = [
     "sku": "10701",
     "slug": "pantalon-cargo-tulipero-move-hombre-870",
     "name": "PANTALON CARGO TULIPERO MOVE HOMBRE",
-    "price": 12590,
+    "price": 14591,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 12590,
+        "price": 14591,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 12590,
+        "price": 13590,
         "label": "desde 3 articulos"
       },
       {
@@ -8133,18 +8043,18 @@ const _products = [
     "sku": "10721",
     "slug": "pantalon-cargo-tulipero-effective-hombre-872",
     "name": "PANTALON CARGO TULIPERO EFFECTIVE HOMBRE",
-    "price": 24490,
+    "price": 28290,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 24490,
+        "price": 28290,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 24490,
+        "price": 26289,
         "label": "desde 3 articulos"
       },
       {
@@ -8238,18 +8148,18 @@ const _products = [
     "sku": "10761",
     "slug": "pantalon-cargo-tulipero-strong-hombre-873",
     "name": "PANTALON CARGO TULIPERO STRONG HOMBRE",
-    "price": 28690,
+    "price": 33190,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 28690,
+        "price": 33190,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 28690,
+        "price": 30890,
         "label": "desde 3 articulos"
       },
       {
@@ -8423,18 +8333,18 @@ const _products = [
     "sku": "10741",
     "slug": "pantalon-cargo-tulipero-pro-hombre-875",
     "name": "PANTALON CARGO TULIPERO PRO  HOMBRE",
-    "price": 20389,
+    "price": 23591,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 20389,
+        "price": 23591,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 20389,
+        "price": 21890,
         "label": "desde 3 articulos"
       },
       {
@@ -8533,18 +8443,18 @@ const _products = [
     "sku": "10871",
     "slug": "pantalon-resist-bi-color-hombre-878",
     "name": "Pantalón RESIST Bi-Color Hombre",
-    "price": 24590,
+    "price": 28390,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 24590,
+        "price": 28390,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 24590,
+        "price": 26389,
         "label": "desde 3 articulos"
       },
       {
@@ -8623,18 +8533,18 @@ const _products = [
     "sku": "10381",
     "slug": "pantalon-alta-visibilidad-bi-color-clase-2-hombre-879",
     "name": "PANTALON ALTA VISIBILIDAD BI-COLOR CLASE 2 HOMBRE",
-    "price": 16090,
+    "price": 18590,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 16090,
+        "price": 18590,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 16090,
+        "price": 17290,
         "label": "desde 3 articulos"
       },
       {
@@ -8713,18 +8623,18 @@ const _products = [
     "sku": "10361",
     "slug": "pantalon-alta-visibilidad-bi-color-clase-1-hombre-880",
     "name": "PANTALON ALTA VISIBILIDAD BI-COLOR CLASE 1 HOMBRE",
-    "price": 15590,
+    "price": 17990,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 15590,
+        "price": 17990,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 15590,
+        "price": 16690,
         "label": "desde 3 articulos"
       },
       {
@@ -8803,18 +8713,18 @@ const _products = [
     "sku": "10057",
     "slug": "pantalon-cargo-classic-hombre-65-poly-35-alg-881",
     "name": "PANTALON CARGO CLASSIC HOMBRE 65% POLY 35% ALG",
-    "price": 11389,
+    "price": 13190,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 11389,
+        "price": 13190,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 11389,
+        "price": 12290,
         "label": "desde 3 articulos"
       },
       {
@@ -8903,18 +8813,18 @@ const _products = [
     "sku": "10107",
     "slug": "pantalon-premium-hombre-65-poly-35-alg-883",
     "name": "PANTALON PREMIUM HOMBRE 65% POLY 35% ALG",
-    "price": 9990,
+    "price": 11489,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 9990,
+        "price": 11489,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 9990,
+        "price": 10690,
         "label": "desde 3 articulos"
       },
       {
@@ -9003,18 +8913,18 @@ const _products = [
     "sku": "10227",
     "slug": "pantalon-classic-s-pinza-hombre-65-poly-35-alg-884",
     "name": "PANTALON CLASSIC S/PINZA HOMBRE 65% POLY 35% ALG",
-    "price": 9990,
+    "price": 11489,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 9990,
+        "price": 11489,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 9990,
+        "price": 10690,
         "label": "desde 3 articulos"
       },
       {
@@ -9103,18 +9013,18 @@ const _products = [
     "sku": "10168",
     "slug": "pantalon-cargo-executive-hombre-65-poly-35-alg-885",
     "name": "PANTALÓN CARGO EXECUTIVE HOMBRE 65% POLY 35% ALG",
-    "price": 16190,
+    "price": 18690,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 16190,
+        "price": 18690,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 16190,
+        "price": 17389,
         "label": "desde 3 articulos"
       },
       {
@@ -9198,18 +9108,18 @@ const _products = [
     "sku": "10341",
     "slug": "pantalon-executive-casual-slim-hombre-887",
     "name": "PANTALON EXECUTIVE CASUAL SLIM HOMBRE",
-    "price": 16090,
+    "price": 18590,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 16090,
+        "price": 18590,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 16090,
+        "price": 17290,
         "label": "desde 3 articulos"
       },
       {
@@ -9293,18 +9203,18 @@ const _products = [
     "sku": "10801",
     "slug": "pantalon-executive-amount-hombre-m-l-888",
     "name": "PANTALON EXECUTIVE AMOUNT HOMBRE M/L",
-    "price": 21490,
+    "price": 24890,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 21490,
+        "price": 24890,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 21490,
+        "price": 23190,
         "label": "desde 3 articulos"
       },
       {
@@ -9388,18 +9298,18 @@ const _products = [
     "sku": "10821",
     "slug": "pantalon-executive-business-hombre-890",
     "name": "PANTALON EXECUTIVE BUSINESS HOMBRE",
-    "price": 16790,
+    "price": 19490,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 16790,
+        "price": 19490,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 16790,
+        "price": 18090,
         "label": "desde 3 articulos"
       },
       {
@@ -9478,18 +9388,18 @@ const _products = [
     "sku": "10661",
     "slug": "pantalon-outwork-ripstop-mollen-hombre-892",
     "name": "PANTALON OUTWORK RIPSTOP MOLLEN  HOMBRE",
-    "price": 22790,
+    "price": 26389,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 22790,
+        "price": 26389,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 22790,
+        "price": 24490,
         "label": "desde 3 articulos"
       },
       {
@@ -9573,18 +9483,18 @@ const _products = [
     "sku": "10681",
     "slug": "pantalon-outwork-ripstop-acacio-hombre-893",
     "name": "PANTALON OUTWORK RIPSTOP ACACIO HOMBRE",
-    "price": 21190,
+    "price": 24490,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 21190,
+        "price": 24490,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 21190,
+        "price": 22790,
         "label": "desde 3 articulos"
       },
       {
@@ -9668,18 +9578,18 @@ const _products = [
     "sku": "10010",
     "slug": "pantalon-sauco-hombre-897",
     "name": "PANTALÓN SAUCO HOMBRE",
-    "price": 26990,
+    "price": 31190,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 26990,
+        "price": 31190,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 26990,
+        "price": 28990,
         "label": "desde 3 articulos"
       },
       {
@@ -9763,18 +9673,18 @@ const _products = [
     "sku": "10015",
     "slug": "pantalon-rauli-hombre-898",
     "name": "PANTALON RAULI HOMBRE",
-    "price": 24190,
+    "price": 27990,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 24190,
+        "price": 27990,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 24190,
+        "price": 26090,
         "label": "desde 3 articulos"
       },
       {
@@ -9856,20 +9766,20 @@ const _products = [
   {
     "id": "903",
     "sku": "12446",
-    "slug": "chaleco-reflectivo-hombre-903",
-    "name": "CHALECO REFLECTIVO HOMBRE",
-    "price": 2090,
+    "slug": "chaleco-reflectivo-clase-3-hombre-903",
+    "name": "CHALECO REFLECTIVO CLASE 3 HOMBRE",
+    "price": 2489,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 2090,
+        "price": 2489,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 2090,
+        "price": 2290,
         "label": "desde 3 articulos"
       },
       {
@@ -9943,18 +9853,18 @@ const _products = [
     "sku": "13069",
     "slug": "primera-capa-practical-line-hombre-m-larga-905",
     "name": "PRIMERA CAPA  PRACTICAL LINE HOMBRE M/LARGA",
-    "price": 6690,
+    "price": 7690,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 6690,
+        "price": 7690,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 6690,
+        "price": 7190,
         "label": "desde 3 articulos"
       },
       {
@@ -10282,18 +10192,18 @@ const _products = [
     "sku": "11131",
     "slug": "overol-gabardina-practical-line-hombre-m-larga-913",
     "name": "OVEROL GABARDINA PRACTICAL LINE HOMBRE M/LARGA",
-    "price": 11691,
+    "price": 13590,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 11691,
+        "price": 13590,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 11691,
+        "price": 12590,
         "label": "desde 3 articulos"
       },
       {
@@ -10382,18 +10292,18 @@ const _products = [
     "sku": "31018",
     "slug": "overol-actium-canvas-hombre-914",
     "name": "OVEROL ACTIUM CANVAS HOMBRE",
-    "price": 24990,
+    "price": 28890,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 24990,
+        "price": 28890,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 24990,
+        "price": 26890,
         "label": "desde 3 articulos"
       },
       {
@@ -10472,18 +10382,18 @@ const _products = [
     "sku": "55111",
     "slug": "bolsillo-desmontable-tulipero-strong-hombre-916",
     "name": "BOLSILLO DESMONTABLE TULIPERO STRONG HOMBRE",
-    "price": 8489,
+    "price": 9890,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 8489,
+        "price": 9890,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 8489,
+        "price": 9190,
         "label": "desde 3 articulos"
       },
       {
@@ -10659,18 +10569,18 @@ const _products = [
     "sku": "55101",
     "slug": "bolsillo-desmontable-tulipero-pro-hombre-918",
     "name": "BOLSILLO DESMONTABLE TULIPERO PRO HOMBRE",
-    "price": 7890,
+    "price": 9090,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 7890,
+        "price": 9090,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 7890,
+        "price": 8489,
         "label": "desde 3 articulos"
       },
       {
@@ -10765,18 +10675,18 @@ const _products = [
     "sku": "02426",
     "slug": "polera-polo-hibrida-c-reflectiva-m-larga-753",
     "name": "POLERA POLO HIBRIDA C/REFLECTIVA  M/LARGA",
-    "price": 9290,
+    "price": 10790,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 9290,
+        "price": 10790,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 9290,
+        "price": 9990,
         "label": "desde 3 articulos"
       },
       {
@@ -10863,20 +10773,20 @@ const _products = [
   {
     "id": "936",
     "sku": "08381",
-    "slug": "knit-fleece-jacket-936",
-    "name": "Knit Fleece Jacket",
-    "price": 19890,
+    "slug": "chaqueta-knit-fleece-executive-line-hombre-m-l-936",
+    "name": "CHAQUETA KNIT FLEECE EXECUTIVE LINE HOMBRE M/L",
+    "price": 22990,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 19890,
+        "price": 22990,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 19890,
+        "price": 21390,
         "label": "desde 3 articulos"
       },
       {
@@ -10955,18 +10865,18 @@ const _products = [
     "sku": "03007",
     "slug": "micropolar-m-l-hombre-100-poly-939",
     "name": "MICROPOLAR M/L HOMBRE 100% POLY",
-    "price": 9290,
+    "price": 10790,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 9290,
+        "price": 10790,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 9290,
+        "price": 9990,
         "label": "desde 3 articulos"
       },
       {
@@ -11068,18 +10978,18 @@ const _products = [
     "sku": "03269",
     "slug": "micropolar-hi-vis-clase-3-m-l-hombre-100-poly-944",
     "name": "MICROPOLAR HI VIS CLASE 3 M/L HOMBRE 100% POLY",
-    "price": 15490,
+    "price": 17890,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 15490,
+        "price": 17890,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 15490,
+        "price": 16590,
         "label": "desde 3 articulos"
       },
       {
@@ -11158,18 +11068,18 @@ const _products = [
     "sku": "08660",
     "slug": "parka-termica-alta-visibilidad-clase-3-m-l-hombre-946",
     "name": "PARKA TERMICA ALTA VISIBILIDAD CLASE 3 M/L HOMBRE",
-    "price": 38189,
+    "price": 44090,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 38189,
+        "price": 44090,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 38189,
+        "price": 40990,
         "label": "desde 3 articulos"
       },
       {
@@ -11253,18 +11163,18 @@ const _products = [
     "sku": "30326",
     "slug": "jardinera-termica-hi-vis-certificada-hombre-100-poly-948",
     "name": "JARDINERA TERMICA HI VIS CERTIFICADA  HOMBRE 100% POLY",
-    "price": 37090,
+    "price": 42790,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 37090,
+        "price": 42790,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 37090,
+        "price": 39790,
         "label": "desde 3 articulos"
       },
       {
@@ -11348,18 +11258,18 @@ const _products = [
     "sku": "01014",
     "slug": "polera-100-algodon-manga-corta-735",
     "name": "Polera 100% Algodón Manga Corta",
-    "price": 3990,
+    "price": 4590,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 3990,
+        "price": 4590,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 3990,
+        "price": 4290,
         "label": "desde 3 articulos"
       },
       {
@@ -11458,18 +11368,18 @@ const _products = [
     "sku": "48098",
     "slug": "chaqueta-ignifuga-antiacida-100-algodon-manga-larga-hombre-949",
     "name": "Chaqueta Ignífuga Antiácida 100% Algodón Manga Larga Hombre",
-    "price": 38790,
+    "price": 44890,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 38790,
+        "price": 44890,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 38790,
+        "price": 41790,
         "label": "desde 3 articulos"
       },
       {
@@ -11541,18 +11451,18 @@ const _products = [
     "sku": "50098",
     "slug": "pantalon-ignifugo-antiacido-100-algodon-hombre-950",
     "name": "Pantalón Ignifugo Antiácido 100% Algodón Hombre",
-    "price": 35491,
+    "price": 40990,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 35491,
+        "price": 40990,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 35491,
+        "price": 38090,
         "label": "desde 3 articulos"
       },
       {
@@ -11624,18 +11534,18 @@ const _products = [
     "sku": "10901",
     "slug": "pantalon-cargo-new-edition-hombre-951",
     "name": "Pantalón Cargo New Edition Hombre",
-    "price": 11589,
+    "price": 13490,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 11589,
+        "price": 13490,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 11589,
+        "price": 12490,
         "label": "desde 3 articulos"
       },
       {
@@ -11724,18 +11634,18 @@ const _products = [
     "sku": "30316",
     "slug": "jardinera-termica-alerce-certificada-hombre-955",
     "name": "Jardinera Térmica Alerce Certificada Hombre",
-    "price": 34090,
+    "price": 39490,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 34090,
+        "price": 39490,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 34090,
+        "price": 36690,
         "label": "desde 3 articulos"
       },
       {
@@ -11807,18 +11717,18 @@ const _products = [
     "sku": "08411",
     "slug": "parka-termica-practical-line-manga-larga-hombre-956",
     "name": "Parka Térmica Practical Line Manga Larga Hombre",
-    "price": 18390,
+    "price": 21290,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 18390,
+        "price": 21290,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 18390,
+        "price": 19790,
         "label": "desde 3 articulos"
       },
       {
@@ -11902,18 +11812,18 @@ const _products = [
     "sku": "10582",
     "slug": "pantalon-cargo-gabardina-forro-polar-hombre-957",
     "name": "Pantalón Cargo Gabardina Forro Polar Hombre",
-    "price": 9790,
+    "price": 11389,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 9790,
+        "price": 11389,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 9790,
+        "price": 10590,
         "label": "desde 3 articulos"
       },
       {
@@ -11976,13 +11886,13 @@ const _products = [
     "colors": [
       {
         "name": "NEGRO",
-        "hex": "#cccccc",
-        "url": ""
+        "hex": "#000000",
+        "url": "https://tworldstore.cl/inicio/957-24305-pantalon-cargo-gabardina-forro-polar-hombre.html#/29-talla-s/31-color-negro"
       },
       {
         "name": "AZUL",
-        "hex": "#cccccc",
-        "url": ""
+        "hex": "#032089",
+        "url": "https://tworldstore.cl/inicio/957-24311-pantalon-cargo-gabardina-forro-polar-hombre.html#/29-talla-s/172-color-azul"
       }
     ],
     "url": "https://tworldstore.cl/inicio/957-24305-pantalon-cargo-gabardina-forro-polar-hombre.html#/29-talla-s/31-color-negro"
@@ -11992,18 +11902,18 @@ const _products = [
     "sku": "08680",
     "slug": "parka-termica-alerce-certificada-hombre-959",
     "name": "Parka Térmica Alerce Certificada Hombre",
-    "price": 40390,
+    "price": 46690,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 40390,
+        "price": 46690,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 40390,
+        "price": 43390,
         "label": "desde 3 articulos"
       },
       {
@@ -12075,18 +11985,18 @@ const _products = [
     "sku": "53010",
     "slug": "primera-capa-ignifuga-antiestatica-hombre-961",
     "name": "Primera Capa Ignífuga Antiestática Hombre",
-    "price": 59690,
+    "price": 69090,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 59690,
+        "price": 69090,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 59690,
+        "price": 64190,
         "label": "desde 3 articulos"
       },
       {
@@ -12158,18 +12068,18 @@ const _products = [
     "sku": "49010",
     "slug": "poleron-ignifugo-antiestatico-manga-larga-hombre-962",
     "name": "Polerón Ignifugo Antiestático Manga Larga Hombre",
-    "price": 55790,
+    "price": 64490,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 55790,
+        "price": 64490,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 55790,
+        "price": 59990,
         "label": "desde 3 articulos"
       },
       {
@@ -12241,18 +12151,18 @@ const _products = [
     "sku": "42010",
     "slug": "polera-polo-ignifuga-antiestatica-manga-larga-hombre-963",
     "name": "Polera Polo Ignifuga Antiestática Manga Larga Hombre",
-    "price": 40290,
+    "price": 46690,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 40290,
+        "price": 46690,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 40290,
+        "price": 43390,
         "label": "desde 3 articulos"
       },
       {
@@ -12324,18 +12234,18 @@ const _products = [
     "sku": "10202",
     "slug": "jeans-free-action-line-hombre-965",
     "name": "Jeans Free Action Line Hombre",
-    "price": 11890,
+    "price": 13690,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 11890,
+        "price": 13690,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 11890,
+        "price": 12790,
         "label": "desde 3 articulos"
       },
       {
@@ -12407,18 +12317,18 @@ const _products = [
     "sku": "10201",
     "slug": "jeans-practical-line-100-algodon-hombre-967",
     "name": "Jeans Practical Line 100% Algodón Hombre",
-    "price": 12590,
+    "price": 14591,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 12590,
+        "price": 14591,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 12590,
+        "price": 13590,
         "label": "desde 3 articulos"
       },
       {
@@ -12490,18 +12400,18 @@ const _products = [
     "sku": "46010",
     "slug": "camisa-ignifuga-antiestatica-technic-m-l-hombre-97-alg-3-f-carbon-969",
     "name": "CAMISA IGNIFUGA ANTIESTATICA TECHNIC M/L HOMBRE 97% ALG 3% F. CARBON",
-    "price": 33890,
+    "price": 39190,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 33890,
+        "price": 39190,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 33890,
+        "price": 36390,
         "label": "desde 3 articulos"
       },
       {
@@ -12573,18 +12483,18 @@ const _products = [
     "sku": "48078",
     "slug": "chaqueta-ignifuga-antiestatica-technic-m-l-hombre-100-alg-970",
     "name": "CHAQUETA IGNIFUGA ANTIESTATICA TECHNIC M/L HOMBRE 100% ALG",
-    "price": 45490,
+    "price": 52690,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 45490,
+        "price": 52690,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 45490,
+        "price": 48990,
         "label": "desde 3 articulos"
       },
       {
@@ -12656,18 +12566,18 @@ const _products = [
     "sku": "50078",
     "slug": "pantalon-ignifugo-antiestatico-technic-hombre-100-alg-971",
     "name": "PANTALON IGNIFUGO ANTIESTATICO TECHNIC  HOMBRE 100% ALG",
-    "price": 39190,
+    "price": 45390,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 39190,
+        "price": 45390,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 39190,
+        "price": 42190,
         "label": "desde 3 articulos"
       },
       {
@@ -12739,18 +12649,18 @@ const _products = [
     "sku": "51068",
     "slug": "overol-ignifugo-antiestatico-technic-hombre-100-alg-972",
     "name": "OVEROL IGNIFUGO ANTIESTATICO TECHNIC  HOMBRE 100% ALG",
-    "price": 59890,
+    "price": 69190,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 59890,
+        "price": 69190,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 59890,
+        "price": 64390,
         "label": "desde 3 articulos"
       },
       {
@@ -12903,18 +12813,18 @@ const _products = [
     "sku": "08041",
     "slug": "chaqueta-softshell-basic-hombre-981",
     "name": "CHAQUETA SOFTSHELL BASIC HOMBRE",
-    "price": 17990,
+    "price": 20790,
     "category": "10-hombre",
     "categoryLabel": "Hombre",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 17990,
+        "price": 20790,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 17990,
+        "price": 19290,
         "label": "desde 3 articulos"
       },
       {
@@ -12993,18 +12903,18 @@ const _products = [
     "sku": "02166",
     "slug": "polera-polo-m-l-mujer-60-alg-40-poly-751",
     "name": "POLERA POLO M/L MUJER 60% ALG 40% POLY",
-    "price": 6390,
+    "price": 7390,
     "category": "11-mujer",
     "categoryLabel": "Mujer",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 6390,
+        "price": 7390,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 6390,
+        "price": 6890,
         "label": "desde 3 articulos"
       },
       {
@@ -13118,18 +13028,18 @@ const _products = [
     "sku": "02156",
     "slug": "polera-polo-m-c-mujer-60-alg-40-poly-752",
     "name": "POLERA POLO M/C MUJER 60% ALG 40% POLY",
-    "price": 5290,
+    "price": 6090,
     "category": "11-mujer",
     "categoryLabel": "Mujer",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 5290,
+        "price": 6090,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 5290,
+        "price": 5691,
         "label": "desde 3 articulos"
       },
       {
@@ -13238,18 +13148,18 @@ const _products = [
     "sku": "02086",
     "slug": "polera-polo-m-l-mujer-80-alg-20-poly-758",
     "name": "POLERA POLO M/L MUJER 80% ALG 20% POLY",
-    "price": 7890,
+    "price": 9090,
     "category": "11-mujer",
     "categoryLabel": "Mujer",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 7890,
+        "price": 9090,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 7890,
+        "price": 8489,
         "label": "desde 3 articulos"
       },
       {
@@ -13348,18 +13258,18 @@ const _products = [
     "sku": "02076",
     "slug": "polera-polo-m-c-mujer-80-alg-20-poly-762",
     "name": "POLERA POLO M/C MUJER 80% ALG 20% POLY",
-    "price": 6490,
+    "price": 7490,
     "category": "11-mujer",
     "categoryLabel": "Mujer",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 6490,
+        "price": 7490,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 6490,
+        "price": 6990,
         "label": "desde 3 articulos"
       },
       {
@@ -13458,18 +13368,18 @@ const _products = [
     "sku": "02356",
     "slug": "polera-polo-comfort-spandex-m-l-mujer-765",
     "name": "POLERA POLO COMFORT SPANDEX M/L MUJER",
-    "price": 7090,
+    "price": 8190,
     "category": "11-mujer",
     "categoryLabel": "Mujer",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 7090,
+        "price": 8190,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 7090,
+        "price": 7590,
         "label": "desde 3 articulos"
       },
       {
@@ -13563,18 +13473,18 @@ const _products = [
     "sku": "02336",
     "slug": "polera-polo-comfort-spandex-m-c-mujer-766",
     "name": "POLERA POLO COMFORT SPANDEX M/C MUJER",
-    "price": 6190,
+    "price": 7090,
     "category": "11-mujer",
     "categoryLabel": "Mujer",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 6190,
+        "price": 7090,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 6190,
+        "price": 6590,
         "label": "desde 3 articulos"
       },
       {
@@ -13668,23 +13578,23 @@ const _products = [
     "sku": "02316",
     "slug": "polera-polo-dryfresh-smooth-60-algodon-manga-larga-mujer-771",
     "name": "Polera Polo DryFresh Smooth® 60% Algodón Manga Larga Mujer",
-    "price": 5390,
+    "price": 7290,
     "category": "11-mujer",
     "categoryLabel": "Mujer",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 5390,
+        "price": 7290,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 5390,
+        "price": 6790,
         "label": "desde 3 articulos"
       },
       {
         "minQuantity": 10,
-        "price": 5390,
+        "price": 6290,
         "label": "desde 10 articulos"
       }
     ],
@@ -13778,18 +13688,18 @@ const _products = [
     "sku": "02266",
     "slug": "polera-polo-dryfresh-m-c-mujer-60-alg-40-poly-772",
     "name": "POLERA POLO DRYFRESH M/C MUJER 60% ALG 40% POLY",
-    "price": 6290,
+    "price": 7190,
     "category": "11-mujer",
     "categoryLabel": "Mujer",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 6290,
+        "price": 7190,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 6290,
+        "price": 6690,
         "label": "desde 3 articulos"
       },
       {
@@ -13893,18 +13803,18 @@ const _products = [
     "sku": "02276",
     "slug": "polera-polo-dryfresh-m-l-mujer-60-alg-40-poly-773",
     "name": "POLERA POLO DRYFRESH M/L MUJER 60% ALG 40% POLY",
-    "price": 7090,
+    "price": 8190,
     "category": "11-mujer",
     "categoryLabel": "Mujer",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 7090,
+        "price": 8190,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 7090,
+        "price": 7590,
         "label": "desde 3 articulos"
       },
       {
@@ -14008,23 +13918,23 @@ const _products = [
     "sku": "02296",
     "slug": "polera-polo-dryfresh-smooth-m-c-mujer-774",
     "name": "POLERA POLO DRYFRESH SMOOTH M/C MUJER",
-    "price": 2489,
+    "price": 6090,
     "category": "11-mujer",
     "categoryLabel": "Mujer",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 2489,
+        "price": 6090,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 2489,
+        "price": 5691,
         "label": "desde 3 articulos"
       },
       {
         "minQuantity": 10,
-        "price": 2489,
+        "price": 5290,
         "label": "desde 10 articulos"
       }
     ],
@@ -14118,23 +14028,23 @@ const _products = [
     "sku": "03159",
     "slug": "micropolar-termico-m-l-mujer-100-poly-778",
     "name": "MICROPOLAR TÉRMICO M/L MUJER 100% POLY",
-    "price": 5589,
+    "price": 6190,
     "category": "11-mujer",
     "categoryLabel": "Mujer",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 5589,
+        "price": 6190,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 5589,
+        "price": 6190,
         "label": "desde 3 articulos"
       },
       {
         "minQuantity": 10,
-        "price": 5589,
+        "price": 6190,
         "label": "desde 10 articulos"
       }
     ],
@@ -14213,18 +14123,18 @@ const _products = [
     "sku": "03129",
     "slug": "micropolar-expedition-m-l-mujer-100-poly-781",
     "name": "MICROPOLAR EXPEDITION M/L MUJER 100% POLY",
-    "price": 25690,
+    "price": 29691,
     "category": "11-mujer",
     "categoryLabel": "Mujer",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 25690,
+        "price": 29691,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 25690,
+        "price": 27590,
         "label": "desde 3 articulos"
       },
       {
@@ -14308,18 +14218,18 @@ const _products = [
     "sku": "03089",
     "slug": "micropolar-tela-plana-mujer-m-l-785",
     "name": "MICROPOLAR TELA PLANA  MUJER M/L",
-    "price": 15190,
+    "price": 17591,
     "category": "11-mujer",
     "categoryLabel": "Mujer",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 15190,
+        "price": 17591,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 15190,
+        "price": 16390,
         "label": "desde 3 articulos"
       },
       {
@@ -14408,18 +14318,18 @@ const _products = [
     "sku": "03149",
     "slug": "micropolar-navigator-m-l-mujer-100-poly-787",
     "name": "MICROPOLAR NAVIGATOR M/L MUJER 100% POLY",
-    "price": 17591,
+    "price": 20389,
     "category": "11-mujer",
     "categoryLabel": "Mujer",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 17591,
+        "price": 20389,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 17591,
+        "price": 18890,
         "label": "desde 3 articulos"
       },
       {
@@ -14496,20 +14406,20 @@ const _products = [
   {
     "id": "792",
     "sku": "06052",
-    "slug": "blusa-oxford-classic-792",
-    "name": "BLUSA OXFORD CLASSIC",
-    "price": 8691,
+    "slug": "blusa-oxford-classic-m-l-mujer-792",
+    "name": "BLUSA OXFORD CLASSIC M/L MUJER",
+    "price": 10090,
     "category": "11-mujer",
     "categoryLabel": "Mujer",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 8691,
+        "price": 10090,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 8691,
+        "price": 9390,
         "label": "desde 3 articulos"
       },
       {
@@ -14586,20 +14496,20 @@ const _products = [
   {
     "id": "795",
     "sku": "06281",
-    "slug": "blusa-oxford-light-795",
-    "name": "BLUSA OXFORD LIGHT",
-    "price": 9790,
+    "slug": "blusa-oxford-light-m-l-mujer-795",
+    "name": "BLUSA OXFORD LIGHT M/L MUJER",
+    "price": 11290,
     "category": "11-mujer",
     "categoryLabel": "Mujer",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 9790,
+        "price": 11290,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 9790,
+        "price": 10490,
         "label": "desde 3 articulos"
       },
       {
@@ -14681,20 +14591,20 @@ const _products = [
   {
     "id": "796",
     "sku": "06301",
-    "slug": "blusa-trevira-light-796",
-    "name": "BLUSA TREVIRA LIGHT",
-    "price": 9690,
+    "slug": "blusa-trevira-light-m-l-mujer-796",
+    "name": "BLUSA TREVIRA LIGHT M/L MUJER",
+    "price": 11190,
     "category": "11-mujer",
     "categoryLabel": "Mujer",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 9690,
+        "price": 11190,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 9690,
+        "price": 10390,
         "label": "desde 3 articulos"
       },
       {
@@ -14776,20 +14686,20 @@ const _products = [
   {
     "id": "802",
     "sku": "06005",
-    "slug": "blusa-jubae-802",
-    "name": "BLUSA JUBAE",
-    "price": 16390,
+    "slug": "blusa-outwork-ripstop-jubae-m-l-mujer-802",
+    "name": "BLUSA OUTWORK RIPSTOP JUBAE M/L MUJER",
+    "price": 18890,
     "category": "11-mujer",
     "categoryLabel": "Mujer",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 16390,
+        "price": 18890,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 16390,
+        "price": 17591,
         "label": "desde 3 articulos"
       },
       {
@@ -14886,20 +14796,20 @@ const _products = [
   {
     "id": "805",
     "sku": "06391",
-    "slug": "blusa-outdoor-805",
-    "name": "BLUSA OUTDOOR",
-    "price": 17691,
+    "slug": "blusa-abelia-manga-larga-mujer-805",
+    "name": "Blusa Abelia Manga Larga Mujer",
+    "price": 20489,
     "category": "11-mujer",
     "categoryLabel": "Mujer",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 17691,
+        "price": 20489,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 17691,
+        "price": 19090,
         "label": "desde 3 articulos"
       },
       {
@@ -14981,20 +14891,20 @@ const _products = [
   {
     "id": "807",
     "sku": "07024",
-    "slug": "basic-cortaviento-807",
-    "name": "BASIC CORTAVIENTO",
-    "price": 12690,
+    "slug": "cortaviento-basic-m-l-mujer-807",
+    "name": "CORTAVIENTO BASIC M/L MUJER",
+    "price": 14691,
     "category": "11-mujer",
     "categoryLabel": "Mujer",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 12690,
+        "price": 14691,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 12690,
+        "price": 13690,
         "label": "desde 3 articulos"
       },
       {
@@ -15083,23 +14993,23 @@ const _products = [
     "sku": "08216",
     "slug": "parka-basica-3-en-1-812",
     "name": "PARKA BÁSICA  3 EN 1",
-    "price": 34790,
+    "price": 12490,
     "category": "11-mujer",
     "categoryLabel": "Mujer",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 34790,
+        "price": 12490,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 34790,
+        "price": 12490,
         "label": "desde 3 articulos"
       },
       {
         "minQuantity": 10,
-        "price": 34790,
+        "price": 12490,
         "label": "desde 10 articulos"
       }
     ],
@@ -15188,23 +15098,23 @@ const _products = [
     "sku": "08334",
     "slug": "chaqueta-termica-premium-813",
     "name": "CHAQUETA TÉRMICA PREMIUM",
-    "price": 15990,
+    "price": 24890,
     "category": "11-mujer",
     "categoryLabel": "Mujer",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 15990,
+        "price": 24890,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 15990,
+        "price": 23090,
         "label": "desde 3 articulos"
       },
       {
         "minQuantity": 10,
-        "price": 15990,
+        "price": 21490,
         "label": "desde 10 articulos"
       }
     ],
@@ -15288,18 +15198,18 @@ const _products = [
     "sku": "08530",
     "slug": "chaqueta-softshell-rhelmu-mujer-m-larga-100-poly-822",
     "name": "CHAQUETA SOFTSHELL RHELMU MUJER M/LARGA 100% POLY",
-    "price": 24490,
+    "price": 28390,
     "category": "11-mujer",
     "categoryLabel": "Mujer",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 24490,
+        "price": 28390,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 24490,
+        "price": 26389,
         "label": "desde 3 articulos"
       },
       {
@@ -15388,23 +15298,23 @@ const _products = [
     "sku": "08510",
     "slug": "chaqueta-softshell-alta-visibilidad-m-l-mujer-825",
     "name": "CHAQUETA SOFTSHELL ALTA VISIBILIDAD M/L MUJER",
-    "price": 25790,
+    "price": 26389,
     "category": "11-mujer",
     "categoryLabel": "Mujer",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 25790,
+        "price": 26389,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 25790,
+        "price": 26389,
         "label": "desde 3 articulos"
       },
       {
         "minQuantity": 10,
-        "price": 25790,
+        "price": 26389,
         "label": "desde 10 articulos"
       }
     ],
@@ -15476,20 +15386,20 @@ const _products = [
   {
     "id": "828",
     "sku": "08351",
-    "slug": "parka-light-mujer-828",
-    "name": "PARKA LIGHT MUJER",
-    "price": 21690,
+    "slug": "parka-termica-light-m-l-mujer-828",
+    "name": "PARKA TÉRMICA LIGHT M/L MUJER",
+    "price": 25090,
     "category": "11-mujer",
     "categoryLabel": "Mujer",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 21690,
+        "price": 25090,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 21690,
+        "price": 23289,
         "label": "desde 3 articulos"
       },
       {
@@ -15578,18 +15488,18 @@ const _products = [
     "sku": "08490",
     "slug": "parka-pukem-mujer-m-larga-100-poly-830",
     "name": "PARKA PUKEM MUJER M/LARGA 100% POLY",
-    "price": 34290,
+    "price": 39690,
     "category": "11-mujer",
     "categoryLabel": "Mujer",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 34290,
+        "price": 39690,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 34290,
+        "price": 36890,
         "label": "desde 3 articulos"
       },
       {
@@ -15676,20 +15586,20 @@ const _products = [
   {
     "id": "837",
     "sku": "08004",
-    "slug": "fix-oregon-parka-837",
-    "name": "FIX OREGÓN PARKA",
-    "price": 55790,
+    "slug": "parka-fix-oregon-termica-m-l-mujer-837",
+    "name": "PARKA FIX OREGÓN TÉRMICA M/L MUJER",
+    "price": 64490,
     "category": "11-mujer",
     "categoryLabel": "Mujer",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 55790,
+        "price": 64490,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 55790,
+        "price": 59990,
         "label": "desde 3 articulos"
       },
       {
@@ -15776,20 +15686,20 @@ const _products = [
   {
     "id": "838",
     "sku": "08002",
-    "slug": "sequoia-parka-3-en-1-838",
-    "name": "Sequoia PARKA 3 EN 1",
-    "price": 69890,
+    "slug": "parka-3-en-1-desmontable-secuoya-m-l-mujer-838",
+    "name": "PARKA 3 EN 1 DESMONTABLE SECUOYA M/L MUJER",
+    "price": 80790,
     "category": "11-mujer",
     "categoryLabel": "Mujer",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 69890,
+        "price": 80790,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 69890,
+        "price": 75090,
         "label": "desde 3 articulos"
       },
       {
@@ -15871,20 +15781,20 @@ const _products = [
   {
     "id": "839",
     "sku": "08008",
-    "slug": "pangue-softshell-outwork-parka-839",
-    "name": "PANGUE SOFTSHELL OUTWORK PARKA",
-    "price": 28590,
+    "slug": "parka-pangue-softshell-outwork-m-l-mujer-839",
+    "name": "PARKA PANGUE SOFTSHELL OUTWORK M/L MUJER",
+    "price": 33090,
     "category": "11-mujer",
     "categoryLabel": "Mujer",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 28590,
+        "price": 33090,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 28590,
+        "price": 30690,
         "label": "desde 3 articulos"
       },
       {
@@ -15961,20 +15871,20 @@ const _products = [
   {
     "id": "843",
     "sku": "08006",
-    "slug": "ralco-parka-softshell-843",
-    "name": "RALCO PARKA SOFTSHELL",
-    "price": 49590,
+    "slug": "parka-ralco-softshell-termica-m-l-mujer-843",
+    "name": "PARKA RALCO SOFTSHELL TÉRMICA M/L MUJER",
+    "price": 57390,
     "category": "11-mujer",
     "categoryLabel": "Mujer",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 49590,
+        "price": 57390,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 49590,
+        "price": 53291,
         "label": "desde 3 articulos"
       },
       {
@@ -16051,18 +15961,18 @@ const _products = [
     "sku": "09018",
     "slug": "poleron-basic-m-l-unisex-65-alg-35-poly-846",
     "name": "POLERON BASIC M/L UNISEX 65% ALG 35% POLY",
-    "price": 7490,
+    "price": 8691,
     "category": "11-mujer",
     "categoryLabel": "Mujer",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 7490,
+        "price": 8691,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 7490,
+        "price": 8090,
         "label": "desde 3 articulos"
       },
       {
@@ -16166,23 +16076,23 @@ const _products = [
     "sku": "09038",
     "slug": "poleron-hoodie-canguro-m-l-unisex-847",
     "name": "POLERON HOODIE CANGURO M/L UNISEX",
-    "price": 11090,
+    "price": 8190,
     "category": "11-mujer",
     "categoryLabel": "Mujer",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 11090,
+        "price": 8190,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 11090,
+        "price": 8190,
         "label": "desde 3 articulos"
       },
       {
         "minQuantity": 10,
-        "price": 11090,
+        "price": 8190,
         "label": "desde 10 articulos"
       }
     ],
@@ -16276,23 +16186,23 @@ const _products = [
     "sku": "09028",
     "slug": "poleron-medio-cierre-m-l-unisex-65-poly-35-alg-848",
     "name": "POLERON MEDIO CIERRE M/L UNISEX 65% POLY 35% ALG",
-    "price": 2891,
+    "price": 11489,
     "category": "11-mujer",
     "categoryLabel": "Mujer",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 2891,
+        "price": 11489,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 2891,
+        "price": 10690,
         "label": "desde 3 articulos"
       },
       {
         "minQuantity": 10,
-        "price": 2891,
+        "price": 9990,
         "label": "desde 10 articulos"
       }
     ],
@@ -16466,18 +16376,18 @@ const _products = [
     "sku": "10631",
     "slug": "pantalon-cargo-gabardina-bicolor-c-cinta-practical-line-853",
     "name": "PANTALON CARGO GABARDINA BICOLOR C/CINTA PRACTICAL LINE",
-    "price": 7490,
+    "price": 8691,
     "category": "11-mujer",
     "categoryLabel": "Mujer",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 7490,
+        "price": 8691,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 7490,
+        "price": 8090,
         "label": "desde 3 articulos"
       },
       {
@@ -16571,18 +16481,18 @@ const _products = [
     "sku": "10641",
     "slug": "pantalon-cargo-gabardina-bicolor-c-cinta-dia-noche-hi-vis-line-855",
     "name": "PANTALON CARGO GABARDINA BICOLOR C/CINTA DÍA NOCHE HI-VIS LINE",
-    "price": 7490,
+    "price": 8691,
     "category": "11-mujer",
     "categoryLabel": "Mujer",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 7490,
+        "price": 8691,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 7490,
+        "price": 8090,
         "label": "desde 3 articulos"
       },
       {
@@ -16654,8 +16564,8 @@ const _products = [
   {
     "id": "856",
     "sku": "10621",
-    "slug": "pantalon-gabardina-dual-hi-vis-con-cinta-dia-y-noche-856",
-    "name": "PANTALON GABARDINA DUAL HI VIS CON CINTA DIA Y NOCHE",
+    "slug": "pantalon-gabardina-dual-con-cinta-dia-noche-hombre-856",
+    "name": "Pantalón Gabardina Dual con Cinta Día/Noche Hombre",
     "price": 3590,
     "category": "11-mujer",
     "categoryLabel": "Mujer",
@@ -16751,18 +16661,18 @@ const _products = [
     "sku": "30048",
     "slug": "pantalon-cargo-alerce-mujer-864",
     "name": "PANTALON CARGO ALERCE  MUJER",
-    "price": 12890,
+    "price": 14990,
     "category": "11-mujer",
     "categoryLabel": "Mujer",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 12890,
+        "price": 14990,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 12890,
+        "price": 13890,
         "label": "desde 3 articulos"
       },
       {
@@ -16851,18 +16761,18 @@ const _products = [
     "sku": "10020",
     "slug": "pantalon-manio-advance-line-mujer-871",
     "name": "PANTALON MAÑIO ADVANCE LINE MUJER",
-    "price": 27290,
+    "price": 31590,
     "category": "11-mujer",
     "categoryLabel": "Mujer",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 27290,
+        "price": 31590,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 27290,
+        "price": 29289,
         "label": "desde 3 articulos"
       },
       {
@@ -16946,18 +16856,18 @@ const _products = [
     "sku": "10751",
     "slug": "pantalon-cargo-tulipero-pro-mujer-876",
     "name": "PANTALON CARGO TULIPERO PRO MUJER",
-    "price": 20990,
+    "price": 24190,
     "category": "11-mujer",
     "categoryLabel": "Mujer",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 20990,
+        "price": 24190,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 20990,
+        "price": 22490,
         "label": "desde 3 articulos"
       },
       {
@@ -17056,18 +16966,18 @@ const _products = [
     "sku": "10731",
     "slug": "pantalon-cargo-tulipero-effective-mujer-877",
     "name": "PANTALON CARGO TULIPERO EFFECTIVE MUJER",
-    "price": 23790,
+    "price": 27590,
     "category": "11-mujer",
     "categoryLabel": "Mujer",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 23790,
+        "price": 27590,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 23790,
+        "price": 25590,
         "label": "desde 3 articulos"
       },
       {
@@ -17161,18 +17071,18 @@ const _products = [
     "sku": "10127",
     "slug": "pantalon-cargo-classic-mujer-65-poly-35-alg-882",
     "name": "PANTALON CARGO CLASSIC MUJER 65% POLY 35% ALG",
-    "price": 9790,
+    "price": 11389,
     "category": "11-mujer",
     "categoryLabel": "Mujer",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 9790,
+        "price": 11389,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 9790,
+        "price": 10590,
         "label": "desde 3 articulos"
       },
       {
@@ -17261,18 +17171,18 @@ const _products = [
     "sku": "10117",
     "slug": "pantalon-classic-mujer-65-poly-35-alg-886",
     "name": "PANTALON CLASSIC MUJER 65% POLY 35% ALG",
-    "price": 8390,
+    "price": 9690,
     "category": "11-mujer",
     "categoryLabel": "Mujer",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 8390,
+        "price": 9690,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 8390,
+        "price": 8990,
         "label": "desde 3 articulos"
       },
       {
@@ -17361,23 +17271,23 @@ const _products = [
     "sku": "10811",
     "slug": "pantalon-executive-amount-mujer-m-l-889",
     "name": "PANTALON EXECUTIVE AMOUNT MUJER M/L",
-    "price": 20691,
+    "price": 18490,
     "category": "11-mujer",
     "categoryLabel": "Mujer",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 20691,
+        "price": 18490,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 20691,
+        "price": 18490,
         "label": "desde 3 articulos"
       },
       {
         "minQuantity": 10,
-        "price": 20691,
+        "price": 18490,
         "label": "desde 10 articulos"
       }
     ],
@@ -17456,18 +17366,18 @@ const _products = [
     "sku": "10831",
     "slug": "pantalon-executive-business-mujer-891",
     "name": "PANTALON EXECUTIVE BUSINESS MUJER",
-    "price": 16290,
+    "price": 18790,
     "category": "11-mujer",
     "categoryLabel": "Mujer",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 16290,
+        "price": 18790,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 16290,
+        "price": 17489,
         "label": "desde 3 articulos"
       },
       {
@@ -17546,18 +17456,18 @@ const _products = [
     "sku": "10691",
     "slug": "pantalon-outwork-ripstop-acacio-mujer-894",
     "name": "PANTALON OUTWORK RIPSTOP ACACIO MUJER",
-    "price": 20090,
+    "price": 23289,
     "category": "11-mujer",
     "categoryLabel": "Mujer",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 20090,
+        "price": 23289,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 20090,
+        "price": 21690,
         "label": "desde 3 articulos"
       },
       {
@@ -17641,18 +17551,18 @@ const _products = [
     "sku": "10671",
     "slug": "pantalon-outwork-ripstop-mollen-mujer-895",
     "name": "PANTALON OUTWORK RIPSTOP MOLLEN  MUJER",
-    "price": 21990,
+    "price": 25390,
     "category": "11-mujer",
     "categoryLabel": "Mujer",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 21990,
+        "price": 25390,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 21990,
+        "price": 23591,
         "label": "desde 3 articulos"
       },
       {
@@ -17736,18 +17646,18 @@ const _products = [
     "sku": "10011",
     "slug": "pantalon-sauco-mujer-896",
     "name": "PANTALÓN SAUCO MUJER",
-    "price": 26691,
+    "price": 30790,
     "category": "11-mujer",
     "categoryLabel": "Mujer",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 26691,
+        "price": 30790,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 26691,
+        "price": 28690,
         "label": "desde 3 articulos"
       },
       {
@@ -17831,18 +17741,18 @@ const _products = [
     "sku": "10016",
     "slug": "pantalon-rauli-mujer-899",
     "name": "PANTALON RAULI MUJER",
-    "price": 22890,
+    "price": 26389,
     "category": "11-mujer",
     "categoryLabel": "Mujer",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 22890,
+        "price": 26389,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 22890,
+        "price": 24590,
         "label": "desde 3 articulos"
       },
       {
@@ -17926,18 +17836,18 @@ const _products = [
     "sku": "12431",
     "slug": "chaleco-geologo-gabardina-practical-line-unisex-s-manga-900",
     "name": "CHALECO GEOLOGO GABARDINA PRACTICAL LINE UNISEX S/MANGA",
-    "price": 7990,
+    "price": 9290,
     "category": "11-mujer",
     "categoryLabel": "Mujer",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 7990,
+        "price": 9290,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 7990,
+        "price": 8691,
         "label": "desde 3 articulos"
       },
       {
@@ -18026,18 +17936,18 @@ const _products = [
     "sku": "12451",
     "slug": "chaleco-geologo-vial-tricot-100-poly-904",
     "name": "CHALECO GEOLOGO VIAL TRICOT 100% POLY",
-    "price": 9990,
+    "price": 11589,
     "category": "11-mujer",
     "categoryLabel": "Mujer",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 9990,
+        "price": 11589,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 9990,
+        "price": 10690,
         "label": "desde 3 articulos"
       },
       {
@@ -18116,18 +18026,18 @@ const _products = [
     "sku": "13079",
     "slug": "primera-capa-practical-line-mujer-m-larga-906",
     "name": "PRIMERA CAPA  PRACTICAL LINE MUJER M/LARGA",
-    "price": 6490,
+    "price": 7490,
     "category": "11-mujer",
     "categoryLabel": "Mujer",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 6490,
+        "price": 7490,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 6490,
+        "price": 6990,
         "label": "desde 3 articulos"
       },
       {
@@ -18371,18 +18281,18 @@ const _products = [
     "sku": "03008",
     "slug": "micropolar-practical-line-m-l-mujer-100-pol-940",
     "name": "MICROPOLAR PRACTICAL LINE M/L MUJER 100% POL",
-    "price": 7790,
+    "price": 8990,
     "category": "11-mujer",
     "categoryLabel": "Mujer",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 7790,
+        "price": 8990,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 7790,
+        "price": 8390,
         "label": "desde 3 articulos"
       },
       {
@@ -18484,18 +18394,18 @@ const _products = [
     "sku": "08450",
     "slug": "parka-termica-impermeable-hi-vis-943",
     "name": "Parka Térmica Impermeable Hi-Vis",
-    "price": 35491,
+    "price": 40990,
     "category": "11-mujer",
     "categoryLabel": "Mujer",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 35491,
+        "price": 40990,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 35491,
+        "price": 38090,
         "label": "desde 3 articulos"
       },
       {
@@ -18589,18 +18499,18 @@ const _products = [
     "sku": "08670",
     "slug": "parka-termica-alta-visibilidad-clase-3-mujer-m-l-947",
     "name": "PARKA TERMICA ALTA VISIBILIDAD CLASE 3 MUJER M/L",
-    "price": 36690,
+    "price": 42490,
     "category": "11-mujer",
     "categoryLabel": "Mujer",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 36690,
+        "price": 42490,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 36690,
+        "price": 39490,
         "label": "desde 3 articulos"
       },
       {
@@ -18682,20 +18592,20 @@ const _products = [
   {
     "id": "937",
     "sku": "08391",
-    "slug": "knit-fleece-jacket-937",
-    "name": "Knit Fleece Jacket",
-    "price": 19190,
+    "slug": "chaqueta-knit-fleece-executive-line-mujer-m-l-937",
+    "name": "CHAQUETA KNIT FLEECE EXECUTIVE LINE MUJER M/L",
+    "price": 22290,
     "category": "11-mujer",
     "categoryLabel": "Mujer",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 19190,
+        "price": 22290,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 19190,
+        "price": 20691,
         "label": "desde 3 articulos"
       },
       {
@@ -18774,18 +18684,18 @@ const _products = [
     "sku": "10911",
     "slug": "pantalon-cargo-new-edition-mujer-952",
     "name": "Pantalón Cargo New Edition Mujer",
-    "price": 11290,
+    "price": 12990,
     "category": "11-mujer",
     "categoryLabel": "Mujer",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 11290,
+        "price": 12990,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 11290,
+        "price": 12090,
         "label": "desde 3 articulos"
       },
       {
@@ -18874,18 +18784,18 @@ const _products = [
     "sku": "08690",
     "slug": "parka-termica-alerce-certificada-manga-larga-mujer-958",
     "name": "Parka Térmica Alerce Certificada Manga Larga Mujer",
-    "price": 38189,
+    "price": 44189,
     "category": "11-mujer",
     "categoryLabel": "Mujer",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 38189,
+        "price": 44189,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 38189,
+        "price": 41090,
         "label": "desde 3 articulos"
       },
       {
@@ -18957,18 +18867,18 @@ const _products = [
     "sku": "10351",
     "slug": "pantalon-casual-slim-mujer-964",
     "name": "Pantalón Casual Slim Mujer",
-    "price": 15790,
+    "price": 18190,
     "category": "11-mujer",
     "categoryLabel": "Mujer",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 15790,
+        "price": 18190,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 15790,
+        "price": 16990,
         "label": "desde 3 articulos"
       },
       {
@@ -19052,18 +18962,18 @@ const _products = [
     "sku": "10212",
     "slug": "jeans-free-action-line-mujer-966",
     "name": "Jeans Free Action Line Mujer",
-    "price": 11190,
+    "price": 12890,
     "category": "11-mujer",
     "categoryLabel": "Mujer",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 11190,
+        "price": 12890,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 11190,
+        "price": 11990,
         "label": "desde 3 articulos"
       },
       {
@@ -19135,18 +19045,18 @@ const _products = [
     "sku": "10211",
     "slug": "jeans-practical-line-100-algodon-mujer-968",
     "name": "Jeans Practical Line 100% Algodón Mujer",
-    "price": 11890,
+    "price": 13790,
     "category": "11-mujer",
     "categoryLabel": "Mujer",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 11890,
+        "price": 13790,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 11890,
+        "price": 12790,
         "label": "desde 3 articulos"
       },
       {
@@ -19218,18 +19128,18 @@ const _products = [
     "sku": "08590",
     "slug": "chaqueta-executive-trade-mujer-m-l-975",
     "name": "CHAQUETA EXECUTIVE TRADE MUJER M/L",
-    "price": 29389,
+    "price": 33890,
     "category": "11-mujer",
     "categoryLabel": "Mujer",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 29389,
+        "price": 33890,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 29389,
+        "price": 31590,
         "label": "desde 3 articulos"
       },
       {
@@ -19308,18 +19218,18 @@ const _products = [
     "sku": "08042",
     "slug": "chaqueta-softshell-basic-mujer-983",
     "name": "CHAQUETA SOFTSHELL BASIC MUJER",
-    "price": 17090,
+    "price": 19690,
     "category": "11-mujer",
     "categoryLabel": "Mujer",
     "volumePricing": [
       {
         "minQuantity": 1,
-        "price": 17090,
+        "price": 19690,
         "label": "C/U"
       },
       {
         "minQuantity": 3,
-        "price": 17090,
+        "price": 18290,
         "label": "desde 3 articulos"
       },
       {
